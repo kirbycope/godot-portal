@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://dicr6mn0pj13o"]
+
+[ext_resource type="Script" path="res://scenes/portal/red_portal.gd" id="1_8kjj6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fo27f"]
+size = Vector3(1, 2, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sospc"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.607843)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ex502"]
+material = SubResource("StandardMaterial3D_sospc")
+size = Vector2(1, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cb6x"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_x5vw8"]
+material = SubResource("StandardMaterial3D_5cb6x")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_05qb4"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.607843)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_nrtq3"]
+material = SubResource("StandardMaterial3D_05qb4")
+size = Vector2(1, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_83c3c"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hcq1t"]
+material = SubResource("StandardMaterial3D_83c3c")
+size = Vector2(0.1, 0.1)
+
+[node name="RedPortal" type="Area3D"]
+script = ExtResource("1_8kjj6")
+
+[node name="CameraMount" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.8)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_fo27f")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ex502")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D"]
+
+[node name="Camera3D" type="Camera3D" parent="MeshInstance3D/SubViewport"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.8)
+
+[node name="CameraPositionMarker" type="MeshInstance3D" parent="MeshInstance3D/SubViewport/Camera3D"]
+visible = false
+mesh = SubResource("SphereMesh_x5vw8")
+
+[node name="RedLens" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+mesh = SubResource("PlaneMesh_nrtq3")
+
+[node name="ExitPoint" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.99, 0.5)
+
+[node name="ExitPositionMarker" type="MeshInstance3D" parent="ExitPoint"]
+visible = false
+mesh = SubResource("PlaneMesh_hcq1t")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

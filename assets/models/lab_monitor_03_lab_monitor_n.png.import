@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://b27cmg1mscaos"
+path.s3tc="res://.godot/imported/lab_monitor_03_lab_monitor_n.png-ad2b5bf99df220390d41469f6fd816d3.s3tc.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "ac42c66b54ee4c26c161f48396871fde"
+}
+
+[deps]
+
+source_file="res://assets/models/lab_monitor_03_lab_monitor_n.png"
+dest_files=["res://.godot/imported/lab_monitor_03_lab_monitor_n.png-ad2b5bf99df220390d41469f6fd816d3.s3tc.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://assets/models/lab_monitor_03_lab_monitor_n.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

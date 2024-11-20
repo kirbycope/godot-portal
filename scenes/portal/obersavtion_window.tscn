@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://bvjivvt7p1ch3"]
+
+[ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glasswindow_frosted_003.png" id="1_p7fca"]
+[ext_resource type="Texture2D" uid="uid://cbb7h5l84uvvr" path="res://assets/materials/glass_normal.png" id="2_00p55"]
+[ext_resource type="Texture2D" uid="uid://d0l8ykvsohstx" path="res://assets/materials/glasswindow_refract.png" id="3_ncks6"]
+[ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plasticwall004a.png" id="4_aqvo0"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6nj52"]
+size = Vector2(1, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfmqy"]
+transparency = 1
+albedo_texture = ExtResource("1_p7fca")
+normal_enabled = true
+normal_texture = ExtResource("2_00p55")
+refraction_enabled = true
+refraction_texture = ExtResource("3_ncks6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl566"]
+albedo_texture = ExtResource("4_aqvo0")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sla1g"]
+material = SubResource("StandardMaterial3D_kl566")
+size = Vector2(1, 0.05)
+orientation = 2
+
+[node name="ObservationWindow" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_6nj52")
+material = SubResource("StandardMaterial3D_tfmqy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+mesh = SubResource("PlaneMesh_sla1g")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.001)
+mesh = SubResource("PlaneMesh_sla1g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.975, 0.001)
+mesh = SubResource("PlaneMesh_sla1g")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.375, 0.001)
+mesh = SubResource("PlaneMesh_sla1g")

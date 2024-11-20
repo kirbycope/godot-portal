@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=3 uid="uid://k0ifbs75tjfi"]
+
+[ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glasswindow_frosted_003.png" id="1_5awo8"]
+[ext_resource type="Texture2D" uid="uid://cbb7h5l84uvvr" path="res://assets/materials/glass_normal.png" id="2_4lsd2"]
+[ext_resource type="Texture2D" uid="uid://d0l8ykvsohstx" path="res://assets/materials/glasswindow_refract.png" id="3_1uunv"]
+[ext_resource type="Texture2D" uid="uid://c8nms308376di" path="res://assets/materials/plasticwall003a.png" id="4_lqw4w"]
+[ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plasticwall004a.png" id="5_kav0k"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_b1whi"]
+size = Vector2(4, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1l68d"]
+albedo_texture = ExtResource("1_5awo8")
+normal_enabled = true
+normal_texture = ExtResource("2_4lsd2")
+refraction_enabled = true
+refraction_texture = ExtResource("3_1uunv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaj0s"]
+albedo_texture = ExtResource("4_lqw4w")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_geoak"]
+material = SubResource("StandardMaterial3D_qaj0s")
+size = Vector2(0.25, 2)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8m6wq"]
+albedo_texture = ExtResource("5_kav0k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vxr5o"]
+material = SubResource("StandardMaterial3D_8m6wq")
+size = Vector2(4, 0.1)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o05bs"]
+albedo_texture = ExtResource("5_kav0k")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2brjt"]
+material = SubResource("StandardMaterial3D_o05bs")
+size = Vector2(0.1, 1.8)
+orientation = 2
+
+[node name="ObservationRoomWindow" type="Node3D"]
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("PlaneMesh_b1whi")
+material = SubResource("StandardMaterial3D_1l68d")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, 1, 0.002)
+mesh = SubResource("PlaneMesh_geoak")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.875, 1, 0.002)
+mesh = SubResource("PlaneMesh_geoak")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0.001)
+mesh = SubResource("PlaneMesh_vxr5o")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.96, 0.001)
+mesh = SubResource("PlaneMesh_vxr5o")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00792, 0.002)
+mesh = SubResource("PlaneMesh_2brjt")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 1.00792, 0.002)
+mesh = SubResource("PlaneMesh_2brjt")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.00792, 0.002)
+mesh = SubResource("PlaneMesh_2brjt")
