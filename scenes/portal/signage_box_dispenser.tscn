@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://caoa2vm83r4v1"]
+
+[ext_resource type="Texture2D" uid="uid://cdt2sr2uco51v" path="res://assets/materials/signage_overlay_boxdispenser.png" id="1_ed85e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_re673"]
+albedo_texture = ExtResource("1_ed85e")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_2ihj3"]
+material = SubResource("StandardMaterial3D_re673")
+size = Vector2(0.45, 0.45)
+orientation = 2
+
+[node name="SignageBoxDispenser" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_2ihj3")

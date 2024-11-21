@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://ca4jnfdnuur3a"]
+[gd_scene load_steps=128 format=3 uid="uid://ca4jnfdnuur3a"]
 
 [ext_resource type="Script" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
 [ext_resource type="PackedScene" uid="uid://luish3xjd85j" path="res://scenes/portal/relaxation_vault.tscn" id="1_eaacc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/autoportal_frame.tscn" id="5_cb2wq"]
 [ext_resource type="PackedScene" uid="uid://c2sxmmtcpwu6h" path="res://scenes/portal/clock.tscn" id="6_mux7u"]
 [ext_resource type="Texture2D" uid="uid://ru5ihn070u6r" path="res://assets/materials/metalwall_bts_006a.png" id="6_rnvuu"]
+[ext_resource type="PackedScene" uid="uid://cmqa5lqwukc0q" path="res://scenes/portal/metal_grate_18.tscn" id="7_mk08i"]
 [ext_resource type="PackedScene" uid="uid://denge4yd20jom" path="res://scenes/player/player_3d.tscn" id="7_tp2ak"]
 [ext_resource type="PackedScene" uid="uid://dicr6mn0pj13o" path="res://scenes/portal/red_portal.tscn" id="9_cxngr"]
 [ext_resource type="Texture2D" uid="uid://bx3hr06q6eclx" path="res://assets/materials/observation_tilefloor001a.png" id="9_scwrs"]
@@ -28,6 +29,20 @@
 [ext_resource type="PackedScene" uid="uid://k0ifbs75tjfi" path="res://scenes/portal/observation_room_window.tscn" id="17_p7vsw"]
 [ext_resource type="Texture2D" uid="uid://d0c2hgxex00f7" path="res://assets/materials/observation_tilefloor003a.png" id="19_ayyn1"]
 [ext_resource type="PackedScene" uid="uid://cv81eewluuovy" path="res://scenes/portal/lab_desk_01.tscn" id="20_fcdxk"]
+[ext_resource type="PackedScene" uid="uid://dplk6b06dpp60" path="res://scenes/portal/box_dropper.tscn" id="28_apbns"]
+[ext_resource type="PackedScene" uid="uid://ccvcebxcqi7jo" path="res://scenes/portal/sign_frame_02.tscn" id="28_hp502"]
+[ext_resource type="PackedScene" uid="uid://caoa2vm83r4v1" path="res://scenes/portal/signage_box_dispenser.tscn" id="28_ovs1s"]
+[ext_resource type="PackedScene" uid="uid://lu7akgdg6qka" path="res://scenes/portal/sign_frame_01.tscn" id="28_r1ebn"]
+[ext_resource type="PackedScene" uid="uid://cam655h5nddek" path="res://scenes/portal/indicator_lights_floor.tscn" id="28_rhs86"]
+[ext_resource type="PackedScene" uid="uid://dn7mf2fpktxmb" path="res://scenes/portal/elevator_shaft.tscn" id="29_2ovkc"]
+[ext_resource type="PackedScene" uid="uid://bg7dietfgkkwx" path="res://scenes/portal/signage_box_hurt.tscn" id="29_glw87"]
+[ext_resource type="PackedScene" uid="uid://cdl6yvkuoectr" path="res://scenes/portal/indicator_light_wall.tscn" id="29_ly1gk"]
+[ext_resource type="PackedScene" uid="uid://bbjlrgac14xh2" path="res://scenes/portal/elevator_caps.tscn" id="30_fwrtn"]
+[ext_resource type="PackedScene" uid="uid://c8b1f4km3wikp" path="res://scenes/portal/portal_cleanser.tscn" id="31_c05p2"]
+[ext_resource type="PackedScene" uid="uid://bt18iv2iea6c6" path="res://scenes/portal/signage_doorstate.tscn" id="31_nesej"]
+[ext_resource type="PackedScene" uid="uid://djc434yd6p4rh" path="res://scenes/portal/signage_arrow.tscn" id="33_42b3t"]
+[ext_resource type="PackedScene" uid="uid://ctrwcheltfyxl" path="res://scenes/portal/round_elevator.tscn" id="33_t47c1"]
+[ext_resource type="PackedScene" uid="uid://dmol0o0h51n4g" path="res://scenes/portal/signage_exit.tscn" id="34_i7wmd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_urrkp"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -60,6 +75,14 @@ uv1_triplanar = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_2mwe4"]
 material = SubResource("StandardMaterial3D_opacl")
 size = Vector2(6, 8)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f3xxk"]
+size = Vector2(4, 5.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ich52"]
+albedo_texture = ExtResource("13_ggmfl")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_312ni"]
 size = Vector2(5.5, 3)
@@ -149,6 +172,14 @@ uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ex7ar"]
 albedo_texture = ExtResource("2_i48fk")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c7uia"]
+size = Vector2(4, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmwvf"]
+albedo_texture = ExtResource("2_i48fk")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkype"]
 albedo_texture = ExtResource("3_o6uc2")
@@ -300,6 +331,16 @@ uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_offset = Vector3(0.25, 0.5, 0)
 uv1_triplanar = true
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_jsffu"]
+size = Vector2(5, 3)
+orientation = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cb4yf"]
+albedo_texture = ExtResource("3_o6uc2")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_offset = Vector3(0.25, 0, 0)
+uv1_triplanar = true
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhjx1"]
 albedo_texture = ExtResource("9_scwrs")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
@@ -402,6 +443,18 @@ transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -9.494
 use_collision = true
 mesh = SubResource("PlaneMesh_2mwe4")
 
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="Ceilings"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.19209e-07, 0, -1.19209e-07, -1, -8.5, 2, -8.75)
+use_collision = true
+mesh = SubResource("PlaneMesh_f3xxk")
+material = SubResource("StandardMaterial3D_ich52")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="Ceilings"]
+transform = Transform3D(1, 0, 0, 0, -1, 1.19209e-07, 0, -1.19209e-07, -1, -8.5, 3, -13.75)
+use_collision = true
+mesh = SubResource("PlaneMesh_f3xxk")
+material = SubResource("StandardMaterial3D_ich52")
+
 [node name="Floors" type="Node3D" parent="."]
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="Floors"]
@@ -457,6 +510,8 @@ mesh = SubResource("PlaneMesh_hbvg4")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 mesh = SubResource("PlaneMesh_hbvg4")
 
+[node name="MetalGrate18" parent="Floors" instance=ExtResource("7_mk08i")]
+
 [node name="CSGMesh3D7" type="CSGMesh3D" parent="Floors"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.25, 0, -1.75)
 use_collision = true
@@ -476,10 +531,10 @@ mesh = SubResource("PlaneMesh_wj4ce")
 material = SubResource("StandardMaterial3D_ex7ar")
 
 [node name="CSGMesh3D10" type="CSGMesh3D" parent="Floors"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -13.25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 0, -14)
 use_collision = true
-mesh = SubResource("PlaneMesh_pt4br")
-material = SubResource("StandardMaterial3D_ryrnf")
+mesh = SubResource("PlaneMesh_c7uia")
+material = SubResource("StandardMaterial3D_mmwvf")
 
 [node name="Walls" type="Node3D" parent="."]
 
@@ -680,6 +735,43 @@ operation = 2
 radius = 1.16307
 height = 0.1
 
+[node name="CSGMesh3D32" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -8.5, 3, -11.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_u4rde")
+
+[node name="CSGMesh3D33" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.5, 1.5, -14)
+use_collision = true
+mesh = SubResource("PlaneMesh_jsffu")
+material = SubResource("StandardMaterial3D_cb4yf")
+
+[node name="CSGMesh3D34" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -6.5, 1.5, -14)
+use_collision = true
+mesh = SubResource("PlaneMesh_jsffu")
+material = SubResource("StandardMaterial3D_cb4yf")
+
+[node name="CSGMesh3D35" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -7, 1, -11.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_konpp")
+
+[node name="CSGMesh3D36" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(-1, 0, 2.62269e-07, 0, 1, 0, -2.62269e-07, 0, -1, -10, 1, -11.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_konpp")
+
+[node name="CSGMesh3D37" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -8.5, 1, -16.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_u4rde")
+
+[node name="CSGMesh3D38" type="CSGMesh3D" parent="Walls"]
+transform = Transform3D(1, 0, -1.74846e-07, 0, 1, 0, 1.74846e-07, 0, 1, -8.5, 3, -16.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_u4rde")
+
 [node name="ObservationRoom1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 4.5)
 
@@ -756,7 +848,7 @@ transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -2, 2.5,
 use_collision = true
 mesh = SubResource("PlaneMesh_8s1vf")
 
-[node name="CSGMesh3D10" type="CSGMesh3D" parent="ObservationRoom1"]
+[node name="Ceiling" type="CSGMesh3D" parent="ObservationRoom1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 1)
 use_collision = true
 mesh = SubResource("PlaneMesh_55n4q")
@@ -828,7 +920,7 @@ use_collision = true
 mesh = SubResource("PlaneMesh_yje7h")
 material = SubResource("StandardMaterial3D_npnew")
 
-[node name="CSGMesh3D10" type="CSGMesh3D" parent="ObservationRoom2"]
+[node name="Ceiling" type="CSGMesh3D" parent="ObservationRoom2"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 2)
 use_collision = true
 mesh = SubResource("PlaneMesh_55n4q")
@@ -879,8 +971,101 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -8.5, 
 [node name="Button" parent="." instance=ExtResource("15_q34q2")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -9.49623, 0, 0.5)
 
+[node name="SignageBoxDispenser" parent="." instance=ExtResource("28_ovs1s")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -11.25, 0.001, -2.75)
+
+[node name="SignageBoxHurt" parent="." instance=ExtResource("29_glw87")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -10.75, 0.001, -2.75)
+
+[node name="IndicatorLightsFloor" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 0.001, -0.65)
+
+[node name="IndicatorLightsFloor2" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -9.5, 0.001, -1.15)
+
+[node name="IndicatorLightsFloor3" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.75, 0.001, -1.45)
+
+[node name="IndicatorLightsFloor4" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -1.75)
+
+[node name="IndicatorLightsFloor5" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -2.25)
+
+[node name="IndicatorLightsFloor6" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -2.75)
+
+[node name="IndicatorLightsFloor7" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -3.25)
+
+[node name="IndicatorLightsFloor8" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -3.75)
+
+[node name="IndicatorLightsFloor9" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -4.25)
+
+[node name="IndicatorLightsFloor10" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -4.75)
+
+[node name="IndicatorLightsFloor11" parent="." instance=ExtResource("28_rhs86")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -10.0021, 0.001, -5.25)
+
+[node name="IndicatorLightWall" parent="." instance=ExtResource("29_ly1gk")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -10, -0.0993121, -5.499)
+
+[node name="IndicatorLightWall2" parent="." instance=ExtResource("29_ly1gk")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -10, 0.400688, -5.499)
+
+[node name="IndicatorLightWall3" parent="." instance=ExtResource("29_ly1gk")]
+transform = Transform3D(1.91069e-15, -4.37114e-08, -1, -1, -4.37114e-08, 0, -4.37114e-08, 1, -4.37114e-08, -10, 0.900688, -5.499)
+
+[node name="SecurityCamera3" parent="." instance=ExtResource("11_vmk87")]
+transform = Transform3D(1, 0, -1.74845e-07, 0, 1, 0, 1.74845e-07, 0, 1, -8.5, 3, -5.5)
+
+[node name="sign_frame01" parent="." instance=ExtResource("28_r1ebn")]
+transform = Transform3D(-2.88495e-08, 0, -0.66, 0, 0.66, 0, 0.66, 0, -2.88495e-08, -10, 1.4, -5.4503)
+
+[node name="SignageDoorstate" parent="sign_frame01" instance=ExtResource("31_nesej")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="SignFrame02" parent="." instance=ExtResource("28_hp502")]
+transform = Transform3D(-2.88495e-08, 0, -0.66, 0, 0.66, 0, 0.66, 0, -2.88495e-08, -8.5, 2.3, -5.45)
+
+[node name="SignageArrow" parent="SignFrame02" instance=ExtResource("33_42b3t")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.34)
+
+[node name="SignageExit" parent="SignFrame02" instance=ExtResource("34_i7wmd")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -0.34)
+
+[node name="BoxDropper" parent="." instance=ExtResource("28_apbns")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -11.25, 2.5, -4.2)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="BoxDropper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.875, 0)
+operation = 2
+radius = 0.85
+height = 0.2
+
+[node name="CSGBox3D" type="MeshInstance3D" parent="BoxDropper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4, 0)
+
 [node name="MetalBox" parent="." instance=ExtResource("16_oqu5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0.377132, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2, 0.377132, -4.2)
+
+[node name="PortalCleanser" parent="." instance=ExtResource("31_c05p2")]
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -9.35, 1, -11.3)
+
+[node name="PortalCleanser2" parent="." instance=ExtResource("31_c05p2")]
+transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, -7.65, 1, -11.3)
+
+[node name="ElevatorShaft" parent="." instance=ExtResource("29_2ovkc")]
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -8.5, 1.5, -11.5)
+
+[node name="ElevatorCaps" parent="." instance=ExtResource("30_fwrtn")]
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, -8.5, 1.5, -12)
+
+[node name="RoundElevator" parent="." instance=ExtResource("33_t47c1")]
+transform = Transform3D(-0.565685, 0, -0.565685, 0, 0.8, 0, 0.565685, 0, -0.565685, -8.5, 0.3, -14.1)
 
 [node name="Events" type="Node3D" parent="."]
 

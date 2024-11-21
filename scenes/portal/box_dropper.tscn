@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplk6b06dpp60"]
+
+[ext_resource type="PackedScene" uid="uid://c4q1ol6g8ussf" path="res://assets/models/box_dropper.glb" id="1_3ewvh"]
+[ext_resource type="PackedScene" uid="uid://bkuejn0nr2g8w" path="res://assets/models/box_dropper_cover.glb" id="2_7vslq"]
+
+[node name="BoxDropper" type="Node3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="box_dropper" parent="." instance=ExtResource("1_3ewvh")]
+
+[node name="box_dropper_cover" parent="." instance=ExtResource("2_7vslq")]

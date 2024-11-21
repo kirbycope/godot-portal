@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdl6yvkuoectr"]
+
+[ext_resource type="Texture2D" uid="uid://l4igsfevpx4a" path="res://assets/materials/indicator_lights_wall.png" id="1_l5usd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lacrt"]
+transparency = 1
+albedo_texture = ExtResource("1_l5usd")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ef8gm"]
+material = SubResource("StandardMaterial3D_lacrt")
+size = Vector2(0.5, 0.125)
+
+[node name="IndicatorLightWall" type="MeshInstance3D"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ef8gm")

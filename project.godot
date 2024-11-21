@@ -13,7 +13,7 @@ config_version=5
 config/name="Portal"
 run/main_scene="res://scenes/portal/testchmb_a_00.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
