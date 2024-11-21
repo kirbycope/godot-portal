@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://luish3xjd85j"]
+[gd_scene load_steps=24 format=3 uid="uid://luish3xjd85j"]
 
 [ext_resource type="Texture2D" uid="uid://cw4rtjra3pw7h" path="res://assets/materials/concrete_modular_floor001c.png" id="1_rcr2i"]
 [ext_resource type="Texture2D" uid="uid://6xh4jw6dpj1i" path="res://assets/materials/glasswindow_frosted.png" id="2_gfdh2"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://d1th8eqrmybp2" path="res://scenes/portal/table.tscn" id="6_npblc"]
 [ext_resource type="PackedScene" uid="uid://bjh34i6l0horp" path="res://scenes/portal/toilet.tscn" id="6_qyyg5"]
 [ext_resource type="PackedScene" uid="uid://bnegielncu64x" path="res://scenes/portal/radio.tscn" id="7_albkg"]
-[ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/autoportal_frame.tscn" id="8_p2lcw"]
 [ext_resource type="PackedScene" uid="uid://c2sxmmtcpwu6h" path="res://scenes/portal/clock.tscn" id="10_upxdn"]
+[ext_resource type="PackedScene" uid="uid://b60y86sl7d63h" path="res://scenes/portal/static_portal_frame.tscn" id="10_yh8sl"]
+[ext_resource type="PackedScene" uid="uid://cstpxxbpi137r" path="res://scenes/bonus/godot_plushie.tscn" id="11_jj4gf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ufsor"]
 albedo_texture = ExtResource("1_rcr2i")
@@ -330,14 +331,17 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 
 [node name="Bed" parent="." instance=ExtResource("5_vwt67")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 1)
 
-[node name="TableReference" parent="." instance=ExtResource("6_npblc")]
-transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 1, -4.8368e-05, -1)
-
 [node name="RadioReference" parent="." instance=ExtResource("7_albkg")]
-transform = Transform3D(0.4, 0, -0.69282, 0, 0.8, 0, 0.69282, 0, 0.4, 1, 0.429669, -1)
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 1, 0.436311, -1)
 
-[node name="AutoportalFrame" parent="." instance=ExtResource("8_p2lcw")]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -1.32, 1, -0.75)
+[node name="TableReference" parent="." instance=ExtResource("6_npblc")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0.961729, 0, -1.00106)
+
+[node name="GodotPlushie" parent="." instance=ExtResource("11_jj4gf")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0.892413, 0.124682, -0.948246)
+
+[node name="StaticPortalFrame" parent="." instance=ExtResource("10_yh8sl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.499, 1, -0.75)
 
 [node name="Clock" parent="." instance=ExtResource("10_upxdn")]
 transform = Transform3D(-3.49691e-08, 0.8, -3.49691e-08, 0, -3.49691e-08, -0.8, -0.8, -3.49691e-08, 1.52855e-15, -1.499, 2.3, -0.75)

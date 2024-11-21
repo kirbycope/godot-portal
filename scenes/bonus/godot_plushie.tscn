@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cstpxxbpi137r"]
+
+[ext_resource type="PackedScene" uid="uid://chvfusra50yj5" path="res://assets/bonus/godotplushie/godou.blend" id="1_uv7f2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwknq"]
+size = Vector3(0.223694, 0.198517, 0.123184)
+
+[node name="GodotPlushie" type="RigidBody3D"]
+
+[node name="godou" parent="." instance=ExtResource("1_uv7f2")]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00088501, 0.0959015, -0.0108261)
+shape = SubResource("BoxShape3D_vwknq")

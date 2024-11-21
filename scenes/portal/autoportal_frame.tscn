@@ -53,6 +53,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qcrwk")
 
 [node name="AutoportalFrame" type="Node3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 
 [node name="autoportal_frame_parts\\obj\\autoportal_frame_obj" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_7aejf")

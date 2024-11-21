@@ -952,7 +952,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.4
 
 [node name="RedPortal" parent="." instance=ExtResource("9_cxngr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.49, 1.5, -0.75)
-visible = false
 
 [node name="BluePortal" parent="." instance=ExtResource("10_eck0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.495)

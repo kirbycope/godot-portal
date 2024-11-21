@@ -22,7 +22,7 @@ func _ready() -> void:
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 
-	# Get the 🎥 camera attached to 🔴 Red Portal's viewport
+	# Get the 🎥 camera attached to the 🔴 Red Portal's viewport
 	camera = $"../RedPortal/MeshInstance3D/SubViewport/Camera3D"
 
 	# Check if the camera was located

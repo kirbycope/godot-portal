@@ -3,13 +3,15 @@ extends Node3D
 var event_00_triggered: bool = false
 var sound_timer: float = 0.0
 var sound_timings: Dictionary = {
-	3.0: "res://assets/sounds/GLaDOS/00_part1_entry-1.wav",  # 5.91s
-	9.0: "res://assets/sounds/GLaDOS/00_part1_entry-2.wav",  # 4.26s
-	13.5: "res://assets/sounds/GLaDOS/00_part1_entry-3.wav", # 4.89s
-	18.5: "res://assets/sounds/GLaDOS/00_part1_entry-4.wav",  # 10.19s
-	29.0: "res://assets/sounds/GLaDOS/00_part1_entry-5.wav",  # 5.27s
-	34.5: "res://assets/sounds/GLaDOS/00_part1_entry-6.wav",  # 3.01s
-	38.0: "res://assets/sounds/GLaDOS/00_part1_entry-7.wav"   # 5.74s
+	0.1: "res://assets/sounds/looping_radio_mix.wav",         # 22.00s
+	22.0: "res://assets/sounds/GLaDOS/00_part1_entry-1.wav",   # 5.91s
+	28.0: "res://assets/sounds/GLaDOS/00_part1_entry-2.wav",   # 4.26s
+	32.5: "res://assets/sounds/GLaDOS/00_part1_entry-3.wav",  # 4.89s
+	37.5: "res://assets/sounds/GLaDOS/00_part1_entry-4.wav",  # 10.19s
+	48.0: "res://assets/sounds/GLaDOS/00_part1_entry-5.wav",  # 5.27s
+	53.5: "res://assets/sounds/GLaDOS/00_part1_entry-6.wav",  # 3.01s
+	56.5: "res://assets/sounds/GLaDOS/00_part1_entry-7.wav",  # 5.74s
+	62.3: "res://assets/sounds/portal_open1.wav"              # 1.89s
 }
 var timer: Timer
 
@@ -39,6 +41,9 @@ func _ready() -> void:
 	timer.timeout.connect(_on_timer_timeout)
 	timer.start()
 
+	# Diable the first portal
+	toggle_node($RedPortal)
+
 	# Open the first door
 	var animation_player = $Door01Wide.get_node("AnimationPlayer")
 	animation_player.play("open")
@@ -54,7 +59,8 @@ func _process(_delta: float) -> void:
 		var animation_player = $Door01Wide2.get_node("AnimationPlayer")
 		animation_player.play("open")
 		$Door01Wide2.open = true
-	
+
+	# Check if the button is not triggered, but still pressed
 	if len($Button.bodies_in_trigger) == 0  and $Door01Wide2.open:
 
 		# Play the close animation
@@ -74,11 +80,15 @@ func _on_timer_timeout() -> void:
 		if is_equal_approx(sound_timer, timing):
 			Globals.play_audio(sound_timings[timing])
 
+			# Get last key
+			var last_key = sound_timings.keys()[-1]
+
 			# Stop the timer if the last sound in the dictionary was played
-			if timing >= 38.0:
+			if timing >= last_key:
 				timer.stop()
 				sound_timer = 0.0
-				# Place Portal?
+				# Enable the first portal
+				toggle_node($RedPortal)
 
 
 ## [EVENT] Close the door behind the player.
@@ -93,3 +103,15 @@ func _on_close_door_body_entered(body: Node3D) -> void:
 		# Play the close animation
 		var animation_player = $Door01Wide.get_node("AnimationPlayer")
 		animation_player.play("close")
+
+
+## Toggles the given node's visibility and its child collision shape.
+func toggle_node(node: Node3D) -> void:
+
+	# Make visible
+	node.visible = !node.visible
+
+	# Re-enable collision shapes
+	for child in node.get_children():
+		if child is CollisionShape3D or child is CollisionPolygon3D:
+			child.disabled = !child.disabled

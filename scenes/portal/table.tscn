@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://d1th8eqrmybp2"]
+[gd_scene load_steps=10 format=4 uid="uid://d1th8eqrmybp2"]
 
 [ext_resource type="Texture2D" uid="uid://co6rpgbbrdyjj" path="res://assets/models/table_reference_table.png" id="1_3u2m5"]
 [ext_resource type="Texture2D" uid="uid://dd4crx400nypy" path="res://assets/models/table_reference_table_exponent.png" id="2_cujxy"]
@@ -43,8 +43,14 @@ bind/0/name = &"polymsh1"
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, 0, 0, 0, 1, -3.57628e-07, 0, 3.71403e-07, 1, 0, 0, 0)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ab3hj"]
+size = Vector3(0.454041, 0.08173, 0.646408)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ik5fb"]
+size = Vector3(0.454041, 0.206728, 0.146667)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_xh1in"]
-size = Vector3(0.454041, 0.429718, 0.633789)
+size = Vector3(0.454041, 0.130009, 0.64209)
 
 [node name="TableReference" type="StaticBody3D"]
 
@@ -63,6 +69,18 @@ bones/0/scale = Vector3(1, 1, 1)
 mesh = SubResource("ArrayMesh_l6tum")
 skin = SubResource("Skin_0e066")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38046, -0.00131986)
+shape = SubResource("BoxShape3D_ab3hj")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23836, 0.244857)
+shape = SubResource("BoxShape3D_ik5fb")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23836, -0.255143)
+shape = SubResource("BoxShape3D_ik5fb")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0.214859, -0.0065918)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0015564, 0.0650043, -0.00244138)
 shape = SubResource("BoxShape3D_xh1in")

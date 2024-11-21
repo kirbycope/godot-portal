@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b60y86sl7d63h"]
+
+[ext_resource type="Texture2D" uid="uid://ni0dgm1o88g0" path="res://assets/materials/plasticwall001a.png" id="1_bqgr5"]
+[ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/autoportal_frame.tscn" id="2_4dbry"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhr5p"]
+albedo_texture = ExtResource("1_bqgr5")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_wicix"]
+material = SubResource("StandardMaterial3D_jhr5p")
+size = Vector2(1.2, 1.9)
+orientation = 2
+
+[node name="StaticPortalFrame" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_wicix")
+
+[node name="AutoportalFrame" parent="." instance=ExtResource("2_4dbry")]
+transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 0, 0, 0.2)
