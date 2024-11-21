@@ -9,6 +9,9 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 
 	# Only press the button if no boides preent in the trigger area
 		$AnimationPlayer.play("press")
+
+		# Play the "off" sound
+		Globals.play_audio("res://assets/sounds/ding_off.wav")
 	
 		# Add the body to the tracking array
 		bodies_in_trigger.append(body)
@@ -20,4 +23,9 @@ func _on_trigger_body_exited(body: Node3D) -> void:
 
 	# Only release the button if no bodies remain in the trigger area
 	if bodies_in_trigger.is_empty():
+
+		# Play the "open" animation
 		$AnimationPlayer.play("release")
+
+		# Play the "on" sound
+		Globals.play_audio("res://assets/sounds/ding_on.wav")
