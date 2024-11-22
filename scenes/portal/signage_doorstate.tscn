@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bt18iv2iea6c6"]
 
-[ext_resource type="Texture2D" uid="uid://b4gf738fba3np" path="res://assets/materials/signage_doorstate.png" id="1_i414b"]
+[ext_resource type="Texture2D" uid="uid://b4gf738fba3np" path="res://assets/materials/signage/signage_doorstate.png" id="1_i414b"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3n8vt"]
 albedo_texture = ExtResource("1_i414b")

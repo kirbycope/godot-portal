@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dplk6b06dpp60"]
+
+[ext_resource type="PackedScene" uid="uid://c4q1ol6g8ussf" path="res://assets/models/box_dropper.glb" id="1_3ewvh"]
+[ext_resource type="PackedScene" uid="uid://bkuejn0nr2g8w" path="res://assets/models/box_dropper_cover.glb" id="2_7vslq"]
+[ext_resource type="PackedScene" uid="uid://dlq7v2pe88jim" path="res://scenes/portal/models/metal_box.tscn" id="3_ho8s1"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_c8iee"]
+height = 0.1
+radius = 0.8
+
+[node name="BoxDropper" type="StaticBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="box_dropper" parent="." instance=ExtResource("1_3ewvh")]
+
+[node name="box_dropper_cover" parent="." instance=ExtResource("2_7vslq")]
+
+[node name="MetalBox" parent="." instance=ExtResource("3_ho8s1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+shape = SubResource("CylinderShape3D_c8iee")

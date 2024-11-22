@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ckv1x41633etf"]
+
+[ext_resource type="Texture2D" uid="uid://bmlq61r8uq4uj" path="res://assets/materials/metal/metaldoor_blue01.png" id="1_3hnns"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcr5g"]
+albedo_texture = ExtResource("1_3hnns")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3itve"]
+material = SubResource("StandardMaterial3D_hcr5g")
+size = Vector2(1, 2)
+orientation = 2
+
+[node name="MetalDoor01" type="MeshInstance3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("PlaneMesh_3itve")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=14 format=3 uid="uid://k0ifbs75tjfi"]
 
-[ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glasswindow_frosted_003.png" id="1_5awo8"]
-[ext_resource type="Texture2D" uid="uid://cbb7h5l84uvvr" path="res://assets/materials/glass_normal.png" id="2_4lsd2"]
-[ext_resource type="Texture2D" uid="uid://d0l8ykvsohstx" path="res://assets/materials/glasswindow_refract.png" id="3_1uunv"]
-[ext_resource type="Texture2D" uid="uid://c8nms308376di" path="res://assets/materials/plasticwall003a.png" id="4_lqw4w"]
-[ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plasticwall004a.png" id="5_kav0k"]
+[ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glass/glasswindow_frosted_003.png" id="1_5awo8"]
+[ext_resource type="Texture2D" uid="uid://cbb7h5l84uvvr" path="res://assets/materials/glass/glass_normal.png" id="2_4lsd2"]
+[ext_resource type="Texture2D" uid="uid://d0l8ykvsohstx" path="res://assets/materials/glass/glasswindow_refract.png" id="3_1uunv"]
+[ext_resource type="Texture2D" uid="uid://c8nms308376di" path="res://assets/materials/plastic/plasticwall003a.png" id="4_lqw4w"]
+[ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plastic/plasticwall004a.png" id="5_kav0k"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b1whi"]
 size = Vector2(4, 2)

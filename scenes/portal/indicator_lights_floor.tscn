@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cam655h5nddek"]
 
-[ext_resource type="Texture2D" uid="uid://bdhmoa3mnp3tk" path="res://assets/materials/indicator_lights_floor.png" id="1_6b3lt"]
+[ext_resource type="Texture2D" uid="uid://bdhmoa3mnp3tk" path="res://assets/materials/signage/indicator_lights_floor.png" id="1_6b3lt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1utjo"]
 transparency = 1

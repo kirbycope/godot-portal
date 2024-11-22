@@ -1,47 +1,49 @@
-[gd_scene load_steps=128 format=3 uid="uid://ca4jnfdnuur3a"]
+[gd_scene load_steps=136 format=3 uid="uid://ca4jnfdnuur3a"]
 
 [ext_resource type="Script" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
 [ext_resource type="PackedScene" uid="uid://luish3xjd85j" path="res://scenes/portal/relaxation_vault.tscn" id="1_eaacc"]
-[ext_resource type="Texture2D" uid="uid://b36j5solchhtm" path="res://assets/materials/concrete_modular_floor001a.png" id="2_i48fk"]
-[ext_resource type="Texture2D" uid="uid://86csgnxjduah" path="res://assets/materials/concrete_bts_modular_wall001a.png" id="3_o6uc2"]
-[ext_resource type="Texture2D" uid="uid://fogfdmf2patu" path="res://assets/materials/metalwall048b.png" id="4_73ckr"]
-[ext_resource type="Texture2D" uid="uid://c8nsjajme1sg0" path="res://assets/materials/observationwall_001b.png" id="4_jsou7"]
-[ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/autoportal_frame.tscn" id="5_cb2wq"]
-[ext_resource type="PackedScene" uid="uid://c2sxmmtcpwu6h" path="res://scenes/portal/clock.tscn" id="6_mux7u"]
-[ext_resource type="Texture2D" uid="uid://ru5ihn070u6r" path="res://assets/materials/metalwall_bts_006a.png" id="6_rnvuu"]
+[ext_resource type="Texture2D" uid="uid://b36j5solchhtm" path="res://assets/materials/concrete/concrete_modular_floor001a.png" id="2_i48fk"]
+[ext_resource type="Texture2D" uid="uid://86csgnxjduah" path="res://assets/materials/concrete/concrete_bts_modular_wall001a.png" id="3_o6uc2"]
+[ext_resource type="Texture2D" uid="uid://fogfdmf2patu" path="res://assets/materials/metal/metalwall048b.png" id="4_73ckr"]
+[ext_resource type="Texture2D" uid="uid://c8nsjajme1sg0" path="res://assets/materials/concrete/observationwall_001b.png" id="4_jsou7"]
+[ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/models/autoportal_frame.tscn" id="5_cb2wq"]
+[ext_resource type="Texture2D" uid="uid://y0s42x0157lp" path="res://assets/materials/concrete/concrete_modular_ceiling001a_normal.png" id="5_ck4g6"]
+[ext_resource type="PackedScene" uid="uid://c2sxmmtcpwu6h" path="res://scenes/portal/models/clock.tscn" id="6_mux7u"]
+[ext_resource type="Texture2D" uid="uid://ru5ihn070u6r" path="res://assets/materials/metal/metalwall_bts_006a.png" id="6_rnvuu"]
 [ext_resource type="PackedScene" uid="uid://cmqa5lqwukc0q" path="res://scenes/portal/metal_grate_18.tscn" id="7_mk08i"]
 [ext_resource type="PackedScene" uid="uid://denge4yd20jom" path="res://scenes/player/player_3d.tscn" id="7_tp2ak"]
 [ext_resource type="PackedScene" uid="uid://dicr6mn0pj13o" path="res://scenes/portal/red_portal.tscn" id="9_cxngr"]
-[ext_resource type="Texture2D" uid="uid://bx3hr06q6eclx" path="res://assets/materials/observation_tilefloor001a.png" id="9_scwrs"]
+[ext_resource type="Texture2D" uid="uid://bx3hr06q6eclx" path="res://assets/materials/tile/observation_tilefloor001a.png" id="9_scwrs"]
 [ext_resource type="PackedScene" uid="uid://bvjivvt7p1ch3" path="res://scenes/portal/obersavtion_window.tscn" id="9_seqe5"]
 [ext_resource type="PackedScene" uid="uid://cqnn422wukjvf" path="res://scenes/portal/blue_portal.tscn" id="10_eck0o"]
-[ext_resource type="PackedScene" uid="uid://bxly86nwh1vr8" path="res://scenes/portal/stool.tscn" id="10_kpsvf"]
-[ext_resource type="PackedScene" uid="uid://bjkb6ufh48c5u" path="res://scenes/portal/lab_chair.tscn" id="11_kc6f2"]
-[ext_resource type="PackedScene" uid="uid://c6k28mrib0q1r" path="res://scenes/portal/security_camera.tscn" id="11_vmk87"]
-[ext_resource type="PackedScene" uid="uid://bt8qpb0jboi5h" path="res://scenes/portal/lab_desk_03.tscn" id="12_mo51w"]
-[ext_resource type="Texture2D" uid="uid://bx5be1eeoic58" path="res://assets/materials/concrete_modular_ceiling001a.png" id="13_ggmfl"]
-[ext_resource type="PackedScene" uid="uid://4oa80fq3q07t" path="res://scenes/portal/lab_desk_04.tscn" id="13_ofni4"]
-[ext_resource type="PackedScene" uid="uid://c36bapfha0ke4" path="res://scenes/portal/door_01_wide.tscn" id="14_wko10"]
-[ext_resource type="Texture2D" uid="uid://e8eu56oysroo" path="res://assets/materials/observationwall_001a.png" id="15_cm4j0"]
-[ext_resource type="PackedScene" uid="uid://bf5itwfd4irqe" path="res://scenes/portal/button.tscn" id="15_q34q2"]
-[ext_resource type="PackedScene" uid="uid://cfyfoqga512rs" path="res://scenes/portal/lab_monitor_01.tscn" id="16_liic5"]
-[ext_resource type="PackedScene" uid="uid://dlq7v2pe88jim" path="res://scenes/portal/metal_box.tscn" id="16_oqu5k"]
+[ext_resource type="PackedScene" uid="uid://bxly86nwh1vr8" path="res://scenes/portal/models/stool.tscn" id="10_kpsvf"]
+[ext_resource type="PackedScene" uid="uid://bjkb6ufh48c5u" path="res://scenes/portal/models/lab_chair.tscn" id="11_kc6f2"]
+[ext_resource type="PackedScene" uid="uid://c6k28mrib0q1r" path="res://scenes/portal/models/security_camera.tscn" id="11_vmk87"]
+[ext_resource type="PackedScene" uid="uid://bt8qpb0jboi5h" path="res://scenes/portal/models/lab_desk_03.tscn" id="12_mo51w"]
+[ext_resource type="Texture2D" uid="uid://bx5be1eeoic58" path="res://assets/materials/concrete/concrete_modular_ceiling001a.png" id="13_ggmfl"]
+[ext_resource type="PackedScene" uid="uid://4oa80fq3q07t" path="res://scenes/portal/models/lab_desk_04.tscn" id="13_ofni4"]
+[ext_resource type="PackedScene" uid="uid://c36bapfha0ke4" path="res://scenes/portal/models/door_01_wide.tscn" id="14_wko10"]
+[ext_resource type="Texture2D" uid="uid://e8eu56oysroo" path="res://assets/materials/concrete/observationwall_001a.png" id="15_cm4j0"]
+[ext_resource type="PackedScene" uid="uid://bf5itwfd4irqe" path="res://scenes/portal/models/button.tscn" id="15_q34q2"]
+[ext_resource type="PackedScene" uid="uid://cfyfoqga512rs" path="res://scenes/portal/models/lab_monitor_01.tscn" id="16_liic5"]
+[ext_resource type="PackedScene" uid="uid://dlq7v2pe88jim" path="res://scenes/portal/models/metal_box.tscn" id="16_oqu5k"]
 [ext_resource type="PackedScene" uid="uid://k0ifbs75tjfi" path="res://scenes/portal/observation_room_window.tscn" id="17_p7vsw"]
-[ext_resource type="Texture2D" uid="uid://d0c2hgxex00f7" path="res://assets/materials/observation_tilefloor003a.png" id="19_ayyn1"]
-[ext_resource type="PackedScene" uid="uid://cv81eewluuovy" path="res://scenes/portal/lab_desk_01.tscn" id="20_fcdxk"]
-[ext_resource type="PackedScene" uid="uid://dplk6b06dpp60" path="res://scenes/portal/box_dropper.tscn" id="28_apbns"]
-[ext_resource type="PackedScene" uid="uid://ccvcebxcqi7jo" path="res://scenes/portal/sign_frame_02.tscn" id="28_hp502"]
+[ext_resource type="PackedScene" uid="uid://ckv1x41633etf" path="res://scenes/portal/metal_door_01.tscn" id="19_7uktk"]
+[ext_resource type="Texture2D" uid="uid://d0c2hgxex00f7" path="res://assets/materials/tile/observation_tilefloor003a.png" id="19_ayyn1"]
+[ext_resource type="PackedScene" uid="uid://cv81eewluuovy" path="res://scenes/portal/models/lab_desk_01.tscn" id="20_fcdxk"]
+[ext_resource type="PackedScene" uid="uid://dplk6b06dpp60" path="res://scenes/portal/models/box_dropper.tscn" id="28_apbns"]
+[ext_resource type="PackedScene" uid="uid://ccvcebxcqi7jo" path="res://scenes/portal/models/sign_frame_02.tscn" id="28_hp502"]
 [ext_resource type="PackedScene" uid="uid://caoa2vm83r4v1" path="res://scenes/portal/signage_box_dispenser.tscn" id="28_ovs1s"]
-[ext_resource type="PackedScene" uid="uid://lu7akgdg6qka" path="res://scenes/portal/sign_frame_01.tscn" id="28_r1ebn"]
+[ext_resource type="PackedScene" uid="uid://lu7akgdg6qka" path="res://scenes/portal/models/sign_frame_01.tscn" id="28_r1ebn"]
 [ext_resource type="PackedScene" uid="uid://cam655h5nddek" path="res://scenes/portal/indicator_lights_floor.tscn" id="28_rhs86"]
-[ext_resource type="PackedScene" uid="uid://dn7mf2fpktxmb" path="res://scenes/portal/elevator_shaft.tscn" id="29_2ovkc"]
+[ext_resource type="PackedScene" uid="uid://dn7mf2fpktxmb" path="res://scenes/portal/models/elevator_shaft.tscn" id="29_2ovkc"]
 [ext_resource type="PackedScene" uid="uid://bg7dietfgkkwx" path="res://scenes/portal/signage_box_hurt.tscn" id="29_glw87"]
 [ext_resource type="PackedScene" uid="uid://cdl6yvkuoectr" path="res://scenes/portal/indicator_light_wall.tscn" id="29_ly1gk"]
-[ext_resource type="PackedScene" uid="uid://bbjlrgac14xh2" path="res://scenes/portal/elevator_caps.tscn" id="30_fwrtn"]
-[ext_resource type="PackedScene" uid="uid://c8b1f4km3wikp" path="res://scenes/portal/portal_cleanser.tscn" id="31_c05p2"]
+[ext_resource type="PackedScene" uid="uid://bbjlrgac14xh2" path="res://scenes/portal/models/elevator_caps.tscn" id="30_fwrtn"]
+[ext_resource type="PackedScene" uid="uid://c8b1f4km3wikp" path="res://scenes/portal/models/portal_cleanser.tscn" id="31_c05p2"]
 [ext_resource type="PackedScene" uid="uid://bt18iv2iea6c6" path="res://scenes/portal/signage_doorstate.tscn" id="31_nesej"]
 [ext_resource type="PackedScene" uid="uid://djc434yd6p4rh" path="res://scenes/portal/signage_arrow.tscn" id="33_42b3t"]
-[ext_resource type="PackedScene" uid="uid://ctrwcheltfyxl" path="res://scenes/portal/round_elevator.tscn" id="33_t47c1"]
+[ext_resource type="PackedScene" uid="uid://ctrwcheltfyxl" path="res://scenes/portal/models/round_elevator.tscn" id="33_t47c1"]
 [ext_resource type="PackedScene" uid="uid://dmol0o0h51n4g" path="res://scenes/portal/signage_exit.tscn" id="34_i7wmd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_urrkp"]
@@ -64,11 +66,15 @@ size = Vector2(10, 9)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m8mej"]
 albedo_texture = ExtResource("13_ggmfl")
+normal_enabled = true
+normal_texture = ExtResource("5_ck4g6")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opacl"]
 albedo_texture = ExtResource("13_ggmfl")
+normal_enabled = true
+normal_texture = ExtResource("5_ck4g6")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
@@ -354,6 +360,7 @@ size = Vector2(4, 2)
 orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_85pke"]
+cull_mode = 2
 albedo_texture = ExtResource("4_jsou7")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m7reo"]
@@ -370,6 +377,8 @@ size = Vector2(4, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k53h7"]
 albedo_texture = ExtResource("13_ggmfl")
+normal_enabled = true
+normal_texture = ExtResource("5_ck4g6")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
@@ -384,7 +393,7 @@ uv1_triplanar = true
 [sub_resource type="PlaneMesh" id="PlaneMesh_h8ysr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a41u4"]
-albedo_texture = ExtResource("19_ayyn1")
+albedo_texture = ExtResource("9_scwrs")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
@@ -400,7 +409,34 @@ size = Vector2(1, 2)
 orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npnew"]
+cull_mode = 2
 albedo_texture = ExtResource("4_jsou7")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_m2h5w"]
+size = Vector2(9, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bn37a"]
+albedo_texture = ExtResource("9_scwrs")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5u7x7"]
+size = Vector2(5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cp1ke"]
+albedo_texture = ExtResource("9_scwrs")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q5nsf"]
+size = Vector2(5, 4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_id3yy"]
+albedo_texture = ExtResource("13_ggmfl")
+normal_enabled = true
+normal_texture = ExtResource("5_ck4g6")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f3jje"]
 size = Vector3(0.2, 2, 2)
@@ -860,6 +896,13 @@ transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 
 [node name="LabMonitor02" parent="ObservationRoom1" instance=ExtResource("16_liic5")]
 transform = Transform3D(-3.49691e-08, 0, 0.8, 0, 0.8, 0, -0.8, 0, -3.49691e-08, 1.4, 1.2, 1.6)
 
+[node name="MetalDoor01" parent="ObservationRoom1" instance=ExtResource("19_7uktk")]
+transform = Transform3D(-0.87, 0, 1.31366e-07, 0, 0.87, 0, -1.31366e-07, 0, -0.87, -1, 0.875, 1.999)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ObservationRoom1/MetalDoor01"]
+operation = 2
+size = Vector3(1, 2, 0.05)
+
 [node name="ObservationRoom2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 2.5)
 
@@ -885,7 +928,7 @@ mesh = SubResource("PlaneMesh_e1oyq")
 material = SubResource("StandardMaterial3D_85pke")
 
 [node name="CSGMesh3D2" type="CSGMesh3D" parent="ObservationRoom2"]
-transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, 0, 1, 3)
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 1, 3)
 use_collision = true
 mesh = SubResource("PlaneMesh_e1oyq")
 material = SubResource("StandardMaterial3D_85pke")
@@ -941,6 +984,116 @@ transform = Transform3D(-0.4, 0, 0.69282, 0, 0.8, 0, -0.69282, 0, -0.4, 0.099999
 [node name="LabChair2" parent="ObservationRoom2" instance=ExtResource("11_kc6f2")]
 transform = Transform3D(-0.69282, 0, -0.4, 0, 0.8, 0, 0.4, 0, -0.69282, -0.1, 0.360094, 2)
 
+[node name="MetalDoor01" parent="ObservationRoom2" instance=ExtResource("19_7uktk")]
+transform = Transform3D(-3.80289e-08, 0, -0.87, 0, 0.87, 0, 0.87, 0, -3.80289e-08, 0.999, 0.87, 2.5)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="ObservationRoom2/MetalDoor01"]
+operation = 2
+size = Vector3(1, 2, 0.05)
+
+[node name="BackRooms" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2, 7.5)
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+use_collision = true
+mesh = SubResource("PlaneMesh_m2h5w")
+material = SubResource("StandardMaterial3D_bn37a")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2)
+use_collision = true
+mesh = SubResource("PlaneMesh_5u7x7")
+material = SubResource("StandardMaterial3D_cp1ke")
+
+[node name="CSGMesh3D3" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, -3.5, 1, 0)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D4" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.5, 1, -1.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_yje7h")
+material = SubResource("StandardMaterial3D_npnew")
+
+[node name="CSGMesh3D5" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, -2.5, 1, 1)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D6" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, -0.5, 1, 1)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D7" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, 1.5, 1, 1)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D8" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-1, 0, 8.74226e-08, 0, 1, 0, -8.74226e-08, 0, -1, 3.5, 1, 1)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D9" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5, 1, 1)
+use_collision = true
+mesh = SubResource("PlaneMesh_yje7h")
+material = SubResource("StandardMaterial3D_npnew")
+
+[node name="CSGMesh3D10" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-0.000366563, 0, -1, 0, 1, 0, 1, 0, -0.000366563, 5.5, 1, 0)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D11" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1, 0, 1.63425e-13, 0, 1, 0, -1.63425e-13, 0, 1, 0.5, 1, -2.999)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="CSGMesh3D12" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1, 0, 1.63425e-13, 0, 1, 0, -1.63425e-13, 0, 1, -1.5, 1, -2.999)
+use_collision = true
+mesh = SubResource("PlaneMesh_e1oyq")
+material = SubResource("StandardMaterial3D_85pke")
+
+[node name="Label3D" type="Label3D" parent="BackRooms"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0.8, 1, -2.3)
+text = "Hi, son!
+You found the backroom."
+
+[node name="Ceiling" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2, 0)
+use_collision = true
+mesh = SubResource("PlaneMesh_55n4q")
+material = SubResource("StandardMaterial3D_k53h7")
+
+[node name="Ceiling2" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 2, 0)
+use_collision = true
+mesh = SubResource("PlaneMesh_55n4q")
+material = SubResource("StandardMaterial3D_k53h7")
+
+[node name="Ceiling3" type="CSGMesh3D" parent="BackRooms"]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, -1, 2, -1)
+mesh = SubResource("PlaneMesh_q5nsf")
+material = SubResource("StandardMaterial3D_id3yy")
+
+[node name="CSGMesh3D13" type="CSGMesh3D" parent="."]
+transform = Transform3D(1, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 1, -6.5, 3, 4.5)
+use_collision = true
+mesh = SubResource("PlaneMesh_yje7h")
+material = SubResource("StandardMaterial3D_npnew")
+
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
 
@@ -951,7 +1104,7 @@ transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.4, -4.49)
 
 [node name="RedPortal" parent="." instance=ExtResource("9_cxngr")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.49, 1.5, -0.75)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.48958, 1.5, -0.75)
 
 [node name="BluePortal" parent="." instance=ExtResource("10_eck0o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.495)
@@ -1040,7 +1193,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="BoxDropper" parent="." instance=ExtResource("28_apbns")]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -11.25, 2.5, -4.2)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="BoxDropper"]
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="BoxDropper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.875, 0)
 operation = 2
 radius = 0.85
