@@ -1,16 +1,20 @@
-[gd_scene load_steps=14 format=3 uid="uid://k0ifbs75tjfi"]
+[gd_scene load_steps=17 format=3 uid="uid://k0ifbs75tjfi"]
 
 [ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glass/glasswindow_frosted_003.png" id="1_5awo8"]
 [ext_resource type="Texture2D" uid="uid://cbb7h5l84uvvr" path="res://assets/materials/glass/glass_normal.png" id="2_4lsd2"]
 [ext_resource type="Texture2D" uid="uid://d0l8ykvsohstx" path="res://assets/materials/glass/glasswindow_refract.png" id="3_1uunv"]
 [ext_resource type="Texture2D" uid="uid://c8nms308376di" path="res://assets/materials/plastic/plasticwall003a.png" id="4_lqw4w"]
+[ext_resource type="Texture2D" uid="uid://cesokujhkqbh0" path="res://assets/materials/plastic/plasticwall003a_normal.png" id="5_hmn5s"]
 [ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plastic/plasticwall004a.png" id="5_kav0k"]
+[ext_resource type="Texture2D" uid="uid://b5jubvk15vpev" path="res://assets/materials/plastic/plasticwall003a_height-ssbump.png" id="6_nr8rj"]
+[ext_resource type="Texture2D" uid="uid://dt86xi1sj0b1x" path="res://assets/materials/plastic/plasticwall004a_height-ssbump.png" id="8_iy1fe"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_b1whi"]
 size = Vector2(4, 2)
 orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1l68d"]
+cull_mode = 2
 albedo_texture = ExtResource("1_5awo8")
 normal_enabled = true
 normal_texture = ExtResource("2_4lsd2")
@@ -18,7 +22,11 @@ refraction_enabled = true
 refraction_texture = ExtResource("3_1uunv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qaj0s"]
+cull_mode = 2
 albedo_texture = ExtResource("4_lqw4w")
+roughness_texture = ExtResource("6_nr8rj")
+normal_enabled = true
+normal_texture = ExtResource("5_hmn5s")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_geoak"]
 material = SubResource("StandardMaterial3D_qaj0s")
@@ -27,6 +35,7 @@ orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8m6wq"]
 albedo_texture = ExtResource("5_kav0k")
+roughness_texture = ExtResource("8_iy1fe")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_vxr5o"]
 material = SubResource("StandardMaterial3D_8m6wq")

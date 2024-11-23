@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bmlq61r8uq4uj" path="res://assets/materials/metal/metaldoor_blue01.png" id="1_3hnns"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcr5g"]
+cull_mode = 2
 albedo_texture = ExtResource("1_3hnns")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_3itve"]

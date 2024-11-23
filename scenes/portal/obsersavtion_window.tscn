@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvjivvt7p1ch3"]
+[gd_scene load_steps=10 format=3 uid="uid://bvjivvt7p1ch3"]
 
 [ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glass/glasswindow_frosted_003.png" id="1_p7fca"]
 [ext_resource type="Texture2D" uid="uid://cbb7h5l84uvvr" path="res://assets/materials/glass/glass_normal.png" id="2_00p55"]
 [ext_resource type="Texture2D" uid="uid://d0l8ykvsohstx" path="res://assets/materials/glass/glasswindow_refract.png" id="3_ncks6"]
 [ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plastic/plasticwall004a.png" id="4_aqvo0"]
+[ext_resource type="Texture2D" uid="uid://dt86xi1sj0b1x" path="res://assets/materials/plastic/plasticwall004a_height-ssbump.png" id="5_282l7"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6nj52"]
 size = Vector2(1, 2)
@@ -11,6 +12,7 @@ orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tfmqy"]
 transparency = 1
+cull_mode = 2
 albedo_texture = ExtResource("1_p7fca")
 normal_enabled = true
 normal_texture = ExtResource("2_00p55")
@@ -18,7 +20,9 @@ refraction_enabled = true
 refraction_texture = ExtResource("3_ncks6")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kl566"]
+cull_mode = 2
 albedo_texture = ExtResource("4_aqvo0")
+roughness_texture = ExtResource("5_282l7")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_sla1g"]
 material = SubResource("StandardMaterial3D_kl566")

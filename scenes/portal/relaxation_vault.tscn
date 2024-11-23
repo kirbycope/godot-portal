@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://luish3xjd85j"]
+[gd_scene load_steps=25 format=3 uid="uid://luish3xjd85j"]
 
 [ext_resource type="Texture2D" uid="uid://cw4rtjra3pw7h" path="res://assets/materials/concrete/concrete_modular_floor001c.png" id="1_rcr2i"]
 [ext_resource type="Texture2D" uid="uid://6xh4jw6dpj1i" path="res://assets/materials/glass/glasswindow_frosted.png" id="2_gfdh2"]
 [ext_resource type="Texture2D" uid="uid://d3yoghir8dai5" path="res://assets/materials/plastic/plasticwall004a.png" id="3_kdern"]
 [ext_resource type="Texture2D" uid="uid://uda3qhlrg2rt" path="res://assets/materials/glass/glasswindow_frosted_003.png" id="4_feesf"]
+[ext_resource type="Texture2D" uid="uid://dt86xi1sj0b1x" path="res://assets/materials/plastic/plasticwall004a_height-ssbump.png" id="4_g8o00"]
 [ext_resource type="PackedScene" uid="uid://ccbf42rpl7w6a" path="res://scenes/portal/models/bed.tscn" id="5_vwt67"]
 [ext_resource type="PackedScene" uid="uid://d1th8eqrmybp2" path="res://scenes/portal/models/table.tscn" id="6_npblc"]
 [ext_resource type="PackedScene" uid="uid://bjh34i6l0horp" path="res://scenes/portal/models/toilet.tscn" id="6_qyyg5"]
@@ -39,6 +40,7 @@ orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ekky5"]
 albedo_texture = ExtResource("3_kdern")
+roughness_texture = ExtResource("4_g8o00")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_y3pr7"]
 material = SubResource("StandardMaterial3D_ekky5")
@@ -74,7 +76,7 @@ shape = SubResource("BoxShape3D_bwyd8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.5)
 shape = SubResource("BoxShape3D_1ojh0")
 
-[node name="MeshInstance3D1" type="MeshInstance3D" parent="Wall1"]
+[node name="Glass" type="MeshInstance3D" parent="Wall1"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_72r47")
 skeleton = NodePath("../..")
@@ -119,7 +121,7 @@ transform = Transform3D(-8.74228e-08, 4.37114e-08, 1, -1, -4.37114e-08, -8.74228
 mesh = SubResource("PlaneMesh_he7cw")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="Wall1"]
+[node name="Glass2" type="MeshInstance3D" parent="Wall1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 mesh = SubResource("PlaneMesh_5buiq")
 skeleton = NodePath("../..")
@@ -138,7 +140,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.5, 1.5, 0)
 shape = SubResource("BoxShape3D_1ojh0")
 
-[node name="MeshInstance3D1" type="MeshInstance3D" parent="Wall2"]
+[node name="Glass" type="MeshInstance3D" parent="Wall2"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_72r47")
 skeleton = NodePath("../..")
@@ -183,7 +185,7 @@ transform = Transform3D(-8.74228e-08, 4.37114e-08, 1, -1, -4.37114e-08, -8.74228
 mesh = SubResource("PlaneMesh_he7cw")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="Wall2"]
+[node name="Glass2" type="MeshInstance3D" parent="Wall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 mesh = SubResource("PlaneMesh_5buiq")
 skeleton = NodePath("../..")
@@ -202,7 +204,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.5, -1.5)
 shape = SubResource("BoxShape3D_1ojh0")
 
-[node name="MeshInstance3D1" type="MeshInstance3D" parent="Wall3"]
+[node name="Glass" type="MeshInstance3D" parent="Wall3"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_72r47")
 skeleton = NodePath("../..")
@@ -247,7 +249,7 @@ transform = Transform3D(-8.74228e-08, 4.37114e-08, 1, -1, -4.37114e-08, -8.74228
 mesh = SubResource("PlaneMesh_he7cw")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="Wall3"]
+[node name="Glass2" type="MeshInstance3D" parent="Wall3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 mesh = SubResource("PlaneMesh_5buiq")
 skeleton = NodePath("../..")
@@ -266,7 +268,7 @@ skeleton = NodePath("../..")
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 1.5, 1.5, 0)
 shape = SubResource("BoxShape3D_1ojh0")
 
-[node name="MeshInstance3D1" type="MeshInstance3D" parent="Wall4"]
+[node name="Glass" type="MeshInstance3D" parent="Wall4"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
 mesh = SubResource("PlaneMesh_72r47")
 skeleton = NodePath("../..")
@@ -311,7 +313,7 @@ transform = Transform3D(-8.74228e-08, 4.37114e-08, 1, -1, -4.37114e-08, -8.74228
 mesh = SubResource("PlaneMesh_he7cw")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D10" type="MeshInstance3D" parent="Wall4"]
+[node name="Glass2" type="MeshInstance3D" parent="Wall4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
 mesh = SubResource("PlaneMesh_5buiq")
 skeleton = NodePath("../..")
@@ -321,15 +323,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.925, 0.005)
 mesh = SubResource("PlaneMesh_y3pr7")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37112e-08, 0, -1, 0, 1, 0, 1, 0, -4.37112e-08, 1.495, 3.425, -6.5567e-10)
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Wall4"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1.42109e-14, 1.925, -0.005)
 mesh = SubResource("PlaneMesh_y3pr7")
+skeleton = NodePath("../..")
 
 [node name="Toilet" parent="." instance=ExtResource("6_qyyg5")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1, 0, 0)
 
 [node name="Bed" parent="." instance=ExtResource("5_vwt67")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0, 0.9)
 
 [node name="RadioReference" parent="." instance=ExtResource("7_albkg")]
 transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 1, 0.436311, -1)

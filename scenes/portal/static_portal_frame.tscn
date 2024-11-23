@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://b60y86sl7d63h"]
+[gd_scene load_steps=6 format=3 uid="uid://b60y86sl7d63h"]
 
 [ext_resource type="Texture2D" uid="uid://ni0dgm1o88g0" path="res://assets/materials/plastic/plasticwall001a.png" id="1_bqgr5"]
 [ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/models/autoportal_frame.tscn" id="2_4dbry"]
+[ext_resource type="Texture2D" uid="uid://c577ndfdth8vw" path="res://assets/materials/plastic/plasticwall001a_normal.png" id="3_ryq8e"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jhr5p"]
 cull_mode = 2
 albedo_texture = ExtResource("1_bqgr5")
+normal_enabled = true
+normal_texture = ExtResource("3_ryq8e")
 uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
