@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://denge4yd20jom" path="res://scenes/player/player_3d.tscn" id="7_tp2ak"]
 [ext_resource type="PackedScene" uid="uid://dicr6mn0pj13o" path="res://scenes/portal/red_portal.tscn" id="9_cxngr"]
 [ext_resource type="Texture2D" uid="uid://bx3hr06q6eclx" path="res://assets/materials/tile/observation_tilefloor001a.png" id="9_scwrs"]
-[ext_resource type="PackedScene" uid="uid://bvjivvt7p1ch3" path="res://scenes/portal/obsersavtion_window.tscn" id="9_seqe5"]
+[ext_resource type="PackedScene" uid="uid://bvjivvt7p1ch3" path="res://scenes/portal/observation_window.tscn" id="9_seqe5"]
 [ext_resource type="PackedScene" uid="uid://cqnn422wukjvf" path="res://scenes/portal/blue_portal.tscn" id="10_eck0o"]
 [ext_resource type="PackedScene" uid="uid://bxly86nwh1vr8" path="res://scenes/portal/models/stool.tscn" id="10_kpsvf"]
 [ext_resource type="Texture2D" uid="uid://cnygnu5k21vsk" path="res://assets/materials/concrete/concrete_modular_wall001a.png" id="10_leq74"]
