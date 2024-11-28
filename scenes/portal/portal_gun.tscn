@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://dr6whl3f64qfx"]
+[gd_scene load_steps=7 format=4 uid="uid://b7ebtcsy6mc6a"]
 
 [ext_resource type="Texture2D" uid="uid://seoy2swb5urt" path="res://assets/models/portal_gun_w_portalgun.png" id="1_6knim"]
-[ext_resource type="Script" path="res://scenes/portal/portal_gun.gd" id="1_wxnov"]
 [ext_resource type="Texture2D" uid="uid://bgiyk5mqwkcne" path="res://assets/models/portal_gun_w_portalgun_exponent.png" id="2_fxqnw"]
 [ext_resource type="Texture2D" uid="uid://6h0jc887mkj8" path="res://assets/models/portal_gun_w_portalgun_normal.png" id="3_13m7b"]
 
@@ -44,9 +43,8 @@ bind/0/name = &"weapon_bone"
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
 
-[node name="portal_gun" type="Node3D"]
-transform = Transform3D(-8.74228e-08, 2, 0, -2, -8.74228e-08, 0, 0, 0, 2, 0, 0, 0)
-script = ExtResource("1_wxnov")
+[node name="PortalGun" type="Node3D"]
+transform = Transform3D(-1.4, 0, 1.22392e-07, 0, 1.4, 0, -1.22392e-07, 0, -1.4, 0, 0, 0)
 
 [node name="w_portalgun_ARM" type="Node3D" parent="."]
 
@@ -60,6 +58,7 @@ bones/0/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
 bones/0/scale = Vector3(1, 1, 1)
 
 [node name="w_portalgun_parts_dmx_w_portalgun_reference_dmx" type="MeshInstance3D" parent="w_portalgun_ARM/Skeleton3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.067, 0)
 mesh = SubResource("ArrayMesh_kk8i1")
 skin = SubResource("Skin_wnj2j")
 

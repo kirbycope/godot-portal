@@ -48,6 +48,15 @@ func _ready() -> void:
 	var animation_player = $Door01Wide.get_node("AnimationPlayer")
 	animation_player.play("open")
 
+	# TESTING
+	$Player.is_holding_rifle = true
+	# Load the scene
+	var scene = load("res://scenes/portal/portal_gun.tscn")
+	# Instantiate the scene
+	var instance = scene.instantiate()
+	# Add the instance to the player scene
+	$"Player/Visuals/HeldItemMount".add_child(instance)
+
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:

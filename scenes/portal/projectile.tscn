@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://d22f3mk0iqprt"]
+
+[ext_resource type="Script" path="res://scenes/portal/projectile.gd" id="1_dfbsc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_74g5k"]
+radius = 0.11
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hahbr"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_fo80e"]
+material = SubResource("StandardMaterial3D_hahbr")
+radius = 0.1
+height = 0.2
+
+[node name="Projectile" type="RigidBody3D"]
+script = ExtResource("1_dfbsc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_74g5k")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_fo80e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
