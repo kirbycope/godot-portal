@@ -49,7 +49,8 @@ func _ready() -> void:
 	animation_player.play("open")
 
 	# TESTING
-	$Player.is_holding_rifle = true
+	#$Player.is_holding_rifle = true
+
 	# Load the scene
 	var scene = load("res://scenes/portal/portal_gun.tscn")
 	# Instantiate the scene

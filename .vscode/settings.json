@@ -1,3 +1,12 @@
 {
-    "godotTools.editorPath.godot4": "c:\\Users\\kirby\\OneDrive\\Desktop\\Godot_v4.3-stable_win64.exe"
+    "godotTools.editorPath.godot4": "c:\\Users\\kirby\\OneDrive\\Desktop\\Godot_v4.3-stable_win64.exe",
+
+    "liveServer.settings.root": "/",
+    "liveServer.settings.https": {
+        "enable": true,
+        "cert": "C:\\GitHub\\localhost.pem",
+        "key": "C:\\GitHub\\localhost.key",
+        "passphrase": "godot"
+    }
+
 }
