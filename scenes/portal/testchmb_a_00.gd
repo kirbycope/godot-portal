@@ -31,6 +31,9 @@ func _ready() -> void:
 	# Set camera's position
 	$Player/CameraMount/Camera3D.position = Vector3(0.0, 0.0, 0.0)
 
+	# Set the camera's raycast position to match the camera's position
+	$Player/CameraMount/Camera3D/RayCast3D.position = Vector3.ZERO
+
 	# Align visuals with the camera
 	$Player/Visuals.rotation = Vector3(0.0, 0.0, $Player/CameraMount.rotation.z)
 
@@ -52,11 +55,11 @@ func _ready() -> void:
 	#$Player.is_holding_rifle = true
 
 	# Load the scene
-	var scene = load("res://scenes/portal/portal_gun.tscn")
+	#var scene = load("res://scenes/portal/portal_gun.tscn")
 	# Instantiate the scene
-	var instance = scene.instantiate()
+	#var instance = scene.instantiate()
 	# Add the instance to the player scene
-	$"Player/Visuals/HeldItemMount".add_child(instance)
+	#$"Player/Visuals/HeldItemMount".add_child(instance)
 
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
