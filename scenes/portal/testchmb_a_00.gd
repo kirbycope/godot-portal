@@ -23,7 +23,7 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 	# Make sure the game is unpaused
-	Globals.game_paused = false
+	$Player.game_paused = false
 
 	# Put the player in first-person perspective
 	$Player.perspective = 1
@@ -91,7 +91,8 @@ func _on_timer_timeout() -> void:
  	# Check if any sounds should be played at the current time
 	for timing in sound_timings:
 		if is_equal_approx(sound_timer, timing):
-			Globals.play_audio(sound_timings[timing])
+			$AudioStreamPlayer.stream =  load(sound_timings[timing])
+			$AudioStreamPlayer.play()
 
 			# Get last key
 			var last_key = sound_timings.keys()[-1]

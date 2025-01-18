@@ -146,6 +146,8 @@ radius = 0.6
 [node name="Button" type="StaticBody3D"]
 script = ExtResource("1_nn8wu")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="button_top_reference" type="Node3D" parent="."]
 
 [node name="button_top_reference_ARM" type="Node3D" parent="button_top_reference"]

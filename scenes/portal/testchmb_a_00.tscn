@@ -631,6 +631,8 @@ size = Vector3(0.2, 2, 2)
 [node name="TestchmbA00" type="Node3D"]
 script = ExtResource("1_arvum")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 4, 0)
 visible = false

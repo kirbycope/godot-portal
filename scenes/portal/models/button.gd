@@ -11,7 +11,8 @@ func _on_trigger_body_entered(body: Node3D) -> void:
 		$AnimationPlayer.play("press")
 
 		# Play the "off" sound
-		Globals.play_audio("res://assets/sounds/ding_off.wav")
+		$AudioStreamPlayer.stream =  load("res://assets/sounds/ding_off.wav")
+		$AudioStreamPlayer.play()
 	
 		# Add the body to the tracking array
 		bodies_in_trigger.append(body)
@@ -28,4 +29,5 @@ func _on_trigger_body_exited(body: Node3D) -> void:
 		$AnimationPlayer.play("release")
 
 		# Play the "on" sound
-		Globals.play_audio("res://assets/sounds/ding_on.wav")
+		$AudioStreamPlayer.stream =  load("res://assets/sounds/ding_on.wav")
+		$AudioStreamPlayer.play()
