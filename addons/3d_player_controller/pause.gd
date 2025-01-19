@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player: CharacterBody3D = get_parent().get_parent()
+@onready var player: CharacterBody3D = get_parent().get_parent().get_parent()
 
 
 ## Called once for every event before _unhandled_input(), allowing you to consume some events.
