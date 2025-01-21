@@ -41,8 +41,8 @@ func _process(delta: float) -> void:
 		# Get the collision object
 		var collision_object = player.raycast_high.get_collider()
 
-		# Only proceed if the collision object is not in the "held" group
-		if !collision_object.is_in_group("held"):
+		# Only proceed if the collision object is not in the "held" group and not a player
+		if !collision_object.is_in_group("held") and !collision_object is CharacterBody3D:
 
 			# Start "hanging"
 			transition(node_name, "Hanging")
@@ -101,7 +101,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.FALLING
+	player.current_state = States.State.FALLING
 
 	# Flag the player as "falling"
 	player.is_falling = true

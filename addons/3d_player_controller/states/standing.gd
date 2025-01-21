@@ -168,7 +168,7 @@ func _input(event: InputEvent) -> void:
 func _ready() -> void:
 
 	# Check if the state is set but not yet started
-	if States.current_state == States.State.STANDING and !player.is_standing:
+	if player.current_state == States.State.STANDING and !player.is_standing:
 
 		# Start "standing"
 		start()
@@ -276,7 +276,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.STANDING
+	player.current_state = States.State.STANDING
 
 	# Flag the player as "standing"
 	player.is_standing = true

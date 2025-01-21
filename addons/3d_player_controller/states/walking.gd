@@ -89,7 +89,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.WALKING
+	player.current_state = States.State.WALKING
 
 	# Flag the player as "walking"
 	player.is_walking = true

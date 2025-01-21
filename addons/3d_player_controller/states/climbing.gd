@@ -50,7 +50,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.CLIMBING
+	player.current_state = States.State.CLIMBING
 
 	# Flag the player as "climbing" (also called "mantling")
 	player.is_climbing = true

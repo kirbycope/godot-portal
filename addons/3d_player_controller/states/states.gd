@@ -14,6 +14,3 @@ enum State {
 	STANDING,
 	WALKING
 }
-
-# Store the current state
-@export var current_state: State = State.STANDING

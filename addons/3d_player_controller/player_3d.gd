@@ -78,6 +78,7 @@ var is_walking: bool = false
 var virtual_velocity: Vector3 = Vector3.ZERO
 
 # Note: `@export` variables are available for editing in the property editor.
+@export var current_state: States.State = States.State.STANDING
 @export var enable_crouching: bool = true
 @export var enable_double_jump: bool = false
 @export var enable_flying: bool = false

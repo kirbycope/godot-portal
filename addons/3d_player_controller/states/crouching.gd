@@ -191,7 +191,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.CROUCHING
+	player.current_state = States.State.CROUCHING
 
 	# Flag the player as "crouching"
 	player.is_crouching = true

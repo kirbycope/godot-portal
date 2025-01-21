@@ -71,7 +71,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.SPRINTING
+	player.current_state = States.State.SPRINTING
 
 	# Flag the player as "sprinting"
 	player.is_sprinting = true

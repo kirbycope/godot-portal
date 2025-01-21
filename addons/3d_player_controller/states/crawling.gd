@@ -71,7 +71,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.CRAWLING
+	player.current_state = States.State.CRAWLING
 
 	# Flag the player as "crawling"
 	player.is_crawling = true

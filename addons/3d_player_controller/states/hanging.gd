@@ -106,7 +106,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.HANGING
+	player.current_state = States.State.HANGING
 
 	# Flag the player as "hanging"
 	player.is_hanging = true

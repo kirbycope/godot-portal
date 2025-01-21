@@ -118,7 +118,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.FLYING
+	player.current_state = States.State.FLYING
 
 	# Flag the player as "flying"
 	player.is_flying = true

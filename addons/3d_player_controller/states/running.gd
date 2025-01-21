@@ -101,7 +101,7 @@ func start() -> void:
 	process_mode = PROCESS_MODE_INHERIT
 
 	# Set the player's new state
-	States.current_state = States.State.RUNNING
+	player.current_state = States.State.RUNNING
 
 	# Flag the player as "running"
 	player.is_running = true
