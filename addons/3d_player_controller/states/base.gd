@@ -7,10 +7,10 @@ class_name BaseState
 func transition(from_state: String, to_state: String):
 
 	# Get the "from" scene
-	var from_scene = get_tree().current_scene.find_child(from_state)
+	var from_scene = get_parent().find_child(from_state)
 
 	# Get the "to scene
-	var to_scene = get_tree().current_scene.find_child(to_state)
+	var to_scene = get_parent().find_child(to_state)
 
 	# Check if the scenes exist
 	if from_scene and to_scene:
