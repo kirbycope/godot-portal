@@ -107,6 +107,9 @@ func _input(event: InputEvent) -> void:
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 
+	# Uncomment the next line if using GodotSteam
+	#if !is_multiplayer_authority(): return
+
 	# Check if the player is moving
 	if player.velocity != Vector3.ZERO or player.virtual_velocity != Vector3.ZERO:
 	

@@ -104,16 +104,21 @@ func _ready() -> void:
 		if event is InputEventJoypadButton and event.button_index == JOY_BUTTON_DPAD_DOWN:
 			InputMap.action_erase_event("ui_down", event)
 
-	# Check if [dpad_right] action is not in the Input Map
-	if not InputMap.has_action("dpad_right"):
+	# Check if [chat] action is not in the Input Map
+	if not InputMap.has_action("chat"):
 
-		# Add the [dpad_right] action to the Input Map
-		InputMap.add_action("dpad_right")
+		# Add the [chat] action to the Input Map
+		InputMap.add_action("chat")
 
 		# Controller [dpad, right]
 		var joypad_button_event = InputEventJoypadButton.new()
 		joypad_button_event.button_index = JOY_BUTTON_DPAD_RIGHT
-		InputMap.action_add_event("dpad_right", joypad_button_event)
+		InputMap.action_add_event("chat", joypad_button_event)
+
+		# Keyboard [T]
+		var key_event = InputEventKey.new()
+		key_event.physical_keycode = KEY_T
+		InputMap.action_add_event("chat", key_event)
 
 	# Remove [dpad, right] from the Built-In Action "ui_right"
 	events = InputMap.action_get_events("ui_right")

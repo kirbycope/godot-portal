@@ -199,10 +199,25 @@ func _input(event) -> void:
 				# Set the visual's rotation
 				visuals.rotation = Vector3.ZERO
 
+	# [chat] button _released_
+	if event.is_action_released("chat"):
+
+		# Check if the game is not paused
+		if !game_paused:
+
+			# Show the mouse
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+			# Set the "paused" flag
+			game_paused = true
+
 
 ## Called each physics frame with the time since the last physics frame as argument (delta, in seconds).
 ## Use _physics_process(delta) if the input needs to be checked continuously in sync with the physics engine, like for smooth movement or jump control.
 func _physics_process(delta) -> void:
+
+	# Uncomment the next line if using GodotSteam
+	#if !is_multiplayer_authority(): return
 
 	# If the game is not paused...
 	if !game_paused:
