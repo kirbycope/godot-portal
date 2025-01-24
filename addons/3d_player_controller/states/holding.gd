@@ -1,6 +1,5 @@
 extends BaseState
 
-@onready var player: CharacterBody3D = get_parent().get_parent()
 var node_name = "Holding"
 
 
@@ -59,8 +58,8 @@ func _process(delta: float) -> void:
 		# Move the held object in front of the player
 		move_held_object()
 
-	# Check if the player is holding a rifle or a tool
-	if player.is_holding_rifle or player.is_holding_tool:
+	# Check if the player is holding a fishing rod, rifle, or a tool
+	if player.is_holding_fishing_rod or player.is_holding_rifle or player.is_holding_tool:
 
 		# Move the position of the held item to the player's hand
 		move_held_item_mount()
@@ -69,33 +68,61 @@ func _process(delta: float) -> void:
 ## Move the item being held in the player's hand to the player's hand.
 func move_held_item_mount() -> void:
 
-	# Get the right hand bone
-	var bone_name = player.bone_name_right_hand
-	var bone_index = player.player_skeleton.find_bone(bone_name)
 
-	# Get the overall transform of the specified bone, with respect to the player's skeleton.
-	var bone_pose = player.player_skeleton.get_bone_global_pose(bone_index)
+	if player.is_holding_fishing_rod:
 
-	# Adjust the held item mount position to match the bone's relative position (adjusting for $Visuals/AuxScene scaling)
-	var bone_origin = bone_pose.origin
-	var pos_x = (-bone_origin.x * 0.01)
-	var pos_y = (bone_origin.y * 0.01)
-	var pos_z = (-bone_origin.z * 0.01)
-	player.held_item_mount.position = Vector3(pos_x, pos_y, pos_z)
+		# Get the left hand bone
+		var bone_name = player.bone_name_left_hand
+		var bone_index = player.player_skeleton.find_bone(bone_name)
 
-	# Set the rotation of the held item mount to match the bone's rotation
-	var bone_basis = bone_pose.basis.get_euler()
-	var rot_x = bone_basis.x
-	var rot_y = bone_basis.y - 0.2
-	var rot_z = bone_basis.z + 0.33
+		# Get the overall transform of the specified bone, with respect to the player's skeleton.
+		var bone_pose = player.player_skeleton.get_bone_global_pose(bone_index)
 
-	# Hack: Handle idle animation postional data
-	if player.animation_player.current_animation == player.animation_standing_holding_rifle:
-		rot_y = rot_y + 0.2
-		rot_z = bone_basis.z - 0.75
+		# Adjust the held item mount position to match the bone's relative position (adjusting for $Visuals/AuxScene 0.1 scaling)
+		var bone_origin = bone_pose.origin
+		var pos_x = (-bone_origin.x * 0.01) + 0.1
+		var pos_y = (bone_origin.y * 0.01)
+		var pos_z = (-bone_origin.z * 0.01) - 0.15
+		player.held_item_mount.position = Vector3(pos_x, pos_y, pos_z)
 
-	# Apply the rotation
-	player.held_item_mount.rotation = Vector3(rot_x, rot_y, rot_z)
+		# Set the rotation of the held item mount to match the bone's rotation
+		var bone_basis = bone_pose.basis.get_euler()
+		var rot_x = -bone_basis.x + 0
+		var rot_y = bone_basis.y + 0.5
+		var rot_z = -bone_basis.z + 1.0
+
+		# Apply the rotation
+		player.held_item_mount.rotation = Vector3(rot_x, rot_y, rot_z)
+
+	elif player.is_holding_rifle:
+
+		# Get the right hand bone
+		var bone_name = player.bone_name_right_hand
+		var bone_index = player.player_skeleton.find_bone(bone_name)
+
+		# Get the overall transform of the specified bone, with respect to the player's skeleton.
+		var bone_pose = player.player_skeleton.get_bone_global_pose(bone_index)
+
+		# Adjust the held item mount position to match the bone's relative position (adjusting for $Visuals/AuxScene scaling)
+		var bone_origin = bone_pose.origin
+		var pos_x = (-bone_origin.x * 0.01)
+		var pos_y = (bone_origin.y * 0.01)
+		var pos_z = (-bone_origin.z * 0.01)
+		player.held_item_mount.position = Vector3(pos_x, pos_y, pos_z)
+
+		# Set the rotation of the held item mount to match the bone's rotation
+		var bone_basis = bone_pose.basis.get_euler()
+		var rot_x = bone_basis.x
+		var rot_y = bone_basis.y - 0.2
+		var rot_z = bone_basis.z + 0.33
+
+		# Hack: Handle idle animation postional data
+		if player.animation_player.current_animation == player.animation_standing_holding_rifle:
+			rot_y = rot_y + 0.2
+			rot_z = bone_basis.z - 0.75
+
+		# Apply the rotation
+		player.held_item_mount.rotation = Vector3(rot_x, rot_y, rot_z)
 
 
 ## Moves the held object in front of the player.

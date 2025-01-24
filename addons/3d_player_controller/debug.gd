@@ -116,6 +116,7 @@ func _process(_delta: float) -> void:
 		# Panel 1
 		$Panel1/IsAiming.button_pressed = $"../../..".is_aiming
 		$Panel1/IsAnimationLocked.button_pressed = $"../../..".is_animation_locked
+		$Panel1/IsCasting.button_pressed = $"../../..".is_casting
 		$Panel1/IsClimbing.button_pressed = $"../../..".is_climbing
 		$Panel1/IsCrawling.button_pressed = $"../../..".is_crawling
 		$Panel1/IsCrouching.button_pressed = $"../../..".is_crouching
@@ -126,6 +127,7 @@ func _process(_delta: float) -> void:
 		$Panel1/IsGrounded.button_pressed = $"../../..".is_grounded
 		$Panel1/IsHanging.button_pressed = $"../../..".is_hanging
 		$Panel1/IsHolding.button_pressed = $"../../..".is_holding
+		$Panel1/IsHoldingFishingRod.button_pressed = $"../../..".is_holding_fishing_rod
 		$Panel1/IsHoldingRifle.button_pressed = $"../../..".is_holding_rifle
 		$Panel1/IsHoldingTool.button_pressed = $"../../..".is_holding_tool
 		$Panel1/IsJumping.button_pressed = $"../../..".is_jumping
@@ -133,13 +135,16 @@ func _process(_delta: float) -> void:
 		$Panel1/IsKickingRight.button_pressed = $"../../..".is_kicking_right
 		$Panel1/IsPunchingLeft.button_pressed = $"../../..".is_punching_left
 		$Panel1/IsPunchingRight.button_pressed = $"../../..".is_punching_right
+		$Panel1/IsReeling.button_pressed = $"../../..".is_reeling
 		$Panel1/IsRunning.button_pressed = $"../../..".is_running
 		$Panel1/IsSprinting.button_pressed = $"../../..".is_sprinting
 		$Panel1/IsStanding.button_pressed = $"../../..".is_standing
+		$Panel1/IsSwimming.button_pressed = $"../../..".is_swimming
 		$Panel1/IsWalking.button_pressed = $"../../..".is_walking
 
 		# Panel 2
 		$Panel2/EnableCrouching.button_pressed = $"../../..".enable_crouching
+		$Panel2/EnableChat.button_pressed = $"../../..".enable_chat
 		$Panel2/EnableDoubleJump.button_pressed = $"../../..".enable_double_jump
 		$Panel2/EnableFlying.button_pressed = $"../../..".enable_flying
 		$Panel2/EnableJumping.button_pressed = $"../../..".enable_jumping

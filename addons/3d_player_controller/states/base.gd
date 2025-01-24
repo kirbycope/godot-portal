@@ -2,6 +2,8 @@ extends Node
 
 class_name BaseState
 
+@onready var player: CharacterBody3D = get_parent().get_parent()
+
 
 ## Called when a state needs to transition to another.
 func transition(from_state: String, to_state: String):

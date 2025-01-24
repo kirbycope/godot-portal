@@ -1,6 +1,5 @@
 extends BaseState
 
-@onready var player: CharacterBody3D = get_parent().get_parent()
 var node_name = "Standing"
 
 
@@ -82,8 +81,14 @@ func _input(event: InputEvent) -> void:
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
 
+				# Check if the player is "holding a fishing rod"
+				if player.is_holding_fishing_rod:
+
+					# Flag the player as "reeling"
+					player.is_reeling = true
+
 				# Check if the player is "holding a rifle"
-				if player.is_holding_rifle:
+				elif player.is_holding_rifle:
 
 					# Flag the player as "aiming"
 					player.is_aiming = true
@@ -112,8 +117,14 @@ func _input(event: InputEvent) -> void:
 		# [left-punch] button just _released_
 		if Input.is_action_just_released("left_punch"):
 
+			# Check if the player is "holding a fishing rod"
+			if player.is_holding_fishing_rod:
+
+				# Flag the player as not "reeling"
+				player.is_reeling = false
+
 			# Check if the player is "holding a rifle"
-			if player.is_holding_rifle:
+			elif player.is_holding_rifle:
 
 				# Flag the player as not "aiming"
 				player.is_aiming = false
@@ -124,8 +135,26 @@ func _input(event: InputEvent) -> void:
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
 
-				# Check if the player is not "holding a rifle"
-				if !player.is_holding_rifle:
+				# Check if the player is "holding a fishing rod"
+				if player.is_holding_fishing_rod:
+
+					# Flag the player as "casting"
+					player.is_casting = true
+
+				# Check if the player is "holding a rifle"
+				elif player.is_holding_rifle:
+
+					# Flag the player as is "firing"
+					player.is_firing = true
+
+					# Delay execution
+					await get_tree().create_timer(0.3).timeout
+
+					# Flag the player as is not "firing"
+					player.is_firing = false
+
+				# The player must be unarmed
+				else:
 
 					# Check if punching is enabled
 					if player.enable_punching:
@@ -145,33 +174,14 @@ func _input(event: InputEvent) -> void:
 							# Check the punch hits something
 							player.check_punch_collision()
 
-		# [right-punch] button just _pressed_
-		if Input.is_action_just_pressed("right_punch"):
+		# [right-punch] button just _released_
+		if Input.is_action_just_released("right_punch"):
 
-			# Check if the animation player is not locked
-			if !player.is_animation_locked:
+			# Check if the player is "holding a fishing rod"
+			if player.is_holding_fishing_rod:
 
-				# Check if the player is "holding a rifle"
-				if player.is_holding_rifle:
-
-					# Flag the player as is "firing"
-					player.is_firing = true
-
-					# Delay execution
-					await get_tree().create_timer(0.3).timeout
-
-					# Flag the player as is not "firing"
-					player.is_firing = false
-
-
-## Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-
-	# Check if the state is set but not yet started
-	if player.current_state == States.State.STANDING and !player.is_standing:
-
-		# Start "standing"
-		start()
+				# Flag the player as not "casting"
+				player.is_casting = false
 
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -179,6 +189,12 @@ func _process(delta: float) -> void:
 
 	# Uncomment the next line if using GodotSteam
 	#if !is_multiplayer_authority(): return
+
+	# Check if the player is swimming
+	if player.is_swimming:
+
+		# Start "swimming"
+		transition(node_name, "Swimming")
 
 	# [crouch] button _pressed_, crouching is enabled, and not already "crouching"
 	if Input.is_action_pressed("crouch") and player.enable_crouching and !player.is_crouching:
@@ -223,8 +239,38 @@ func play_animation() -> void:
 	# Check if the animation player is not locked
 	if !player.is_animation_locked:
 
+		# Check if the player is "holding a fishing rod"
+		if player.is_holding_fishing_rod:
+
+			# Check if the player is "casting"
+			if player.is_casting:
+
+				# Check if the animation player is not already playing the appropriate animation
+				if player.animation_player.current_animation != player.animation_standing_casting_fishing_rod:
+
+					# Play the "standing, casting fishing rod" animation
+					player.animation_player.play(player.animation_standing_casting_fishing_rod)
+
+			# Check if the player is "reeling"
+			elif player.is_reeling:
+
+				# Check if the animation player is not already playing the appropriate animation
+				if player.animation_player.current_animation != player.animation_standing_reeling_fishing_rod:
+
+					# Play the "standing, holding reeling rod" animation
+					player.animation_player.play(player.animation_standing_reeling_fishing_rod)
+
+			# The player must be "idle"
+			else:
+
+				# Check if the animation player is not already playing the appropriate animation
+				if player.animation_player.current_animation != player.animation_standing_holding_fishing_rod:
+
+					# Play the "standing, holding fishing rod" animation
+					player.animation_player.play(player.animation_standing_holding_fishing_rod)
+
 		# Check if the player is "holding a rifle"
-		if player.is_holding_rifle:
+		elif player.is_holding_rifle:
 
 			# Check if the player is "firing"			
 			if player.is_firing:

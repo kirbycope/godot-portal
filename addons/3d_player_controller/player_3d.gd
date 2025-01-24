@@ -25,6 +25,9 @@ const animation_jumping_holding_tool = "Tool_Falling_Idle"
 const animation_standing = "Standing_Idle"
 const animation_standing_aiming_rifle = "Rifle_Aiming_Idle"
 const animation_standing_firing_rifle = "Rifle_Firing"
+const animation_standing_casting_fishing_rod = "Fishing_Cast"
+const animation_standing_holding_fishing_rod = "Fishing_Idle"
+const animation_standing_reeling_fishing_rod = "Fishing_Reel"
 const animation_standing_holding_rifle = "Rifle_Low_Idle"
 const animation_standing_holding_tool = "Tool_Standing_Idle"
 
@@ -36,12 +39,16 @@ const animation_sprinting = "Sprinting_In_Place"
 const animation_sprinting_holding_rifle = "Rifle_Sprinting_In_Place"
 const animation_sprinting_holding_tool = "Tool_Sprinting_In_Place"
 
+const animation_swimming = "Swimming_In_Place"
+const animation_treading_water = "Treading_Water"
+
 const animation_walking = "Walking_In_Place"
 const animation_walking_aiming_rifle = "Rifle_Walking_Aiming"
 const animation_walking_firing_rifle = "Rifle_Walking_Firing"
 const animation_walking_holding_rifle = "Rifle_Low_Run_In_Place"
 const animation_walking_holding_tool = "Tool_Walking_In_Place"
 
+const bone_name_left_hand = "mixamorigLeftHandIndex1"
 const bone_name_right_hand = "mixamorigRightHandIndex1"
 const kicking_low_left = "Kicking_Low_Left"
 const kicking_low_right = "Kicking_Low_Right"
@@ -54,6 +61,7 @@ const punching_low_right = "Punching_Low_Right"
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var is_aiming: bool = false
 var is_animation_locked: bool = false
+var is_casting: bool = false
 var is_climbing: bool = false
 var is_crawling: bool = false
 var is_crouching: bool = false
@@ -64,6 +72,7 @@ var is_firing: bool = false
 var is_flying: bool = false
 var is_hanging: bool = false
 var is_holding: bool = false
+var is_holding_fishing_rod: bool = false
 var is_holding_rifle: bool = false
 var is_holding_tool: bool = false
 var is_jumping: bool = false
@@ -71,14 +80,18 @@ var is_kicking_left: bool = false
 var is_kicking_right: bool = false
 var is_punching_left: bool = false
 var is_punching_right: bool = false
+var is_reeling: bool = false
 var is_running: bool = false
 var is_sprinting: bool = false
 var is_standing: bool = false
+var is_swimming: bool = false
 var is_walking: bool = false
+var swimming_in
 var virtual_velocity: Vector3 = Vector3.ZERO
 
 # Note: `@export` variables are available for editing in the property editor.
 @export var current_state: States.State = States.State.STANDING
+@export var enable_chat: bool = false
 @export var enable_crouching: bool = true
 @export var enable_double_jump: bool = false
 @export var enable_flying: bool = false
@@ -109,6 +122,7 @@ var virtual_velocity: Vector3 = Vector3.ZERO
 @export var speed_hanging: float = 0.5
 @export var speed_running: float = 3.5
 @export var speed_sprinting: float = 5.0
+@export var speed_swimming: float = 3.0
 @export var speed_walking: float = 1.0
 @export var zoom_max: float = 3.0
 @export var zoom_min: float = 1.0
@@ -200,7 +214,7 @@ func _input(event) -> void:
 				visuals.rotation = Vector3.ZERO
 
 	# [chat] button _released_
-	if event.is_action_released("chat"):
+	if event.is_action_released("dpad_right") and enable_chat:
 
 		# Check if the game is not paused
 		if !game_paused:
@@ -246,11 +260,20 @@ func _physics_process(delta) -> void:
 				# Rotate camera based on controller movement
 				camera_rotate_by_controller(delta)
 	
-		# Check if the player is not hanging
+		# Check if the player is not "hanging"
 		if !is_hanging:
 
-			# Add the gravity.
-			velocity.y -= gravity * delta
+			# Check if the player is "swimming"
+			if is_swimming:
+
+				# Ignore the gravity
+				velocity.y += 0.0
+
+			# The player must not be "hanging" or "swimming"
+			else:
+
+				# Add the gravity
+				velocity.y -= gravity * delta
 
 			# Handle player movement
 			update_velocity()
@@ -462,10 +485,6 @@ func move_player(delta: float) -> void:
 		velocity.y = 0.0
 		# Flag the character as "grounded"
 		is_grounded = true
-	# The player must be airborne
-	#else:
-		# Flag the character as not "grounded"
-		#is_grounded = false
 
 	# Moves the body based on velocity.
 	move_and_slide()
