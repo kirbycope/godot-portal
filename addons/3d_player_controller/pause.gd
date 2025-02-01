@@ -33,6 +33,15 @@ func _on_back_to_game_button_pressed() -> void:
 	player.game_paused = false
 
 
+func _on_return_home_button_pressed() -> void:
+
+	# Return the player to the initial position
+	player.position = player.initial_position
+
+	# Return to the game
+	_on_back_to_game_button_pressed()
+
+
 ## Handle "Leave Game" button _pressed_.
 func _on_leave_game_button_pressed() -> void:
 

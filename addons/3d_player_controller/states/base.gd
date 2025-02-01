@@ -5,6 +5,11 @@ class_name BaseState
 @onready var player: CharacterBody3D = get_parent().get_parent()
 
 
+## Returns the string name of a state.
+func get_state_name(state: States.State) -> String:
+	return States.State.keys()[state].capitalize()
+
+
 ## Called when a state needs to transition to another.
 func transition(from_state: String, to_state: String):
 

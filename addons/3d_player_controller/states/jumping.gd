@@ -10,7 +10,7 @@ func _input(event: InputEvent) -> void:
 	if !player.game_paused:
 
 		# [jump] button just _pressed_
-		if Input.is_action_just_pressed("jump"):
+		if event.is_action_pressed("jump"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -34,17 +34,12 @@ func _input(event: InputEvent) -> void:
 						transition(node_name, "Flying")
 
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+## Called every frame. '_delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 
 	# Uncomment the next line if using GodotSteam
 	#if !is_multiplayer_authority(): return
 
-	# Check if the player is swimming
-	if player.is_swimming:
-
-		# Start "swimming"
-		transition(node_name, "Swimming")
 
 	# Check the eyeline for a ledge to grab.
 	if !player.raycast_top.is_colliding() and player.raycast_high.is_colliding():

@@ -10,23 +10,17 @@ func _input(event: InputEvent) -> void:
 	if !player.game_paused:
 
 		# [sprint] button _pressed_
-		if Input.is_action_pressed("sprint"):
+		if event.is_action_pressed("sprint"):
 
 			# Start "sprinting"
 			transition(node_name, "Sprinting")
 
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+## Called every frame. '_delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 
 	# Uncomment the next line if using GodotSteam
 	#if !is_multiplayer_authority(): return
-
-	# Check if the player is swimming
-	if player.is_swimming:
-
-		# Start "swimming"
-		transition(node_name, "Swimming")
 
 	# Check if the player is not moving
 	if player.velocity == Vector3.ZERO and player.virtual_velocity == Vector3.ZERO:

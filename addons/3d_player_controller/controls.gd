@@ -457,7 +457,7 @@ func _ready() -> void:
 		mouse_button_event.button_index  = MOUSE_BUTTON_WHEEL_UP
 		mouse_button_event.pressed = true
 		InputMap.action_add_event("zoom_out", mouse_button_event)
-		
+
 		# Controller 🄻3
 		var joypad_button_event = InputEventJoypadButton.new()
 		joypad_button_event.button_index = JOY_BUTTON_RIGHT_STICK

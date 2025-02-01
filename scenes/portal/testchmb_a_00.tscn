@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
 [ext_resource type="PackedScene" uid="uid://luish3xjd85j" path="res://scenes/portal/relaxation_vault.tscn" id="1_eaacc"]
+[ext_resource type="PackedScene" uid="uid://ujh51l2wv1vk" path="res://addons/3d_player_controller/player_3d.tscn" id="2_hco2o"]
 [ext_resource type="Texture2D" uid="uid://b36j5solchhtm" path="res://assets/materials/concrete/concrete_modular_floor001a.png" id="2_i48fk"]
 [ext_resource type="Texture2D" uid="uid://86csgnxjduah" path="res://assets/materials/concrete/concrete_bts_modular_wall001a.png" id="3_o6uc2"]
 [ext_resource type="Texture2D" uid="uid://fogfdmf2patu" path="res://assets/materials/metal/metalwall048b.png" id="4_73ckr"]
@@ -12,7 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://ru5ihn070u6r" path="res://assets/materials/metal/metalwall_bts_006a.png" id="6_rnvuu"]
 [ext_resource type="Texture2D" uid="uid://tuviw6xhjvyc" path="res://assets/materials/concrete/concrete_modular_floor001a_normal.png" id="7_1s5g7"]
 [ext_resource type="PackedScene" uid="uid://cmqa5lqwukc0q" path="res://scenes/portal/metal_grate_18.tscn" id="7_mk08i"]
-[ext_resource type="PackedScene" uid="uid://denge4yd20jom" path="res://scenes/player/player_3d.tscn" id="7_tp2ak"]
 [ext_resource type="PackedScene" uid="uid://dicr6mn0pj13o" path="res://scenes/portal/red_portal.tscn" id="9_cxngr"]
 [ext_resource type="Texture2D" uid="uid://bx3hr06q6eclx" path="res://assets/materials/tile/observation_tilefloor001a.png" id="9_scwrs"]
 [ext_resource type="PackedScene" uid="uid://bvjivvt7p1ch3" path="res://scenes/portal/observation_window.tscn" id="9_seqe5"]
@@ -642,7 +642,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_atgxy")
 
-[node name="Player" parent="." instance=ExtResource("7_tp2ak")]
+[node name="Player" parent="." instance=ExtResource("2_hco2o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="RelaxationVault" parent="." instance=ExtResource("1_eaacc")]

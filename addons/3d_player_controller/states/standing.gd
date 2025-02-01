@@ -10,19 +10,19 @@ func _input(event: InputEvent) -> void:
 	if !player.game_paused:
 
 		# [crouch] button just _pressed_ and crouching is enabled
-		if Input.is_action_just_pressed("crouch") and player.enable_crouching:
+		if event.is_action_pressed("crouch") and player.enable_crouching:
 
 			# Start "crouching"
 			transition(node_name, "Crouching")
 
 		# [jump] button just _pressed_
-		if Input.is_action_just_pressed("jump") and player.enable_jumping:
+		if event.is_action_pressed("jump") and player.enable_jumping:
 
 			# Start "jumping"
 			transition(node_name, "Jumping")
 
 		# [left-kick] button _pressed_
-		if Input.is_action_pressed("left_kick"):
+		if event.is_action_pressed("left_kick"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -49,7 +49,7 @@ func _input(event: InputEvent) -> void:
 							player.check_kick_collision()
 
 		# [right-kick] button _pressed_
-		if Input.is_action_pressed("right_kick"):
+		if event.is_action_pressed("right_kick"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -76,7 +76,7 @@ func _input(event: InputEvent) -> void:
 							player.check_kick_collision()
 
 		# [left-punch] button just _pressed_
-		if Input.is_action_just_pressed("left_punch"):
+		if event.is_action_pressed("left_punch"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -115,7 +115,7 @@ func _input(event: InputEvent) -> void:
 								player.check_punch_collision()
 
 		# [left-punch] button just _released_
-		if Input.is_action_just_released("left_punch"):
+		if event.is_action_released("left_punch"):
 
 			# Check if the player is "holding a fishing rod"
 			if player.is_holding_fishing_rod:
@@ -130,7 +130,7 @@ func _input(event: InputEvent) -> void:
 				player.is_aiming = false
 
 		# [right-punch] button just _pressed_
-		if Input.is_action_just_pressed("right_punch"):
+		if event.is_action_pressed("right_punch"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -175,7 +175,7 @@ func _input(event: InputEvent) -> void:
 							player.check_punch_collision()
 
 		# [right-punch] button just _released_
-		if Input.is_action_just_released("right_punch"):
+		if event.is_action_released("right_punch"):
 
 			# Check if the player is "holding a fishing rod"
 			if player.is_holding_fishing_rod:
@@ -184,17 +184,11 @@ func _input(event: InputEvent) -> void:
 				player.is_casting = false
 
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+## Called every frame. '_delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 
 	# Uncomment the next line if using GodotSteam
 	#if !is_multiplayer_authority(): return
-
-	# Check if the player is swimming
-	if player.is_swimming:
-
-		# Start "swimming"
-		transition(node_name, "Swimming")
 
 	# [crouch] button _pressed_, crouching is enabled, and not already "crouching"
 	if Input.is_action_pressed("crouch") and player.enable_crouching and !player.is_crouching:
@@ -259,6 +253,15 @@ func play_animation() -> void:
 
 					# Play the "standing, holding reeling rod" animation
 					player.animation_player.play(player.animation_standing_reeling_fishing_rod)
+
+				# Get the held fishing rod's animation player
+				var fishing_rod_animation_player = player.held_item_mount.get_node("FishingRod/AnimationPlayer")
+
+				# Check if the animation player is not already playing the appropriate animation
+				if fishing_rod_animation_player.current_animation != "Take 001":
+
+					# Play the "reeling" animation
+					fishing_rod_animation_player.play("Take 001")
 
 			# The player must be "idle"
 			else:

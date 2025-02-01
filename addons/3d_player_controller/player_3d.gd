@@ -35,6 +35,10 @@ const animation_running = "Running_In_Place"
 const animation_running_aiming_rifle = "Rifle_Aiming_Run_In_Place"
 const animation_running_holding_rifle = "Rifle_Low_Run_In_Place"
 
+const animation_skateboarding_fast = "Skateboarding_Fast_In_Place"
+const animation_skateboarding_normal = "Skateboarding_In_Place"
+const animation_skateboarding_slow = "Skateboarding_Slow_In_Place"
+
 const animation_sprinting = "Sprinting_In_Place"
 const animation_sprinting_holding_rifle = "Rifle_Sprinting_In_Place"
 const animation_sprinting_holding_tool = "Tool_Sprinting_In_Place"
@@ -82,6 +86,7 @@ var is_punching_left: bool = false
 var is_punching_right: bool = false
 var is_reeling: bool = false
 var is_running: bool = false
+var is_skateboarding: bool = false
 var is_sprinting: bool = false
 var is_standing: bool = false
 var is_swimming: bool = false
@@ -130,11 +135,14 @@ var virtual_velocity: Vector3 = Vector3.ZERO
 
 # Note: `@onready` variables are set when the scene is loaded.
 @onready var animation_player = $Visuals/AuxScene/AnimationPlayer
+@onready var audio_player = $AudioStreamPlayer3D
+@onready var base_state: BaseState = $States/Base
 @onready var camera_mount = $CameraMount
 @onready var camera = $CameraMount/Camera3D
 @onready var collision_height = $CollisionShape3D.shape.height
 @onready var collision_position = $CollisionShape3D.position
 @onready var held_item_mount = $Visuals/HeldItemMount
+@onready var initial_position = position
 @onready var item_mount = $ItemMount
 @onready var player_skeleton = $Visuals/AuxScene/Node/Skeleton3D
 @onready var raycast_lookat = $CameraMount/Camera3D/RayCast3D

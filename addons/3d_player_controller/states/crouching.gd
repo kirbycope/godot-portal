@@ -10,13 +10,13 @@ func _input(event: InputEvent) -> void:
 	if !player.game_paused:
 
 		# [jump] button just _pressed_
-		if Input.is_action_just_pressed("jump") and player.enable_jumping:
+		if event.is_action_pressed("jump") and player.enable_jumping:
 
 			# Start "jumping"
 			transition(node_name, "Jumping")
 
 		# [left-punch] button just _pressed_
-		if Input.is_action_just_pressed("left_punch"):
+		if event.is_action_pressed("left_punch"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -49,7 +49,7 @@ func _input(event: InputEvent) -> void:
 							player.check_punch_collision()
 
 		# [left-punch] button just _released_
-		if Input.is_action_just_released("left_punch"):
+		if event.is_action_released("left_punch"):
 
 			# Check if the player is "holding a rifle"
 			if player.is_holding_rifle:
@@ -58,7 +58,7 @@ func _input(event: InputEvent) -> void:
 				player.is_aiming = false
 
 		# [right-punch] button just _pressed_
-		if Input.is_action_just_pressed("right_punch"):
+		if event.is_action_pressed("right_punch"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -85,7 +85,7 @@ func _input(event: InputEvent) -> void:
 							player.check_punch_collision()
 
 		# [right-punch] button just _pressed_
-		if Input.is_action_just_pressed("right_punch"):
+		if event.is_action_pressed("right_punch"):
 
 			# Check if the animation player is not locked
 			if !player.is_animation_locked:
@@ -103,17 +103,11 @@ func _input(event: InputEvent) -> void:
 					player.is_firing = false
 
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+## Called every frame. '_delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 
 	# Uncomment the next line if using GodotSteam
 	#if !is_multiplayer_authority(): return
-
-	# Check if the player is swimming
-	if player.is_swimming:
-
-		# Start "swimming"
-		transition(node_name, "Swimming")
 
 	# Check if the player is moving
 	if player.velocity != Vector3.ZERO or player.virtual_velocity != Vector3.ZERO:

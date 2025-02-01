@@ -2,9 +2,11 @@ extends BaseState
 
 var node_name = "Swimming"
 
+@onready var swimming_sound = preload("res://addons/3d_player_controller/sounds/398037__swordofkings128__water-swimming-1_2.mp3") as AudioStream
 
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+
+## Called every frame. '_delta' is the elapsed time since the previous frame.
+func _process(_delta: float) -> void:
 
 	# Uncomment the next line if using GodotSteam
 	#if !is_multiplayer_authority(): return
@@ -20,13 +22,12 @@ func _process(delta: float) -> void:
 
 		# [jump] button just _pressed_
 		if Input.is_action_pressed("jump"):
-
-			var water_top = player.swimming_in.get_parent().position.y + (player.swimming_in.get_child(0).shape.size.y / 2)
-			var new_position = player.position.y + 0.01
-			var player_top = new_position + player.collision_height/2
-
-			if player_top <= water_top:
-				player.position.y = new_position
+			if player.swimming_in:
+				var water_top = player.swimming_in.get_parent().position.y + (player.swimming_in.get_child(0).shape.size.y / 2)
+				var new_position = player.position.y + 0.01
+				var player_top = new_position + player.collision_height/2
+				if player_top <= water_top:
+					player.position.y = new_position
 
 	# Check if the player is not "swimming"
 	if !player.is_swimming:
@@ -59,6 +60,15 @@ func play_animation() -> void:
 				# Play the "swimming" animation
 				player.animation_player.play(player.animation_swimming)
 
+			# Check if the audio player is not playing or if the stream is not the "swimming" sound effect
+			if not player.audio_player.playing or player.audio_player.stream != swimming_sound:
+			
+				# Set the audio player's stream to the "swimming" sound effect
+				player.audio_player.stream = swimming_sound
+
+				# Play the "swimming" sound effect
+				player.audio_player.play()
+
 		# The player must not be moving
 		else:
 
@@ -70,6 +80,15 @@ func play_animation() -> void:
 
 				# Play the "treading water" animation
 				player.animation_player.play(player.animation_treading_water)
+
+			# Check if the audio player is streaming the "swimming" sound effect
+			if player.audio_player.stream == swimming_sound:
+
+				# Stop the "swimming" sound effect
+				player.audio_player.stop()
+
+				# Clear the audio player's stream
+				player.audio_player.stream = null
 
 
 ## Start "swimming".
@@ -91,16 +110,17 @@ func start() -> void:
 	player.velocity.y = player.velocity.y * 0.0
 
 	# Get positional information
-	var parent_position = player.swimming_in.get_parent().position
-	var child_size = player.swimming_in.get_child(0).shape.size
-	var water_top = player.swimming_in.get_parent().position.y + (child_size.y / 2)
-	var player_half_height = player.collision_height / 2
-	
-	# Check if the player is below water level
-	if (player.position.y + player_half_height) < (parent_position.y + water_top):
+	if player.swimming_in:
+		var parent_position = player.swimming_in.get_parent().position
+		var child_size = player.swimming_in.get_child(0).shape.size
+		var water_top = player.swimming_in.get_parent().position.y + (child_size.y / 2)
+		var player_half_height = player.collision_height / 2
+		
+		# Check if the player is below water level
+		if (player.position.y + player_half_height) < (parent_position.y + water_top):
 
-		# Set the player's vertical position to be at water level
-		player.position.y = water_top - player_half_height
+			# Set the player's vertical position to be at water level
+			player.position.y = water_top - player_half_height
 
 
 ## Stop "swimming".
@@ -114,3 +134,12 @@ func stop() -> void:
 
 	# [Re]set the player visuals postion
 	player.visuals_aux_scene.position.y = player.collision_height / 2
+
+	# Stop the "swimming" sound effect
+	if player.audio_player.stream == swimming_sound:
+
+		# Stop the "swimming" sound effect
+		player.audio_player.stop()
+
+		# Clear the audio player's stream
+		player.audio_player.stream = null
