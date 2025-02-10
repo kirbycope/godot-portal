@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/398037__swordofkings128__water-swimming-1_2.m
 [params]
 
 loop=false
-loop_offset=0.0
-bpm=0.0
+loop_offset=0
+bpm=0
 beat_count=0
 bar_beats=4

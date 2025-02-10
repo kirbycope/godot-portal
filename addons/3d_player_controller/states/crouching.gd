@@ -1,5 +1,14 @@
 extends BaseState
 
+const animation_crouching = "Crouching_Idle"
+const animation_crouching_aiming_rifle = "Rifle_Aiming_Idle_Crouching"
+const animation_crouching_firing_rifle = "Rifle_Firing_Crouching"
+const animation_crouching_holding_rifle = "Rifle_Idle_Crouching"
+const animation_crouching_move = "Sneaking_In_Place"
+const animation_crouching_move_holding_rifle = "Rifle_Walk_Crouching"
+const animation_crouching_holding_tool = "Tool_Idle_Crouching"
+const animation_punching_low_left = "Punching_Low_Left"
+const animation_punching_low_right = "Punching_Low_Right"
 var node_name = "Crouching"
 
 
@@ -40,10 +49,10 @@ func _input(event: InputEvent) -> void:
 						player.is_punching_left = true
 
 						# Check if the animation player is not already playing the appropriate animation
-						if player.animation_player.current_animation != player.punching_low_left:
+						if player.animation_player.current_animation != animation_punching_low_left:
 
 							# Play the "punching low, left" animation
-							player.animation_player.play(player.punching_low_left)
+							player.animation_player.play(animation_punching_low_left)
 
 							# Check the punch hits something
 							player.check_punch_collision()
@@ -76,10 +85,10 @@ func _input(event: InputEvent) -> void:
 						player.is_punching_right = true
 
 						# Check if the animation player is not already playing the appropriate animation
-						if player.animation_player.current_animation != player.punching_low_right:
+						if player.animation_player.current_animation != animation_punching_low_right:
 
 							# Play the "punching low, right" animation
-							player.animation_player.play(player.punching_low_right)
+							player.animation_player.play(animation_punching_low_right)
 
 							# Check the punch hits something
 							player.check_punch_collision()
@@ -144,46 +153,46 @@ func play_animation() -> void:
 			if player.is_firing:
 
 				# Check if the animation player is not already playing the appropriate animation
-				if player.animation_player.current_animation != player.animation_crouching_firing_rifle:
+				if player.animation_player.current_animation != animation_crouching_firing_rifle:
 
 					# Play the "crouching, firing rifle" animation
-					player.animation_player.play(player.animation_crouching_firing_rifle)
+					player.animation_player.play(animation_crouching_firing_rifle)
 
 			# Check if the player is "aiming"
 			elif player.is_aiming:
 
 				# Check if the animation player is not already playing the appropriate animation
-				if player.animation_player.current_animation != player.animation_crouching_aiming_rifle:
+				if player.animation_player.current_animation != animation_crouching_aiming_rifle:
 
 					# Play the "crouching, aiming a rifle" animation
-					player.animation_player.play(player.animation_crouching_aiming_rifle)
+					player.animation_player.play(animation_crouching_aiming_rifle)
 
 			# The player must be "idle"
 			else:
 
 				# Check if the animation player is not already playing the appropriate animation
-				if player.animation_player.current_animation != player.animation_crouching_holding_rifle:
+				if player.animation_player.current_animation != animation_crouching_holding_rifle:
 
 					# Play the "crouching idle, holding rifle" animation
-					player.animation_player.play(player.animation_crouching_holding_rifle)
+					player.animation_player.play(animation_crouching_holding_rifle)
 
 		# Check if the player is "holding a tool"
 		elif player.is_holding_tool:
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != player.animation_crouching_holding_tool:
+			if player.animation_player.current_animation != animation_crouching_holding_tool:
 
 				# Play the "crouching, holding tool" animation
-				player.animation_player.play(player.animation_crouching_holding_tool)
+				player.animation_player.play(animation_crouching_holding_tool)
 
 		# The player must be unarmed
 		else:
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != player.animation_crouching:
+			if player.animation_player.current_animation != animation_crouching:
 
 				# Play the "crouching" animation
-				player.animation_player.play(player.animation_crouching)
+				player.animation_player.play(animation_crouching)
 
 
 ## Start "crouching".

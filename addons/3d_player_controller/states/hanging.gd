@@ -1,5 +1,8 @@
 extends BaseState
 
+const animation_hanging = "Hanging_Idle"
+const animation_hanging_shimmy_left = "Braced_Hang_Shimmy_Left_In_Place"
+const animation_hanging_shimmy_right = "Braced_Hang_Shimmy_Right_In_Place"
 var node_name = "Hanging"
 
 
@@ -57,20 +60,27 @@ func play_animation() -> void:
 		if Input.is_action_pressed("move_left"):
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != player.animation_hanging_shimmy_left:
+			if player.animation_player.current_animation != animation_hanging_shimmy_left:
+
+				# Stop the current animation so no blending occurs
+				player.animation_player.stop()
 
 				# Play the "hanging, shimmy-ing left" animation
-				player.animation_player.play(player.animation_hanging_shimmy_left)
+				player.animation_player.play(animation_hanging_shimmy_left)
 
 		# Check if the player if moving right
 		elif Input.is_action_pressed("move_right"):
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != player.animation_hanging_shimmy_right:
+			if player.animation_player.current_animation != animation_hanging_shimmy_right:
+
+				# Stop the current animation so no blending occurs
+				player.animation_player.stop()
 
 				# Play the "hanging, shimmy-ing left" animation
-				player.animation_player.play(player.animation_hanging_shimmy_right)
+				player.animation_player.play(animation_hanging_shimmy_right)
 
+		# The player must not be moving
 		else:
 
 			# Stop player movement
@@ -80,12 +90,16 @@ func play_animation() -> void:
 			player.visuals_aux_scene.position = player.visuals_aux_scene_position
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != player.animation_hanging:
+			if player.animation_player.current_animation != animation_hanging:
+
+				# Stop the current animation so no blending occurs
+				player.animation_player.stop()
 
 				# Play the "hanging" animation
-				player.animation_player.play(player.animation_hanging)
+				player.animation_player.play(animation_hanging)
 
 
+## Moves the player in the given direction.
 func move_character(direction: float) -> void:
 
 	# Adjust player visuals for animation

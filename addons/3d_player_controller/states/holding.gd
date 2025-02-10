@@ -1,5 +1,6 @@
 extends BaseState
 
+const animation_standing_holding_rifle = "Rifle_Low_Idle"
 var node_name = "Holding"
 
 
@@ -37,7 +38,7 @@ func _input(event: InputEvent) -> void:
 				var collider = player.raycast_lookat.get_collider()
 
 				# Check if the collider is a RigidBody3D
-				if collider is RigidBody3D:
+				if collider is RigidBody3D and collider is not VehicleBody3D:
 
 					# Flag the RigidBody3D as being "held"
 					collider.add_to_group("held")
@@ -68,7 +69,7 @@ func _process(_delta: float) -> void:
 ## Move the item being held in the player's hand to the player's hand.
 func move_held_item_mount() -> void:
 
-
+	# Check if the player is holding a fishing rod
 	if player.is_holding_fishing_rod:
 
 		# Get the left hand bone
@@ -94,6 +95,7 @@ func move_held_item_mount() -> void:
 		# Apply the rotation
 		player.held_item_mount.rotation = Vector3(rot_x, rot_y, rot_z)
 
+	# Check if the player is holding a rifle
 	elif player.is_holding_rifle:
 
 		# Get the right hand bone
@@ -117,7 +119,7 @@ func move_held_item_mount() -> void:
 		var rot_z = bone_basis.z + 0.33
 
 		# Hack: Handle idle animation postional data
-		if player.animation_player.current_animation == player.animation_standing_holding_rifle:
+		if player.animation_player.current_animation == animation_standing_holding_rifle:
 			rot_y = rot_y + 0.2
 			rot_z = bone_basis.z - 0.75
 
