@@ -13,6 +13,7 @@ uv1_scale = Vector3(0.5, 0.5, 0.5)
 uv1_triplanar = true
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_wicix"]
+lightmap_size_hint = Vector2i(9, 11)
 material = SubResource("StandardMaterial3D_jhr5p")
 size = Vector2(1.4, 1.9)
 orientation = 2
@@ -24,8 +25,10 @@ transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+layers = 2
 mesh = SubResource("PlaneMesh_wicix")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.00958616)
+layers = 2
 mesh = SubResource("PlaneMesh_wicix")

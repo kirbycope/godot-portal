@@ -11,12 +11,16 @@ var sub_viewport_texture: ViewportTexture
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 
-	# Get the MeshInstance3D
 	mesh_instance = $MeshInstance3D
 
-	# Create the MeshInstance3D's material override
-	mesh_instance.material_override = StandardMaterial3D.new()
-	material_override = mesh_instance.material_override
+	# Get the shader material
+	var shader_material = mesh_instance.mesh.material as ShaderMaterial
+
+	# Get the SubViewport
+	var viewport = $MeshInstance3D/SubViewport
+
+	# Set the viewport texture as the shader parameter
+	shader_material.set_shader_parameter("viewport_texture", viewport.get_texture())
 
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
@@ -31,9 +35,6 @@ func _process(_delta: float) -> void:
 		# Move the 🎥 camera from behind the 🔵 Blue Portal to behind the 🔴 Red Portal,
 		# so that the 🔴 Red Portal's SubViewport now displays what it would look like looking out of the 🔵 Blue Portal.
 		camera.global_transform = camera_mount.global_transform
-
-		# Set the texture from the viewport
-		material_override.albedo_texture = $MeshInstance3D/SubViewport.get_texture()
 
 
 ## Called when a Node3D enters _this_ Area3D.

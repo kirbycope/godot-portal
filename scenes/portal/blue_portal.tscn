@@ -1,16 +1,28 @@
-[gd_scene load_steps=11 format=3 uid="uid://cqnn422wukjvf"]
+[gd_scene load_steps=12 format=3 uid="uid://cqnn422wukjvf"]
 
 [ext_resource type="Script" path="res://scenes/portal/blue_portal.gd" id="1_4trtb"]
+[ext_resource type="Shader" path="res://scenes/portal/portal.gdshader" id="2_26fhp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_geim7"]
 size = Vector3(1, 2, 0.05)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o05lc"]
-transparency = 1
-albedo_color = Color(0, 0, 1, 0.607843)
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_6i421"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1pc64"]
+seamless = true
+noise = SubResource("FastNoiseLite_6i421")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmc0b"]
+render_priority = 0
+shader = ExtResource("2_26fhp")
+shader_parameter/size = 0.5
+shader_parameter/size_inner = 0.2
+shader_parameter/portalFrameColor = Color(0, 0, 1, 1)
+shader_parameter/portalHighlightColor = Color(0.784314, 0.784314, 1, 1)
+shader_parameter/noise = SubResource("NoiseTexture2D_1pc64")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v14q8"]
-material = SubResource("StandardMaterial3D_o05lc")
+material = SubResource("ShaderMaterial_lmc0b")
 size = Vector2(1, 2)
 orientation = 2
 
@@ -21,15 +33,6 @@ albedo_color = Color(0, 0, 1, 1)
 material = SubResource("StandardMaterial3D_v65k0")
 radius = 0.1
 height = 0.2
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4a3to"]
-transparency = 1
-albedo_color = Color(0, 0, 1, 0.607843)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_jrj1r"]
-material = SubResource("StandardMaterial3D_4a3to")
-size = Vector2(1, 2)
-orientation = 2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yg1i3"]
 albedo_color = Color(0, 0, 1, 1)
@@ -54,14 +57,11 @@ mesh = SubResource("PlaneMesh_v14q8")
 
 [node name="Camera3D" type="Camera3D" parent="MeshInstance3D/SubViewport"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.8)
+cull_mask = 1048573
 
 [node name="CameraPositionMarker" type="MeshInstance3D" parent="MeshInstance3D/SubViewport/Camera3D"]
 visible = false
 mesh = SubResource("SphereMesh_s0hgd")
-
-[node name="BlueLens" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
-mesh = SubResource("PlaneMesh_jrj1r")
 
 [node name="ExitPoint" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.99, 0.5)

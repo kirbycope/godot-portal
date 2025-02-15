@@ -142,6 +142,7 @@ shape = SubResource("BoxShape3D_1ojh0")
 
 [node name="Glass" type="MeshInstance3D" parent="Wall2"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -0.5, 0)
+layers = 2
 mesh = SubResource("PlaneMesh_72r47")
 skeleton = NodePath("../..")
 
