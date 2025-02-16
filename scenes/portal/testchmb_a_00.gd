@@ -46,6 +46,7 @@ func _ready() -> void:
 
 	# Diable the first portal
 	toggle_node($RedPortal)
+	toggle_node($BluePortal)
 
 	# Open the first door
 	var animation_player = $Door01Wide.get_node("AnimationPlayer")
@@ -103,6 +104,7 @@ func _on_timer_timeout() -> void:
 				sound_timer = 0.0
 				# Enable the first portal
 				toggle_node($RedPortal)
+				toggle_node($BluePortal)
 
 
 ## [EVENT] Close the door behind the player.

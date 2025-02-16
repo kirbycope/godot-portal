@@ -17,7 +17,7 @@ render_priority = 0
 shader = ExtResource("2_ah86e")
 shader_parameter/size = 0.5
 shader_parameter/size_inner = 0.2
-shader_parameter/portalFrameColor = Color(1, 0, 0, 1)
+shader_parameter/portalFrameColor = Color(1, 0.294118, 0, 1)
 shader_parameter/portalHighlightColor = Color(1, 0.784314, 0.784314, 1)
 shader_parameter/noise = SubResource("NoiseTexture2D_s8ur4")
 

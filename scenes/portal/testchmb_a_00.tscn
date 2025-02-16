@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://86csgnxjduah" path="res://assets/materials/concrete/concrete_bts_modular_wall001a.png" id="3_o6uc2"]
 [ext_resource type="Texture2D" uid="uid://fogfdmf2patu" path="res://assets/materials/metal/metalwall048b.png" id="4_73ckr"]
 [ext_resource type="Texture2D" uid="uid://c8nsjajme1sg0" path="res://assets/materials/concrete/observationwall_001b.png" id="4_jsou7"]
-[ext_resource type="PackedScene" uid="uid://bc7jhjrgev5mo" path="res://scenes/portal/models/autoportal_frame.tscn" id="5_cb2wq"]
 [ext_resource type="Texture2D" uid="uid://y0s42x0157lp" path="res://assets/materials/concrete/concrete_modular_ceiling001a_normal.png" id="5_ck4g6"]
 [ext_resource type="PackedScene" uid="uid://c2sxmmtcpwu6h" path="res://scenes/portal/models/clock.tscn" id="6_mux7u"]
 [ext_resource type="Texture2D" uid="uid://ru5ihn070u6r" path="res://assets/materials/metal/metalwall_bts_006a.png" id="6_rnvuu"]
@@ -54,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://bt18iv2iea6c6" path="res://scenes/portal/signage_doorstate.tscn" id="31_nesej"]
 [ext_resource type="PackedScene" uid="uid://djc434yd6p4rh" path="res://scenes/portal/signage_arrow.tscn" id="33_42b3t"]
 [ext_resource type="PackedScene" uid="uid://ctrwcheltfyxl" path="res://scenes/portal/models/round_elevator.tscn" id="33_t47c1"]
+[ext_resource type="PackedScene" uid="uid://b60y86sl7d63h" path="res://scenes/portal/static_portal_frame.tscn" id="34_78lca"]
 [ext_resource type="PackedScene" uid="uid://dmol0o0h51n4g" path="res://scenes/portal/signage_exit.tscn" id="34_i7wmd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_urrkp"]
@@ -1305,8 +1305,8 @@ material = SubResource("StandardMaterial3D_npnew")
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 0)
 
-[node name="AutoportalFrame" parent="." instance=ExtResource("5_cb2wq")]
-transform = Transform3D(-3.49691e-08, 0, -0.8, 0, 0.8, 0, 0.8, 0, -3.49691e-08, 0, 1, -4.3)
+[node name="StaticPortalFrame" parent="." instance=ExtResource("34_78lca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -4.509)
 
 [node name="Clock" parent="." instance=ExtResource("6_mux7u")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.4, -4.49)
