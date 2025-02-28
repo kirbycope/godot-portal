@@ -1,7 +1,7 @@
 ![Thumbnail](/ci/thumbnail.png)
 
 # godot-portal
-The opening scene of Portal (PC, 2007) made using the Godot game engine.
+The first level of Portal (PC, 2007) made using the Godot game engine.
 
 <details>
 <summary>Using Addons</summary>
