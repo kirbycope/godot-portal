@@ -1,7 +1,7 @@
 ![Thumbnail](/ci/thumbnail.png)
 
 # godot-portal
-A remake of Portal using the Godot Game Engine.
+Portal (PC, 2007) made using the Godot game engine.
 
 <details>
 <summary>Using Addons</summary>
