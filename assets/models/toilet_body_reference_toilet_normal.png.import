@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drnwxb4uytrbv"
+uid="uid://bhlfdc04qcl8k"
 path.s3tc="res://.godot/imported/toilet_body_reference_toilet_normal.png-d6d55bddf2bf880122f9a7a9b8e9dcbf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "6dd147785b5f3d527ce034fc9e9a6a36"
 }
 
 [deps]

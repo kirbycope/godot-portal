@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3csf1rfxs6uw"
+uid="uid://lctykiickc7q"
 path.s3tc="res://.godot/imported/radio_reference_radio_exponent.png-71c32b68fd51ce68e53e0b011fb97a79.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "143115da238ca7bc0d7f911db0ce9b54"
 }
 
 [deps]

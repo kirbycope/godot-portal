@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsvnitl7w1vin"
+uid="uid://b5u2hqqxkih1j"
 path.s3tc="res://.godot/imported/box_dropper_box_dropper_tube.png-0a4708a213492bc583e1cb7853982e9b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "bfc77468ef12f70323d86205c9d5cd5c"
 }
 
 [deps]

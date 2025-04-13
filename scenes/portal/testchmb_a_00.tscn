@@ -1,6 +1,6 @@
 [gd_scene load_steps=201 format=3 uid="uid://ca4jnfdnuur3a"]
 
-[ext_resource type="Script" uid="uid://dlff4gt4g2mro" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
+[ext_resource type="Script" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
 [ext_resource type="PackedScene" uid="uid://luish3xjd85j" path="res://scenes/portal/relaxation_vault.tscn" id="1_eaacc"]
 [ext_resource type="PackedScene" uid="uid://ujh51l2wv1vk" path="res://addons/3d_player_controller/player_3d.tscn" id="2_hco2o"]
 [ext_resource type="Texture2D" uid="uid://b36j5solchhtm" path="res://assets/materials/concrete/concrete_modular_floor001a.png" id="2_i48fk"]
@@ -234,7 +234,7 @@ uv1_offset = Vector3(0.125, 0, 0)
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_rgnjy"]
-size = Vector3(3, 4, 0.01)
+size = Vector3(3, 4, 3)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hrxel"]
 albedo_texture = ExtResource("3_o6uc2")
@@ -888,8 +888,9 @@ mesh = SubResource("BoxMesh_gu1ib")
 material = SubResource("StandardMaterial3D_wfnc7")
 
 [node name="CSGMesh3D3" type="CSGMesh3D" parent="Walls"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, -4.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 2, -6)
 use_collision = true
+collision_mask = 2
 mesh = SubResource("BoxMesh_rgnjy")
 material = SubResource("StandardMaterial3D_hrxel")
 

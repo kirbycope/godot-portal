@@ -2,14 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwg5w18vc57f2"
+uid="uid://di6s8pfk1230h"
 path.s3tc="res://.godot/imported/clock_clock.png-f6858239c1c227ea2495219df8aa647d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
-}
-generator_parameters={
-"md5": "64a9fac62530fc11a8b8e7c7039f1c08"
 }
 
 [deps]
