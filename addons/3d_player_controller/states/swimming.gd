@@ -1,8 +1,8 @@
 extends BaseState
 
-const animation_swimming = "Swimming_In_Place"
-const animation_treading_water = "Treading_Water"
-var node_name = "Swimming"
+const ANIMATION_SWIMMING := "Swimming_In_Place" + "/mixamo_com"
+const ANIMATION_TREADING_WATER := "Treading_Water" + "/mixamo_com"
+const NODE_NAME := "Swimming"
 
 @onready var swimming_sound = preload("res://addons/3d_player_controller/sounds/398037__swordofkings128__water-swimming-1_2.mp3") as AudioStream
 
@@ -24,18 +24,30 @@ func _process(_delta: float) -> void:
 
 		# [jump] button just _pressed_
 		if Input.is_action_pressed("jump"):
+
+			# Check if the player is swimming in a body of water
 			if player.is_swimming_in:
+
+				# Get the water level (top of water body)
 				var water_top = player.is_swimming_in.get_parent().position.y + (player.is_swimming_in.get_child(0).shape.size.y / 2)
+
+				# Get the player's new position (if it were incremented)
 				var new_position = player.position.y + 0.01
-				var player_top = new_position + player.collision_height/2
+
+				# Get the player's top position (position + height)
+				var player_top = new_position + (player.collision_height * .75)
+
+				# Check if the water is above the player
 				if player_top <= water_top:
+
+					# Increment the player's vertical position
 					player.position.y = new_position
 
 	# Check if the player is not "swimming"
 	if !player.is_swimming:
 
 		# Start "standing"
-		transition(node_name, "Standing")
+		transition(NODE_NAME, "Standing")
 
 	# Check if the player is "swimming"
 	if player.is_swimming:
@@ -54,13 +66,16 @@ func play_animation() -> void:
 		if player.velocity != Vector3.ZERO:
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != animation_swimming:
+			if player.animation_player.current_animation != ANIMATION_SWIMMING:
+
+				# Move the collison shape to match the player
+				player.collision_shape.rotation_degrees.x = 90
 
 				# Adjust player visuals for animation
-				player.visuals_aux_scene.position.y = lerp(player.visuals_aux_scene.position.y, player.collision_height/2, 0.25)
+				player.visuals_aux_scene.position.y = lerp(player.visuals_aux_scene.position.y, player.collision_height * .5, 0.1)
 
 				# Play the "swimming" animation
-				player.animation_player.play(animation_swimming)
+				player.animation_player.play(ANIMATION_SWIMMING)
 
 			# Check if the audio player is not playing or if the stream is not the "swimming" sound effect
 			if not player.audio_player.playing or player.audio_player.stream != swimming_sound:
@@ -75,13 +90,16 @@ func play_animation() -> void:
 		else:
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != animation_treading_water:
+			if player.animation_player.current_animation != ANIMATION_TREADING_WATER:
+
+				# Move the collison shape to match the player
+				player.collision_shape.rotation_degrees.x = 0
 
 				# [Re]set the player visuals postion
-				player.visuals_aux_scene.position.y = player.collision_height / 4
+				player.visuals_aux_scene.position.y = 0.0
 
 				# Play the "treading water" animation
-				player.animation_player.play(animation_treading_water)
+				player.animation_player.play(ANIMATION_TREADING_WATER)
 
 			# Check if the audio player is streaming the "swimming" sound effect
 			if player.audio_player.stream == swimming_sound:
@@ -108,15 +126,18 @@ func start() -> void:
 	# Set the player's speed
 	player.speed_current = player.speed_swimming
 
-	# Slow the player down
-	player.velocity.y = player.velocity.y * 0.0
+	# Set player properties
+	player.gravity = 0.0
+	player.motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
+	player.position.y += 0.1
+	player.velocity.y = 0.0
 
 	# Get positional information
 	if player.is_swimming_in:
 		var parent_position = player.is_swimming_in.get_parent().position
 		var child_size = player.is_swimming_in.get_child(0).shape.size
 		var water_top = player.is_swimming_in.get_parent().position.y + (child_size.y / 2)
-		var player_half_height = player.collision_height / 2
+		var player_half_height = player.collision_height * .75
 		
 		# Check if the player is below water level
 		if (player.position.y + player_half_height) < (parent_position.y + water_top):
@@ -134,11 +155,18 @@ func stop() -> void:
 	# Flag the player as not "swimming"
 	player.is_swimming = false
 
+	# [Re]Set player properties
+	player.gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+	player.motion_mode = CharacterBody3D.MOTION_MODE_GROUNDED
+	player.velocity.y -= player.gravity
+	player.visuals.rotation.x = 0
+	player.visuals_aux_scene.position.y = 0.0
+
 	# Remove which body the player is swimming in
 	player.is_swimming_in = null
 
-	# [Re]set the player visuals postion
-	player.visuals_aux_scene.position.y = player.collision_height / 2
+	# Reset the collison shape to match the player
+	player.collision_shape.rotation_degrees.x = 0
 
 	# Stop the "swimming" sound effect
 	if player.audio_player.stream == swimming_sound:

@@ -1,7 +1,8 @@
 extends BaseState
 
-const animation_crawling = "Crawling_In_Place"
-var node_name = "Crawling"
+const ANIMATION_CRAWLING := "Crawling_In_Place" + "/mixamo_com"
+const ANIMATION_CROUCHING_MOVE_HOLDING_RIFLE := "Rifle_Walk_Crouching" + "/mixamo_com"
+const NODE_NAME := "Crawling"
 
 
 ## Called when there is an input event.
@@ -10,17 +11,11 @@ func _input(event: InputEvent) -> void:
 	# Check if the game is not paused
 	if !player.game_paused:
 
-		# [crouch] button just _released_
-		if event.is_action_released("crouch"):
-
-			# Start "standing"
-			transition(node_name, "Standing")
-
 		# [jump] button just _pressed_
 		if event.is_action_pressed("jump") and player.enable_jumping:
 
 			# Start "jumping"
-			transition(node_name, "Jumping")
+			transition(NODE_NAME, "Jumping")
 
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
@@ -33,7 +28,13 @@ func _process(_delta: float) -> void:
 	if player.velocity == Vector3.ZERO:
 
 		# Start "crouching"		
-		transition(node_name, "Crouching")
+		transition(NODE_NAME, "Crouching")
+
+	# [crouch] button just _released_
+	if Input.is_action_just_released("crouch"):
+
+		# Start "standing"
+		transition(NODE_NAME, "Standing")
 
 	# Check if the player is "crawling"
 	if player.is_crawling:
@@ -52,19 +53,19 @@ func play_animation() -> void:
 		if player.is_holding_rifle:
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != player.animation_crouching_move_holding_rifle:
+			if player.animation_player.current_animation != ANIMATION_CROUCHING_MOVE_HOLDING_RIFLE:
 
 				# Play the "crouching and moving, holding a rifle" animation
-				player.animation_player.play(player.animation_crouching_move_holding_rifle, -1, 0.75)
+				player.animation_player.play(ANIMATION_CROUCHING_MOVE_HOLDING_RIFLE, -1, 0.75)
 
 		# The player must be unarmed
 		else:
 
 			# Check if the animation player is not already playing the appropriate animation
-			if player.animation_player.current_animation != animation_crawling:
+			if player.animation_player.current_animation != ANIMATION_CRAWLING:
 
 				# Play the "crawling" animation
-				player.animation_player.play(animation_crawling)
+				player.animation_player.play(ANIMATION_CRAWLING)
 
 
 ## Start "crawling".

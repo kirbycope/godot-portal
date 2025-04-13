@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://dicr6mn0pj13o"]
 
-[ext_resource type="Script" path="res://scenes/portal/red_portal.gd" id="1_8kjj6"]
-[ext_resource type="Shader" path="res://scenes/portal/portal.gdshader" id="2_ah86e"]
+[ext_resource type="Script" uid="uid://d3b5ilw7qcw8i" path="res://scenes/portal/red_portal.gd" id="1_8kjj6"]
+[ext_resource type="Shader" uid="uid://bnhyun7yukyd2" path="res://scenes/portal/portal.gdshader" id="2_ah86e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fo27f"]
 size = Vector3(1, 2, 0.05)
@@ -17,9 +17,9 @@ render_priority = 0
 shader = ExtResource("2_ah86e")
 shader_parameter/size = 0.5
 shader_parameter/size_inner = 0.2
+shader_parameter/noise = SubResource("NoiseTexture2D_s8ur4")
 shader_parameter/portalFrameColor = Color(1, 0.294118, 0, 1)
 shader_parameter/portalHighlightColor = Color(1, 0.784314, 0.784314, 1)
-shader_parameter/noise = SubResource("NoiseTexture2D_s8ur4")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ex502"]
 lightmap_size_hint = Vector2i(7, 12)

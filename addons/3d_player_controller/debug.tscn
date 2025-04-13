@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dv80q7jwkx20r"]
 
-[ext_resource type="Script" path="res://addons/3d_player_controller/debug.gd" id="1_nyx4n"]
+[ext_resource type="Script" uid="uid://cw83brmd2u3nt" path="res://addons/3d_player_controller/debug.gd" id="1_nyx4n"]
 [ext_resource type="Texture2D" uid="uid://bsy2lsoc2x7du" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonA.png" id="2_fbawl"]
 [ext_resource type="Texture2D" uid="uid://dwptb8dk65176" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonB.png" id="3_bf0qu"]
 [ext_resource type="Texture2D" uid="uid://be40mbpq3lmcc" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonX.png" id="4_oh1iv"]
@@ -44,7 +44,7 @@ script = ExtResource("1_nyx4n")
 [node name="Panel1" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 216.0
-offset_bottom = 696.0
+offset_bottom = 676.0
 
 [node name="Label22" type="Label" parent="Panel1"]
 layout_mode = 0
@@ -209,473 +209,375 @@ offset_top = 240.0
 offset_right = 216.0
 offset_bottom = 264.0
 
-[node name="Label15" type="Label" parent="Panel1"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 264.0
-offset_right = 169.0
-offset_bottom = 287.0
-text = "is_grounded"
-
-[node name="IsGrounded" type="CheckBox" parent="Panel1"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 264.0
-offset_right = 216.0
-offset_bottom = 288.0
-
 [node name="Label18" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 312.0
+offset_top = 288.0
 offset_right = 169.0
-offset_bottom = 335.0
+offset_bottom = 311.0
 text = "is_holding"
 
 [node name="IsHolding" type="CheckBox" parent="Panel1"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 312.0
-offset_right = 216.0
-offset_bottom = 336.0
-
-[node name="Label28" type="Label" parent="Panel1"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 336.0
-offset_right = 179.0
-offset_bottom = 359.0
-text = "is_holding_fishing_rod"
-
-[node name="IsHoldingFishingRod" type="CheckBox" parent="Panel1"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 336.0
-offset_right = 216.0
-offset_bottom = 360.0
-
-[node name="Label8" type="Label" parent="Panel1"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 288.0
-offset_right = 179.0
-offset_bottom = 311.0
-text = "is_hanging"
-
-[node name="IsHanging" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 288.0
 offset_right = 216.0
 offset_bottom = 312.0
 
+[node name="Label28" type="Label" parent="Panel1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 312.0
+offset_right = 179.0
+offset_bottom = 335.0
+text = "is_holding_fishing_rod"
+
+[node name="IsHoldingFishingRod" type="CheckBox" parent="Panel1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 312.0
+offset_right = 216.0
+offset_bottom = 336.0
+
+[node name="Label8" type="Label" parent="Panel1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 264.0
+offset_right = 179.0
+offset_bottom = 287.0
+text = "is_hanging"
+
+[node name="IsHanging" type="CheckBox" parent="Panel1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 264.0
+offset_right = 216.0
+offset_bottom = 288.0
+
 [node name="Label16" type="Label" parent="Panel1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 336.0
+offset_right = 179.0
+offset_bottom = 359.0
+text = "is_holding_rifle"
+
+[node name="IsHoldingRifle" type="CheckBox" parent="Panel1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 336.0
+offset_right = 216.0
+offset_bottom = 360.0
+
+[node name="Label17" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 360.0
 offset_right = 179.0
 offset_bottom = 383.0
-text = "is_holding_rifle"
+text = "is_holding_tool"
 
-[node name="IsHoldingRifle" type="CheckBox" parent="Panel1"]
+[node name="IsHoldingTool" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 360.0
 offset_right = 216.0
 offset_bottom = 384.0
 
-[node name="Label17" type="Label" parent="Panel1"]
+[node name="Label9" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 384.0
 offset_right = 179.0
 offset_bottom = 407.0
-text = "is_holding_tool"
+text = "is_jumping"
 
-[node name="IsHoldingTool" type="CheckBox" parent="Panel1"]
+[node name="IsJumping" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 384.0
 offset_right = 216.0
 offset_bottom = 408.0
 
-[node name="Label9" type="Label" parent="Panel1"]
+[node name="Label10" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 408.0
-offset_right = 179.0
+offset_right = 169.0
 offset_bottom = 431.0
-text = "is_jumping"
+text = "is_kicking_left"
 
-[node name="IsJumping" type="CheckBox" parent="Panel1"]
+[node name="IsKickingLeft" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 408.0
 offset_right = 216.0
 offset_bottom = 432.0
 
-[node name="Label10" type="Label" parent="Panel1"]
+[node name="Label11" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 432.0
 offset_right = 169.0
 offset_bottom = 455.0
-text = "is_kicking_left"
+text = "is_kicking_right"
 
-[node name="IsKickingLeft" type="CheckBox" parent="Panel1"]
+[node name="IsKickingRight" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 432.0
 offset_right = 216.0
 offset_bottom = 456.0
 
-[node name="Label11" type="Label" parent="Panel1"]
+[node name="Label12" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 456.0
-offset_right = 169.0
+offset_right = 179.0
 offset_bottom = 479.0
-text = "is_kicking_right"
+text = "is_punching_left"
 
-[node name="IsKickingRight" type="CheckBox" parent="Panel1"]
+[node name="IsPunchingLeft" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 456.0
 offset_right = 216.0
 offset_bottom = 480.0
 
-[node name="Label12" type="Label" parent="Panel1"]
+[node name="Label13" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 480.0
 offset_right = 179.0
 offset_bottom = 503.0
-text = "is_punching_left"
+text = "is_punching_right"
 
-[node name="IsPunchingLeft" type="CheckBox" parent="Panel1"]
+[node name="IsPunchingRight" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 480.0
 offset_right = 216.0
 offset_bottom = 504.0
 
-[node name="Label13" type="Label" parent="Panel1"]
+[node name="Label30" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 504.0
 offset_right = 179.0
 offset_bottom = 527.0
-text = "is_punching_right"
+text = "is_reeling"
 
-[node name="IsPunchingRight" type="CheckBox" parent="Panel1"]
+[node name="IsReeling" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 504.0
 offset_right = 216.0
 offset_bottom = 528.0
 
-[node name="Label30" type="Label" parent="Panel1"]
+[node name="Label20" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 528.0
 offset_right = 179.0
 offset_bottom = 551.0
-text = "is_reeling"
+text = "is_running"
 
-[node name="IsReeling" type="CheckBox" parent="Panel1"]
+[node name="IsRunning" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 528.0
 offset_right = 216.0
 offset_bottom = 552.0
 
-[node name="Label20" type="Label" parent="Panel1"]
+[node name="Label31" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 552.0
 offset_right = 179.0
 offset_bottom = 575.0
-text = "is_running"
+text = "is_skateboarding"
 
-[node name="IsRunning" type="CheckBox" parent="Panel1"]
+[node name="IsSkateboarding" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 552.0
 offset_right = 216.0
 offset_bottom = 576.0
 
-[node name="Label31" type="Label" parent="Panel1"]
+[node name="Label14" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 576.0
 offset_right = 179.0
 offset_bottom = 599.0
-text = "is_skateboarding"
+text = "is_sprinting"
 
-[node name="IsSkateboarding" type="CheckBox" parent="Panel1"]
+[node name="IsSprinting" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 576.0
 offset_right = 216.0
 offset_bottom = 600.0
 
-[node name="Label14" type="Label" parent="Panel1"]
+[node name="Label21" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 600.0
 offset_right = 179.0
 offset_bottom = 623.0
-text = "is_sprinting"
+text = "is_standing"
 
-[node name="IsSprinting" type="CheckBox" parent="Panel1"]
+[node name="IsStanding" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 600.0
 offset_right = 216.0
 offset_bottom = 624.0
 
-[node name="Label21" type="Label" parent="Panel1"]
+[node name="Label23" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 624.0
 offset_right = 179.0
 offset_bottom = 647.0
-text = "is_standing"
+text = "is_swimming"
 
-[node name="IsStanding" type="CheckBox" parent="Panel1"]
+[node name="IsSwimming" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 624.0
 offset_right = 216.0
 offset_bottom = 648.0
 
-[node name="Label23" type="Label" parent="Panel1"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 648.0
-offset_right = 179.0
-offset_bottom = 671.0
-text = "is_swimming"
-
-[node name="IsSwimming" type="CheckBox" parent="Panel1"]
+[node name="IsWalking" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 648.0
 offset_right = 216.0
 offset_bottom = 672.0
 
-[node name="IsWalking" type="CheckBox" parent="Panel1"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 672.0
-offset_right = 216.0
-offset_bottom = 696.0
-
 [node name="Label27" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 672.0
+offset_top = 648.0
 offset_right = 179.0
-offset_bottom = 695.0
+offset_bottom = 671.0
 text = "is_walking"
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 1064.0
 offset_right = 1280.0
-offset_bottom = 364.0
+offset_bottom = 430.0
 
-[node name="Label5" type="Label" parent="Panel2"]
+[node name="EnableChat" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 9.0
-offset_right = 169.0
-offset_bottom = 23.0
+offset_left = 75.0
+offset_right = 216.0
+offset_bottom = 31.0
 text = "enable_chat"
 
-[node name="EnableChat" type="CheckBox" parent="Panel2"]
+[node name="EnableCrouching" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
+offset_left = 32.0
+offset_top = 32.0
 offset_right = 216.0
-offset_bottom = 24.0
-
-[node name="Label4" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 24.0
-offset_right = 169.0
-offset_bottom = 47.0
+offset_bottom = 63.0
 text = "enable_crouching"
 
-[node name="EnableCrouching" type="CheckBox" parent="Panel2"]
+[node name="EnableDoubleJump" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 24.0
+offset_left = 8.0
+offset_top = 64.0
 offset_right = 216.0
-offset_bottom = 48.0
-
-[node name="Label1" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 48.0
-offset_right = 169.0
-offset_bottom = 71.0
+offset_bottom = 95.0
 text = "enable_double_jump"
 
-[node name="EnableDoubleJump" type="CheckBox" parent="Panel2"]
+[node name="EnableFlying" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 48.0
+offset_left = 66.0
+offset_top = 96.0
 offset_right = 216.0
-offset_bottom = 72.0
-
-[node name="Label2" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 72.0
-offset_right = 179.0
-offset_bottom = 95.0
+offset_bottom = 127.0
 text = "enable_flying"
 
-[node name="EnableFlying" type="CheckBox" parent="Panel2"]
+[node name="EnableJumping" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 72.0
+offset_left = 45.0
+offset_top = 128.0
 offset_right = 216.0
-offset_bottom = 96.0
-
-[node name="Label27" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 96.0
-offset_right = 179.0
-offset_bottom = 119.0
+offset_bottom = 159.0
 text = "enable_jumping"
 
-[node name="EnableJumping" type="CheckBox" parent="Panel2"]
+[node name="EnableKicking" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 96.0
+offset_left = 45.0
+offset_top = 160.0
 offset_right = 216.0
-offset_bottom = 120.0
-
-[node name="Label29" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 120.0
-offset_right = 179.0
-offset_bottom = 143.0
+offset_bottom = 191.0
 text = "enable_kicking"
 
-[node name="EnableKicking" type="CheckBox" parent="Panel2"]
+[node name="EnablePunching" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 120.0
+offset_left = 36.0
+offset_top = 192.0
 offset_right = 216.0
-offset_bottom = 144.0
-
-[node name="Label30" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 144.0
-offset_right = 179.0
-offset_bottom = 167.0
+offset_bottom = 223.0
 text = "enable_punching"
 
-[node name="EnablePunching" type="CheckBox" parent="Panel2"]
+[node name="EnableVibration" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 144.0
+offset_left = 36.0
+offset_top = 224.0
 offset_right = 216.0
-offset_bottom = 168.0
-
-[node name="Label3" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 168.0
-offset_right = 179.0
-offset_bottom = 191.0
+offset_bottom = 255.0
 text = "enable_vibration"
 
-[node name="EnableVibration" type="CheckBox" parent="Panel2"]
+[node name="LockCamera" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 192.0
-offset_top = 168.0
-offset_right = 216.0
-offset_bottom = 192.0
-
-[node name="Label15" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 216.0
-offset_right = 179.0
-offset_bottom = 239.0
-text = "lock_camera"
-
-[node name="LockCamera" type="CheckBox" parent="Panel2"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 216.0
-offset_right = 216.0
-offset_bottom = 240.0
-
-[node name="Label16" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 240.0
-offset_right = 179.0
-offset_bottom = 263.0
-text = "lock_movement_x"
-
-[node name="LockMovementX" type="CheckBox" parent="Panel2"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 240.0
-offset_right = 216.0
-offset_bottom = 264.0
-
-[node name="Label18" type="Label" parent="Panel2"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 263.0
-offset_right = 179.0
-offset_bottom = 286.0
-text = "lock_movement_y"
-
-[node name="LockMovementY" type="CheckBox" parent="Panel2"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 263.0
+offset_left = 36.0
+offset_top = 256.0
 offset_right = 216.0
 offset_bottom = 287.0
+text = "lock_camera"
 
-[node name="Label17" type="Label" parent="Panel2"]
+[node name="LockMovementX" type="CheckButton" parent="Panel2"]
 layout_mode = 0
-offset_left = 9.0
-offset_top = 287.0
-offset_right = 179.0
-offset_bottom = 310.0
-text = "lock_perspective"
-
-[node name="LockPerspective" type="CheckBox" parent="Panel2"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 287.0
+offset_left = 30.0
+offset_top = 288.0
 offset_right = 216.0
-offset_bottom = 311.0
+offset_bottom = 319.0
+text = "lock_movement_x"
+
+[node name="LockMovementY" type="CheckButton" parent="Panel2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 320.0
+offset_right = 216.0
+offset_bottom = 351.0
+text = "lock_movement_y"
+
+[node name="LockPerspective" type="CheckButton" parent="Panel2"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 352.0
+offset_right = 216.0
+offset_bottom = 383.0
+text = "lock_perspective"
 
 [node name="GamePaused" type="CheckBox" parent="Panel2"]
 layout_mode = 0
 offset_left = 192.0
-offset_top = 335.0
+offset_top = 403.0
 offset_right = 216.0
-offset_bottom = 359.0
+offset_bottom = 427.0
 
 [node name="Label28" type="Label" parent="Panel2"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 335.0
+offset_top = 403.0
 offset_right = 179.0
-offset_bottom = 358.0
+offset_bottom = 426.0
 text = "game_paused"
 
 [node name="XboxController" type="Control" parent="."]
@@ -934,3 +836,30 @@ offset_right = 1203.0
 offset_bottom = 728.0
 rotation = 1.57079
 texture = ExtResource("25_js775")
+
+[node name="FPS" type="Panel" parent="."]
+layout_mode = 1
+offset_left = 1202.0
+offset_top = 696.0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Label" type="Label" parent="FPS"]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 67.0
+offset_bottom = 23.0
+text = "FPS: 0000"
+
+[connection signal="toggled" from="Panel2/EnableChat" to="." method="_on_enable_chat_toggled"]
+[connection signal="toggled" from="Panel2/EnableCrouching" to="." method="_on_enable_crouching_toggled"]
+[connection signal="toggled" from="Panel2/EnableDoubleJump" to="." method="_on_enable_double_jump_toggled"]
+[connection signal="toggled" from="Panel2/EnableFlying" to="." method="_on_enable_flying_toggled"]
+[connection signal="toggled" from="Panel2/EnableJumping" to="." method="_on_enable_jumping_toggled"]
+[connection signal="toggled" from="Panel2/EnableKicking" to="." method="_on_enable_kicking_toggled"]
+[connection signal="toggled" from="Panel2/EnablePunching" to="." method="_on_enable_punching_toggled"]
+[connection signal="toggled" from="Panel2/EnableVibration" to="." method="_on_enable_vibration_toggled"]
+[connection signal="toggled" from="Panel2/LockCamera" to="." method="_on_lock_camera_toggled"]
+[connection signal="toggled" from="Panel2/LockMovementX" to="." method="_on_lock_movement_x_toggled"]
+[connection signal="toggled" from="Panel2/LockMovementY" to="." method="_on_lock_movement_y_toggled"]
+[connection signal="toggled" from="Panel2/LockPerspective" to="." method="_on_lock_perspective_toggled"]

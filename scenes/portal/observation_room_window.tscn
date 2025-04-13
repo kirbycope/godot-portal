@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://b5jubvk15vpev" path="res://assets/materials/plastic/plasticwall003a_height-ssbump.png" id="6_nr8rj"]
 [ext_resource type="Texture2D" uid="uid://dt86xi1sj0b1x" path="res://assets/materials/plastic/plasticwall004a_height-ssbump.png" id="8_iy1fe"]
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_b1whi"]
-size = Vector2(4, 2)
-orientation = 2
+[sub_resource type="BoxMesh" id="BoxMesh_ye6xf"]
+size = Vector3(4, 2, 0.001)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1l68d"]
 cull_mode = 2
@@ -54,7 +53,7 @@ orientation = 2
 
 [node name="CSGMesh3D" type="CSGMesh3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("PlaneMesh_b1whi")
+mesh = SubResource("BoxMesh_ye6xf")
 material = SubResource("StandardMaterial3D_1l68d")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

@@ -140,23 +140,6 @@ bind/0/name = &"polymsh"
 bind/0/bone = -1
 bind/0/pose = Transform3D(1, 0, 0, 0, 1, -3.57628e-07, 0, 3.71403e-07, 1, 0, 0, 0)
 
-[sub_resource type="Animation" id="Animation_e3web"]
-resource_name = "open"
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("door_01_lftdoor_reference")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0, -1.1)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("door_01_rtdoor_reference")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0, 1.1)
-
 [sub_resource type="Animation" id="Animation_27jjg"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -174,10 +157,27 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0)
 
+[sub_resource type="Animation" id="Animation_e3web"]
+resource_name = "open"
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("door_01_lftdoor_reference")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0, -1.1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("door_01_rtdoor_reference")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 1, 0, 0, 1.1)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qwyq1"]
 _data = {
-"RESET": SubResource("Animation_27jjg"),
-"open": SubResource("Animation_e3web")
+&"RESET": SubResource("Animation_27jjg"),
+&"open": SubResource("Animation_e3web")
 }
 
 [node name="Door01" type="Node3D"]
