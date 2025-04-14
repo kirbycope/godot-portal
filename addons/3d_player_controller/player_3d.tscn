@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://ujh51l2wv1vk"]
 
 [ext_resource type="Script" uid="uid://2iaqywmqcahl" path="res://addons/3d_player_controller/player_3d.gd" id="1_f3dlg"]
-[ext_resource type="Script" uid="uid://qg3kc3fkwemc" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_ifath"]
+[ext_resource type="Script" uid="uid://dogj7c7b6w6ts" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_ifath"]
 [ext_resource type="PackedScene" uid="uid://c7x2c4rsai64q" path="res://addons/3d_player_controller/virtual_buttons.tscn" id="2_vtolg"]
 [ext_resource type="PackedScene" uid="uid://dv80q7jwkx20r" path="res://addons/3d_player_controller/debug.tscn" id="3_xex47"]
 [ext_resource type="PackedScene" uid="uid://c714y0011rxmt" path="res://addons/3d_player_controller/y_bot.tscn" id="4_swcjt"]
@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://xf1vm85b12dr" path="res://addons/3d_player_controller/camera_3d.gd" id="5_j65kv"]
 [ext_resource type="Script" uid="uid://bxskxesywooou" path="res://addons/3d_player_controller/states/climbing.gd" id="5_xlvyu"]
 [ext_resource type="Script" uid="uid://br5fy64tx7tfn" path="res://addons/3d_player_controller/states/crawling.gd" id="6_72vy6"]
-[ext_resource type="Script" uid="uid://b23wyc1lxy7ni" path="res://addons/3d_player_controller/states/base.gd" id="6_u38ru"]
+[ext_resource type="Script" uid="uid://b334sqlxim7ag" path="res://addons/3d_player_controller/states/base.gd" id="6_u38ru"]
 [ext_resource type="PackedScene" uid="uid://b4e68syey7fke" path="res://addons/3d_player_controller/settings.tscn" id="7_1k1wo"]
 [ext_resource type="Script" uid="uid://dgr1stgatu2la" path="res://addons/3d_player_controller/states/crouching.gd" id="7_2pwpa"]
 [ext_resource type="Script" uid="uid://da2abedbjpere" path="res://addons/3d_player_controller/states/falling.gd" id="8_50ucx"]

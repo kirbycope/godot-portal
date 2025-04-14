@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=4 uid="uid://c36bapfha0ke4"]
 
 [ext_resource type="PackedScene" uid="uid://b7cbgqetpgjiy" path="res://assets/models/door_01_frame_wide_reference.glb" id="1_6mk06"]
-[ext_resource type="Script" uid="uid://evi3pa5v7o5o" path="res://scenes/portal/models/door_01_wide.gd" id="1_60ejt"]
+[ext_resource type="Script" uid="uid://eflxaffxdr" path="res://scenes/portal/models/door_01_wide.gd" id="1_60ejt"]
 [ext_resource type="Texture2D" uid="uid://cclffo1tbnci3" path="res://assets/models/door_01_lftdoor_reference_Door_01.png" id="2_hiqo0"]
 [ext_resource type="Texture2D" uid="uid://bcgxggt1atve7" path="res://assets/models/door_01_lftdoor_reference_Door_01_exponent.png" id="3_3d8ws"]
 [ext_resource type="Texture2D" uid="uid://djl4hmrxa3gtg" path="res://assets/models/door_01_lftdoor_reference_Door_01_normal.png" id="4_si62q"]
 [ext_resource type="Texture2D" uid="uid://cucsw6ejeml0t" path="res://assets/models/door_01_rtdoor_reference_Door_01.png" id="5_maoqt"]
-[ext_resource type="Texture2D" uid="uid://8pj84xphqegw" path="res://assets/models/door_01_rtdoor_reference_Door_01_exponent.png" id="6_npc0t"]
-[ext_resource type="Texture2D" uid="uid://cot7g0pan1tna" path="res://assets/models/door_01_rtdoor_reference_Door_01_normal.png" id="7_ufr77"]
+[ext_resource type="Texture2D" uid="uid://bhfyxcy0oea68" path="res://assets/models/door_01_rtdoor_reference_Door_01_exponent.png" id="6_npc0t"]
+[ext_resource type="Texture2D" uid="uid://cea4h7i5pwb3v" path="res://assets/models/door_01_rtdoor_reference_Door_01_normal.png" id="7_ufr77"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hv1aa"]
 resource_name = "Door_01"

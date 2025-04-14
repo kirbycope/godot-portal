@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=4 uid="uid://bnegielncu64x"]
 
 [ext_resource type="Texture2D" uid="uid://6pq4dqf7ktxd" path="res://assets/models/radio_reference_radio.png" id="1_ak6tw"]
-[ext_resource type="Texture2D" uid="uid://3csf1rfxs6uw" path="res://assets/models/radio_reference_radio_exponent.png" id="2_vct7r"]
-[ext_resource type="Texture2D" uid="uid://c6hq1ya438wup" path="res://assets/models/radio_reference_radio_normal.png" id="3_o6rda"]
+[ext_resource type="Texture2D" uid="uid://lctykiickc7q" path="res://assets/models/radio_reference_radio_exponent.png" id="2_vct7r"]
+[ext_resource type="Texture2D" uid="uid://c1gkx1axsxtdr" path="res://assets/models/radio_reference_radio_normal.png" id="3_o6rda"]
 [ext_resource type="AudioStream" uid="uid://dyfjsln2ql0gl" path="res://assets/sounds/looping_radio_mix.wav" id="4_y4xr0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6t8be"]

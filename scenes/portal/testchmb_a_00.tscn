@@ -1,6 +1,6 @@
 [gd_scene load_steps=201 format=3 uid="uid://ca4jnfdnuur3a"]
 
-[ext_resource type="Script" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
+[ext_resource type="Script" uid="uid://dlff4gt4g2mro" path="res://scenes/portal/testchmb_a_00.gd" id="1_arvum"]
 [ext_resource type="PackedScene" uid="uid://luish3xjd85j" path="res://scenes/portal/relaxation_vault.tscn" id="1_eaacc"]
 [ext_resource type="PackedScene" uid="uid://ujh51l2wv1vk" path="res://addons/3d_player_controller/player_3d.tscn" id="2_hco2o"]
 [ext_resource type="Texture2D" uid="uid://b36j5solchhtm" path="res://assets/materials/concrete/concrete_modular_floor001a.png" id="2_i48fk"]

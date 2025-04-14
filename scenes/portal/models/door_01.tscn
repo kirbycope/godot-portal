@@ -7,8 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bcgxggt1atve7" path="res://assets/models/door_01_lftdoor_reference_Door_01_exponent.png" id="5_iu4d4"]
 [ext_resource type="Texture2D" uid="uid://djl4hmrxa3gtg" path="res://assets/models/door_01_lftdoor_reference_Door_01_normal.png" id="6_nh7ub"]
 [ext_resource type="Texture2D" uid="uid://cucsw6ejeml0t" path="res://assets/models/door_01_rtdoor_reference_Door_01.png" id="7_c6usp"]
-[ext_resource type="Texture2D" uid="uid://8pj84xphqegw" path="res://assets/models/door_01_rtdoor_reference_Door_01_exponent.png" id="8_065b3"]
-[ext_resource type="Texture2D" uid="uid://cot7g0pan1tna" path="res://assets/models/door_01_rtdoor_reference_Door_01_normal.png" id="9_uyofq"]
+[ext_resource type="Texture2D" uid="uid://bhfyxcy0oea68" path="res://assets/models/door_01_rtdoor_reference_Door_01_exponent.png" id="8_065b3"]
+[ext_resource type="Texture2D" uid="uid://cea4h7i5pwb3v" path="res://assets/models/door_01_rtdoor_reference_Door_01_normal.png" id="9_uyofq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aldwr"]
 resource_name = "Door_01"

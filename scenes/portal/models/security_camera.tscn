@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cb7ty5lqgqt0q" path="res://assets/models/security_camera_Security_Camera.png" id="1_xkhjd"]
 [ext_resource type="Texture2D" uid="uid://xx6ubo4k2pr0" path="res://assets/models/security_camera_Security_Camera_exponent.png" id="2_7fnc3"]
-[ext_resource type="Texture2D" uid="uid://cg74r1cxmlnqs" path="res://assets/models/security_camera_Security_Camera_normal.png" id="3_oim0o"]
+[ext_resource type="Texture2D" uid="uid://cmu2rcs4iuw5p" path="res://assets/models/security_camera_Security_Camera_normal.png" id="3_oim0o"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46qtc"]
 resource_name = "Security_Camera"

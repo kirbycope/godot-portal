@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://mh0fjavyicpq" path="res://assets/models/toilet_body_reference_toilet.png" id="1_mw1ok"]
 [ext_resource type="Texture2D" uid="uid://dgxxpbvpbt2pq" path="res://assets/models/toilet_body_reference_toilet_exponent.png" id="2_vtgjk"]
-[ext_resource type="Texture2D" uid="uid://drnwxb4uytrbv" path="res://assets/models/toilet_body_reference_toilet_normal.png" id="3_6mdni"]
+[ext_resource type="Texture2D" uid="uid://bhlfdc04qcl8k" path="res://assets/models/toilet_body_reference_toilet_normal.png" id="3_6mdni"]
 [ext_resource type="Texture2D" uid="uid://bt4ds5u8kt1wo" path="res://assets/models/toilet_lid_reference_toilet.png" id="4_878uu"]
 [ext_resource type="Texture2D" uid="uid://b0kjh5fnkverl" path="res://assets/models/toilet_lid_reference_toilet_exponent.png" id="5_xyiki"]
 [ext_resource type="Texture2D" uid="uid://3y23tl5lqu2s" path="res://assets/models/toilet_lid_reference_toilet_normal.png" id="6_ecp0y"]
