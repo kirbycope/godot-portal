@@ -26,16 +26,7 @@ func _ready() -> void:
 	$Player.game_paused = false
 
 	# Put the player in first-person perspective
-	$Player.perspective = 1
-
-	# Set camera's position
-	$Player/CameraMount/Camera3D.position = Vector3.ZERO
-
-	# Set the camera's raycast position to match the camera's position
-	$Player/CameraMount/Camera3D/RayCast3D.position = Vector3.ZERO
-
-	# Align visuals with the camera
-	$Player/Visuals.rotation = Vector3(0.0, 0.0, $Player/CameraMount.rotation.z)
+	$Player.camera.switch_to_first_person()
 
 	# Setup the Timer node
 	timer = Timer.new()
