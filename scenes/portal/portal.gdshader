@@ -25,7 +25,7 @@ void fragment() {
     float dist = length(UV - vec2(0.5,0.5));
 
     vec2 nuv = UV;
-    
+
     nuv = rotateUV(UV, vec2(0.5), 45.0*TIME*0.01);
     nuv.x += (TIME*0.1);
     nuv.y -= (TIME*0.1);
