@@ -36,6 +36,7 @@ var is_sprinting: bool = false
 var is_standing: bool = false
 var is_swimming_in
 var is_swimming: bool = false
+var is_using: bool = false
 var is_walking: bool = false
 var virtual_velocity: Vector3 = Vector3.ZERO
 
@@ -92,6 +93,7 @@ var virtual_velocity: Vector3 = Vector3.ZERO
 @onready var raycast_top = $Visuals/RayCast3D_InFrontPlayer_Top
 @onready var raycast_high = $Visuals/RayCast3D_InFrontPlayer_High
 @onready var raycast_middle = $Visuals/RayCast3D_InFrontPlayer_Middle
+@onready var raycast_use = $Visuals/RayCast3D_InFrontPlayer_Use
 @onready var raycast_low = $Visuals/RayCast3D_InFrontPlayer_Low
 @onready var raycast_below = $Visuals/RayCast3D_BelowPlayer
 @onready var menu_pause = $CameraMount/Camera3D/Pause

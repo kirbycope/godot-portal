@@ -14,6 +14,7 @@ const ANIMATION_STANDING_PUNCHING_HIGH_LEFT := "Punching_High_Left" + "/mixamo_c
 const ANIMATION_STANDING_PUNCHING_HIGH_RIGHT := "Punching_High_Right" + "/mixamo_com"
 const ANIMATION_STANDING_PUNCHING_LOW_LEFT := "Punching_Low_Left" + "/mixamo_com"
 const ANIMATION_STANDING_PUNCHING_LOW_RIGHT := "Punching_Low_Right" + "/mixamo_com"
+const ANIMATION_STANDING_USING := "Button_Pushing" + "/mixamo_com"
 const NODE_NAME := "Standing"
 
 
@@ -92,6 +93,30 @@ func _input(event: InputEvent) -> void:
 							# Check the kick hits something
 							player.check_kick_collision()
 
+		# [aim] button just _pressed_
+		if event.is_action_pressed("aim"):
+
+			# Check if the animation player is not locked
+			if !player.is_animation_locked:
+
+				# Check if the player is "holding a rifle"
+				if player.is_holding_rifle:
+
+					# Flag the player as "aiming"
+					player.is_aiming = true
+
+		# [aim] button just _released_
+		if event.is_action_released("aim"):
+
+			# Check if the animation player is not locked
+			if !player.is_animation_locked:
+
+				# Check if the player is "holding a rifle"
+				if player.is_holding_rifle:
+
+					# Flag the player as not "aiming"
+					player.is_aiming = false
+
 		# [left-punch] button just _pressed_
 		if event.is_action_pressed("left_punch"):
 
@@ -104,14 +129,8 @@ func _input(event: InputEvent) -> void:
 					# Flag the player as "reeling"
 					player.is_reeling = true
 
-				# Check if the player is "holding a rifle"
-				elif player.is_holding_rifle:
-
-					# Flag the player as "aiming"
-					player.is_aiming = true
-
-				# The player must be unarmed
-				else:
+				# Check if the player is not "holding a rifle"
+				elif !player.is_holding_rifle:
 
 					# Check if punching is enabled
 					if player.enable_punching:
@@ -140,11 +159,23 @@ func _input(event: InputEvent) -> void:
 				# Flag the player as not "reeling"
 				player.is_reeling = false
 
-			# Check if the player is "holding a rifle"
-			elif player.is_holding_rifle:
+		# [shoot] button just _pressed_
+		if event.is_action_pressed("shoot"):
 
-				# Flag the player as not "aiming"
-				player.is_aiming = false
+			# Check if the animation player is not locked
+			if !player.is_animation_locked:
+
+				# Check if the player is "holding a rifle"
+				if player.is_holding_rifle:
+
+					# Flag the player as is "firing"
+					player.is_firing = true
+
+					# Delay execution
+					await get_tree().create_timer(0.3).timeout
+
+					# Flag the player as is not "firing"
+					player.is_firing = false
 
 		# [right-punch] button just _pressed_
 		if event.is_action_pressed("right_punch"):
@@ -158,20 +189,8 @@ func _input(event: InputEvent) -> void:
 					# Flag the player as "casting"
 					player.is_casting = true
 
-				# Check if the player is "holding a rifle"
-				elif player.is_holding_rifle:
-
-					# Flag the player as is "firing"
-					player.is_firing = true
-
-					# Delay execution
-					await get_tree().create_timer(0.3).timeout
-
-					# Flag the player as is not "firing"
-					player.is_firing = false
-
-				# The player must be unarmed
-				else:
+				# Check if the player is not "holding a rifle"
+				elif !player.is_holding_rifle:
 
 					# Check if punching is enabled
 					if player.enable_punching:
@@ -199,6 +218,15 @@ func _input(event: InputEvent) -> void:
 
 				# Flag the player as not "casting"
 				player.is_casting = false
+
+		# [use] button just _pressed_ (and the middle raycast is colliding)
+		if event.is_action_pressed("use") and player.raycast_use.is_colliding():
+
+			# Check that the collider is usable
+			if player.raycast_use.get_collider().is_in_group("Usable"):
+
+				# Flag the player as "using"
+				player.is_using = true
 
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
@@ -330,6 +358,24 @@ func play_animation() -> void:
 
 		# The player must be unarmed
 		else:
+
+			# Check if the player is "using"
+			if player.is_using:
+
+				# Flag the animation player as locked
+				player.is_animation_locked = true
+
+				# Play the "standing using" animation
+				player.animation_player.play(ANIMATION_STANDING_USING)
+
+				# Delay execution
+				await get_tree().create_timer(3.3).timeout
+
+				# Flag the animation player no longer locked
+				player.is_animation_locked = false
+
+				# Flag the player as no longer using
+				player.is_using = false
 
 			# Check if the animation player is not already playing the appropriate animation
 			if player.animation_player.current_animation != ANIMATION_STANDING:
