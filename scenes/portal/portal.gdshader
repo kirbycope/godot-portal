@@ -1,3 +1,4 @@
+// https://godotshaders.com/shader/portal-2-like-shader/
 shader_type spatial;
 
 uniform float size: hint_range(0.0,0.5) = 0.5;
