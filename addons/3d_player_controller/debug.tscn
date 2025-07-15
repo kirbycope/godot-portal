@@ -1,50 +1,16 @@
-[gd_scene load_steps=26 format=3 uid="uid://dv80q7jwkx20r"]
+[gd_scene load_steps=2 format=3 uid="uid://dv80q7jwkx20r"]
 
 [ext_resource type="Script" uid="uid://cw83brmd2u3nt" path="res://addons/3d_player_controller/debug.gd" id="1_nyx4n"]
-[ext_resource type="Texture2D" uid="uid://bsy2lsoc2x7du" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonA.png" id="2_fbawl"]
-[ext_resource type="Texture2D" uid="uid://dwptb8dk65176" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonB.png" id="3_bf0qu"]
-[ext_resource type="Texture2D" uid="uid://be40mbpq3lmcc" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonX.png" id="4_oh1iv"]
-[ext_resource type="Texture2D" uid="uid://b88u6i3uapu15" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonY.png" id="5_tp2mo"]
-[ext_resource type="Texture2D" uid="uid://b5pctwlxh161v" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonL1.png" id="6_ufh1b"]
-[ext_resource type="Texture2D" uid="uid://clsxgn3u4ubv6" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonL2.png" id="7_g1jgn"]
-[ext_resource type="Texture2D" uid="uid://30m18dcq4kpn" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonR1.png" id="8_o606g"]
-[ext_resource type="Texture2D" uid="uid://xt5f61f6hwst" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonR2.png" id="9_w8w7o"]
-[ext_resource type="Texture2D" uid="uid://d036yvcsk57jm" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonSelect.png" id="10_hi5tw"]
-[ext_resource type="Texture2D" uid="uid://hck8uc6fm1ao" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/1x/buttonStart.png" id="11_ngph4"]
-[ext_resource type="Texture2D" uid="uid://bqhx2e67ytr2m" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/2x/target.png" id="12_edgb2"]
-[ext_resource type="Texture2D" uid="uid://cd2axbcct7dpm" path="res://addons/3d_player_controller/textures/game_icons/PNG/Black/2x/plus.png" id="13_77uqr"]
-[ext_resource type="Texture2D" uid="uid://dsdfjpsfpnp5d" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonA.png" id="14_c0yct"]
-[ext_resource type="Texture2D" uid="uid://cfwa0s4mda7qp" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonB.png" id="15_4ghtc"]
-[ext_resource type="Texture2D" uid="uid://u030yeaxicsm" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonX.png" id="16_gdap7"]
-[ext_resource type="Texture2D" uid="uid://b2rccdn7v8nw6" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonY.png" id="17_nyfs6"]
-[ext_resource type="Texture2D" uid="uid://bdg5tlbkrgnf0" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonL1.png" id="18_qcc84"]
-[ext_resource type="Texture2D" uid="uid://0ruy01sjdxda" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonL2.png" id="19_op37c"]
-[ext_resource type="Texture2D" uid="uid://caqm2w7lruk06" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonR1.png" id="20_b634t"]
-[ext_resource type="Texture2D" uid="uid://dghhjs8jg6jwo" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonR2.png" id="21_n5awx"]
-[ext_resource type="Texture2D" uid="uid://gnqg5x0o6gms" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonSelect.png" id="22_o6b7t"]
-[ext_resource type="Texture2D" uid="uid://wtlticuwv5tq" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/buttonStart.png" id="23_vwva8"]
-[ext_resource type="Texture2D" uid="uid://vwmrlhriswdc" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/2x/target.png" id="24_rel5q"]
-[ext_resource type="Texture2D" uid="uid://dtunt7cfmiu0r" path="res://addons/3d_player_controller/textures/game_icons/PNG/White/1x/plus-1.png" id="25_js775"]
 
 [node name="Debug" type="Control"]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = -640.0
-offset_bottom = -360.0
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
 script = ExtResource("1_nyx4n")
 
 [node name="Panel1" type="Panel" parent="."]
 layout_mode = 0
 offset_right = 216.0
-offset_bottom = 700.0
+offset_bottom = 720.0
 
 [node name="Label22" type="Label" parent="Panel1"]
 layout_mode = 0
@@ -392,12 +358,27 @@ offset_bottom = 552.0
 [node name="Label31" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 552.0
+offset_top = 576.0
 offset_right = 179.0
-offset_bottom = 575.0
+offset_bottom = 599.0
 text = "is_skateboarding"
 
 [node name="IsSkateboarding" type="CheckBox" parent="Panel1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 576.0
+offset_right = 216.0
+offset_bottom = 600.0
+
+[node name="Label34" type="Label" parent="Panel1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 552.0
+offset_right = 179.0
+offset_bottom = 575.0
+text = "is_shimmying"
+
+[node name="IsShimmying" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 552.0
@@ -407,83 +388,83 @@ offset_bottom = 576.0
 [node name="Label14" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 576.0
-offset_right = 179.0
-offset_bottom = 599.0
-text = "is_sprinting"
-
-[node name="IsSprinting" type="CheckBox" parent="Panel1"]
-layout_mode = 0
-offset_left = 192.0
-offset_top = 576.0
-offset_right = 216.0
-offset_bottom = 600.0
-
-[node name="Label21" type="Label" parent="Panel1"]
-layout_mode = 0
-offset_left = 9.0
 offset_top = 600.0
 offset_right = 179.0
 offset_bottom = 623.0
-text = "is_standing"
+text = "is_sprinting"
 
-[node name="IsStanding" type="CheckBox" parent="Panel1"]
+[node name="IsSprinting" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 600.0
 offset_right = 216.0
 offset_bottom = 624.0
 
-[node name="Label23" type="Label" parent="Panel1"]
+[node name="Label21" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 624.0
 offset_right = 179.0
 offset_bottom = 647.0
-text = "is_swimming"
+text = "is_standing"
 
-[node name="IsSwimming" type="CheckBox" parent="Panel1"]
+[node name="IsStanding" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 624.0
 offset_right = 216.0
 offset_bottom = 648.0
 
-[node name="IsUsing" type="CheckBox" parent="Panel1"]
+[node name="Label23" type="Label" parent="Panel1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 648.0
+offset_right = 179.0
+offset_bottom = 671.0
+text = "is_swimming"
+
+[node name="IsSwimming" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 648.0
 offset_right = 216.0
 offset_bottom = 672.0
 
-[node name="Label33" type="Label" parent="Panel1"]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 648.0
-offset_right = 179.0
-offset_bottom = 671.0
-text = "is_using"
-
-[node name="IsWalking" type="CheckBox" parent="Panel1"]
+[node name="IsUsing" type="CheckBox" parent="Panel1"]
 layout_mode = 0
 offset_left = 192.0
 offset_top = 672.0
 offset_right = 216.0
 offset_bottom = 696.0
 
-[node name="Label27" type="Label" parent="Panel1"]
+[node name="Label33" type="Label" parent="Panel1"]
 layout_mode = 0
 offset_left = 9.0
 offset_top = 672.0
 offset_right = 179.0
 offset_bottom = 695.0
+text = "is_using"
+
+[node name="IsWalking" type="CheckBox" parent="Panel1"]
+layout_mode = 0
+offset_left = 192.0
+offset_top = 696.0
+offset_right = 216.0
+offset_bottom = 720.0
+
+[node name="Label27" type="Label" parent="Panel1"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 696.0
+offset_right = 179.0
+offset_bottom = 719.0
 text = "is_walking"
 
 [node name="Panel2" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 1064.0
 offset_right = 1280.0
-offset_bottom = 430.0
+offset_bottom = 468.0
 
 [node name="EnableChat" type="CheckButton" parent="Panel2"]
 layout_mode = 0
@@ -492,387 +473,167 @@ offset_right = 216.0
 offset_bottom = 31.0
 text = "enable_chat"
 
+[node name="EnableClimbing" type="CheckButton" parent="Panel2"]
+layout_mode = 0
+offset_left = 42.0
+offset_top = 31.0
+offset_right = 215.0
+offset_bottom = 62.0
+text = "enable_climbing"
+
 [node name="EnableCrouching" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 32.0
+offset_top = 62.0
 offset_right = 216.0
-offset_bottom = 63.0
+offset_bottom = 93.0
 text = "enable_crouching"
 
 [node name="EnableDoubleJump" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 64.0
+offset_top = 94.0
 offset_right = 216.0
-offset_bottom = 95.0
+offset_bottom = 125.0
 text = "enable_double_jump"
 
 [node name="EnableFlying" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 66.0
-offset_top = 96.0
+offset_top = 126.0
 offset_right = 216.0
-offset_bottom = 127.0
+offset_bottom = 157.0
 text = "enable_flying"
 
 [node name="EnableJumping" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 45.0
-offset_top = 128.0
+offset_top = 158.0
 offset_right = 216.0
-offset_bottom = 159.0
+offset_bottom = 189.0
 text = "enable_jumping"
 
 [node name="EnableKicking" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 45.0
-offset_top = 160.0
+offset_top = 189.0
 offset_right = 216.0
-offset_bottom = 191.0
+offset_bottom = 220.0
 text = "enable_kicking"
 
 [node name="EnablePunching" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 192.0
+offset_top = 220.0
 offset_right = 216.0
-offset_bottom = 223.0
+offset_bottom = 251.0
 text = "enable_punching"
+
+[node name="EnableSprinting" type="CheckButton" parent="Panel2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 250.0
+offset_right = 216.0
+offset_bottom = 281.0
+text = "enable_sprinting"
 
 [node name="EnableVibration" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 224.0
+offset_top = 281.0
 offset_right = 216.0
-offset_bottom = 255.0
+offset_bottom = 312.0
 text = "enable_vibration"
 
 [node name="LockCamera" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 36.0
-offset_top = 256.0
+offset_top = 312.0
 offset_right = 216.0
-offset_bottom = 287.0
+offset_bottom = 343.0
 text = "lock_camera"
 
 [node name="LockMovementX" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 30.0
-offset_top = 288.0
+offset_top = 343.0
 offset_right = 216.0
-offset_bottom = 319.0
+offset_bottom = 374.0
 text = "lock_movement_x"
 
 [node name="LockMovementY" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 30.0
-offset_top = 320.0
+offset_top = 375.0
 offset_right = 216.0
-offset_bottom = 351.0
+offset_bottom = 406.0
 text = "lock_movement_y"
 
 [node name="LockPerspective" type="CheckButton" parent="Panel2"]
 layout_mode = 0
 offset_left = 30.0
-offset_top = 352.0
+offset_top = 407.0
 offset_right = 216.0
-offset_bottom = 383.0
+offset_bottom = 438.0
 text = "lock_perspective"
 
 [node name="GamePaused" type="CheckBox" parent="Panel2"]
 layout_mode = 0
 offset_left = 192.0
-offset_top = 403.0
+offset_top = 438.0
 offset_right = 216.0
-offset_bottom = 427.0
+offset_bottom = 462.0
 
 [node name="Label28" type="Label" parent="Panel2"]
 layout_mode = 0
 offset_left = 9.0
-offset_top = 403.0
+offset_top = 438.0
 offset_right = 179.0
-offset_bottom = 426.0
+offset_bottom = 461.0
 text = "game_paused"
 
-[node name="XboxController" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Black" type="Control" parent="XboxController"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ButtonA" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1179.0
-offset_top = 620.0
-offset_right = 1229.0
-offset_bottom = 670.0
-texture = ExtResource("2_fbawl")
-
-[node name="ButtonB" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1211.0
-offset_top = 588.0
-offset_right = 1261.0
-offset_bottom = 638.0
-texture = ExtResource("3_bf0qu")
-
-[node name="ButtonX" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1147.0
-offset_top = 588.0
-offset_right = 1197.0
-offset_bottom = 638.0
-texture = ExtResource("4_oh1iv")
-
-[node name="ButtonY" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1179.0
-offset_top = 556.0
-offset_right = 1229.0
-offset_bottom = 606.0
-texture = ExtResource("5_tp2mo")
-
-[node name="ButtonL1" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 925.0
-offset_top = 548.0
-offset_right = 975.0
-offset_bottom = 598.0
-texture = ExtResource("6_ufh1b")
-
-[node name="ButtonL2" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 925.0
-offset_top = 516.0
-offset_right = 975.0
-offset_bottom = 566.0
-texture = ExtResource("7_g1jgn")
-
-[node name="ButtonR1" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1230.0
-offset_top = 548.0
-offset_right = 1280.0
-offset_bottom = 598.0
-texture = ExtResource("8_o606g")
-
-[node name="ButtonR2" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1230.0
-offset_top = 516.0
-offset_right = 1280.0
-offset_bottom = 566.0
-texture = ExtResource("9_w8w7o")
-
-[node name="ButtonSelect" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1059.0
-offset_top = 588.0
-offset_right = 1109.0
-offset_bottom = 638.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("10_hi5tw")
-
-[node name="ButtonStart" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1107.0
-offset_top = 588.0
-offset_right = 1157.0
-offset_bottom = 638.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("11_ngph4")
-
-[node name="StickR" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1107.0
-offset_top = 628.0
-offset_right = 1207.0
-offset_bottom = 728.0
-texture = ExtResource("12_edgb2")
-
-[node name="StickL" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 955.0
-offset_top = 564.0
-offset_right = 1055.0
-offset_bottom = 664.0
-texture = ExtResource("12_edgb2")
-
-[node name="DPad" type="TextureRect" parent="XboxController/Black"]
-layout_mode = 0
-offset_left = 1001.0
-offset_top = 626.0
-offset_right = 1101.0
-offset_bottom = 726.0
-texture = ExtResource("13_77uqr")
-
-[node name="White" type="Control" parent="XboxController"]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="ButtonA" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1179.0
-offset_top = 620.0
-offset_right = 1229.0
-offset_bottom = 670.0
-texture = ExtResource("14_c0yct")
-
-[node name="ButtonB" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1211.0
-offset_top = 588.0
-offset_right = 1261.0
-offset_bottom = 638.0
-texture = ExtResource("15_4ghtc")
-
-[node name="ButtonX" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1147.0
-offset_top = 588.0
-offset_right = 1197.0
-offset_bottom = 638.0
-texture = ExtResource("16_gdap7")
-
-[node name="ButtonY" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1179.0
-offset_top = 556.0
-offset_right = 1229.0
-offset_bottom = 606.0
-texture = ExtResource("17_nyfs6")
-
-[node name="ButtonL1" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 925.0
-offset_top = 548.0
-offset_right = 975.0
-offset_bottom = 598.0
-texture = ExtResource("18_qcc84")
-
-[node name="ButtonL2" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 925.0
-offset_top = 516.0
-offset_right = 975.0
-offset_bottom = 566.0
-texture = ExtResource("19_op37c")
-
-[node name="ButtonR1" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1230.0
-offset_top = 548.0
-offset_right = 1280.0
-offset_bottom = 598.0
-texture = ExtResource("20_b634t")
-
-[node name="ButtonR2" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1230.0
-offset_top = 516.0
-offset_right = 1280.0
-offset_bottom = 566.0
-texture = ExtResource("21_n5awx")
-
-[node name="ButtonSelect" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1059.0
-offset_top = 588.0
-offset_right = 1109.0
-offset_bottom = 638.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("22_o6b7t")
-
-[node name="ButtonStart" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1107.0
-offset_top = 588.0
-offset_right = 1157.0
-offset_bottom = 638.0
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("23_vwva8")
-
-[node name="StickR" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1107.0
-offset_top = 628.0
-offset_right = 1207.0
-offset_bottom = 728.0
-texture = ExtResource("24_rel5q")
-
-[node name="StickL" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 955.0
-offset_top = 564.0
-offset_right = 1055.0
-offset_bottom = 664.0
-texture = ExtResource("24_rel5q")
-
-[node name="DPadUp" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1003.0
-offset_top = 628.0
-offset_right = 1103.0
-offset_bottom = 728.0
-texture = ExtResource("25_js775")
-
-[node name="DPadDown" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1003.0
-offset_top = 628.0
-offset_right = 1103.0
-offset_bottom = 728.0
-texture = ExtResource("25_js775")
-flip_v = true
-
-[node name="DPadLeft" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1103.0
-offset_top = 628.0
-offset_right = 1203.0
-offset_bottom = 728.0
-rotation = 1.57079
-texture = ExtResource("25_js775")
-flip_h = true
-flip_v = true
-
-[node name="DPadRight" type="TextureRect" parent="XboxController/White"]
-layout_mode = 0
-offset_left = 1103.0
-offset_top = 628.0
-offset_right = 1203.0
-offset_bottom = 728.0
-rotation = 1.57079
-texture = ExtResource("25_js775")
-
-[node name="FPS" type="Panel" parent="."]
+[node name="Coordinates" type="RichTextLabel" parent="."]
+clip_contents = false
 layout_mode = 1
-offset_left = 1202.0
-offset_top = 696.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 280.0
+offset_top = 697.0
+offset_right = 1000.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 0
+bbcode_enabled = true
+text = "[center]X:0.0 Y:0.0 Z:0.0[/center]"
+scroll_active = false
+
+[node name="FPS" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1207.0
+offset_top = 697.0
 offset_right = 1280.0
 offset_bottom = 720.0
-
-[node name="Label" type="Label" parent="FPS"]
-layout_mode = 0
-offset_left = 3.0
-offset_right = 67.0
-offset_bottom = 23.0
+grow_horizontal = 0
+grow_vertical = 0
 text = "FPS: 0000"
 
 [connection signal="toggled" from="Panel2/EnableChat" to="." method="_on_enable_chat_toggled"]
+[connection signal="toggled" from="Panel2/EnableClimbing" to="." method="_on_enable_climbing_toggled"]
 [connection signal="toggled" from="Panel2/EnableCrouching" to="." method="_on_enable_crouching_toggled"]
 [connection signal="toggled" from="Panel2/EnableDoubleJump" to="." method="_on_enable_double_jump_toggled"]
 [connection signal="toggled" from="Panel2/EnableFlying" to="." method="_on_enable_flying_toggled"]
 [connection signal="toggled" from="Panel2/EnableJumping" to="." method="_on_enable_jumping_toggled"]
 [connection signal="toggled" from="Panel2/EnableKicking" to="." method="_on_enable_kicking_toggled"]
 [connection signal="toggled" from="Panel2/EnablePunching" to="." method="_on_enable_punching_toggled"]
+[connection signal="toggled" from="Panel2/EnableSprinting" to="." method="_on_enable_sprinting_toggled"]
 [connection signal="toggled" from="Panel2/EnableVibration" to="." method="_on_enable_vibration_toggled"]
 [connection signal="toggled" from="Panel2/LockCamera" to="." method="_on_lock_camera_toggled"]
 [connection signal="toggled" from="Panel2/LockMovementX" to="." method="_on_lock_movement_x_toggled"]

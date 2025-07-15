@@ -1,118 +1,40 @@
 extends Control
+## debug.gd
 
+# Player (player_3d.gd)
+#├── AudioStreamPlayer3D
+#├── CameraMount
+#│	└── Camera3D (camera_3d.gd)
+#│		└── ChatWindow (chat_window.gd)
+#│			└── Message (message.gd)
+#│		└── Debug (debug.gd)
+#│		└── Emotes (emotes.gd)
+#│		└── Pause (pause.gd)
+#│		└── Settings (settings.gd)
+#├── CollisionShape3D
+#├── Controls (controls.gd)
+#├── ShapeCast3D
+#├── States
+#└── Visuals
+#	└── AuxScene
+#		└── AnimationPlayer
+
+# Note: `@onready` variables are set when the scene is loaded.
 @onready var player: CharacterBody3D = get_parent().get_parent().get_parent()
-@onready var stick_l_origin: Vector2 = $XboxController/White/StickL.position
-@onready var stick_r_origin: Vector2 = $XboxController/White/StickR.position
 
 
 ## Called once for every event before _unhandled_input(), allowing you to consume some events.
 func _input(event) -> void:
-
 	# [debug] button _pressed_
 	if event.is_action_pressed("debug"):
-
 		# Toggle "debug" visibility
 		visible = !visible
-
-	# Check if the Debug UI is currently displayed
-	if visible:
-
-		# Check if the current Input Event was triggered by a joypad
-		if Controls.current_input_type == Controls.InputType.CONTROLLER:
-
-			# Show the controller
-			$XboxController.visible = true
-
-			# Get the joypad's name
-			var device_name = Input.get_joy_name(event.device)
-
-			# Check if the joypad is an XBox controller
-			if device_name == "XInput Gamepad":
-
-				# ⍐ (D-Pad Up)
-				if event.is_action_pressed("dpad_up"):
-					$XboxController/White/DPadUp.visible = false
-				elif event.is_action_released("dpad_up"):
-					$XboxController/White/DPadUp.visible = true
-				# ⍗ (D-Pad Down)
-				if event.is_action_pressed("dpad_down"):
-					$XboxController/White/DPadDown.visible = false
-				elif event.is_action_released("dpad_down"):
-					$XboxController/White/DPadDown.visible = true
-				# ⍇ (D-Pad Left)
-				if event.is_action_pressed("dpad_left"):
-					$XboxController/White/DPadLeft.visible = false
-				elif event.is_action_released("dpad_left"):
-					$XboxController/White/DPadLeft.visible = true
-				# ⍈ (D-Pad Right)
-				if event.is_action_pressed("dpad_right"):
-					$XboxController/White/DPadRight.visible = false
-				elif event.is_action_released("dpad_right"):
-					$XboxController/White/DPadRight.visible = true
-				# Ⓐ
-				if event.is_action_pressed("jump"):
-					$XboxController/White/ButtonA.visible = false
-				elif event.is_action_released("jump"):
-					$XboxController/White/ButtonA.visible = true
-				# Ⓑ
-				if event.is_action_pressed("sprint"):
-					$XboxController/White/ButtonB.visible = false
-				elif event.is_action_released("sprint"):
-					$XboxController/White/ButtonB.visible = true
-				# Ⓧ
-				if event.is_action_pressed("use"):
-					$XboxController/White/ButtonX.visible = false
-				elif event.is_action_released("use"):
-					$XboxController/White/ButtonX.visible = true
-				# Ⓨ
-				if event.is_action_pressed("crouch"):
-					$XboxController/White/ButtonY.visible = false
-				elif event.is_action_released("crouch"):
-					$XboxController/White/ButtonY.visible = true
-				# ☰ (Start)
-				if event.is_action_pressed("start"):
-					$XboxController/White/ButtonStart.visible = false
-				elif event.is_action_released("start"):
-					$XboxController/White/ButtonStart.visible = true
-				# ⧉ (Select)
-				if event.is_action_pressed("select"):
-					$XboxController/White/ButtonSelect.visible = false
-				elif event.is_action_released("select"):
-					$XboxController/White/ButtonSelect.visible = true
-				# Ⓛ1 (L1)
-				if event.is_action_pressed("left_punch"):
-					$XboxController/White/ButtonL1.visible = false
-				elif event.is_action_released("left_punch"):
-					$XboxController/White/ButtonL1.visible = true
-				# Ⓛ2 (L2)
-				if event.is_action_pressed("left_kick"):
-					$XboxController/White/ButtonL2.visible = false
-				elif event.is_action_released("left_kick"):
-					$XboxController/White/ButtonL2.visible = true
-				# Ⓡ1 (R1)
-				if event.is_action_pressed("right_punch"):
-					$XboxController/White/ButtonR1.visible = false
-				elif event.is_action_released("right_punch"):
-					$XboxController/White/ButtonR1.visible = true
-				# Ⓡ2 (R2)
-				if event.is_action_pressed("right_kick"):
-					$XboxController/White/ButtonR2.visible = false
-				elif event.is_action_released("right_kick"):
-					$XboxController/White/ButtonR2.visible = true
-
-		# Input Event was not triggered by a joypad 
-		else:
-
-			# Hide the controller
-			$XboxController.visible = false
 
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-
 	# Check is the Debug Panel is visible
 	if visible:
-
 		# Panel 1
 		$Panel1/IsAiming.button_pressed = player.is_aiming
 		$Panel1/IsAnimationLocked.button_pressed = player.is_animation_locked
@@ -138,6 +60,7 @@ func _process(_delta: float) -> void:
 		$Panel1/IsReeling.button_pressed = player.is_reeling
 		$Panel1/IsRunning.button_pressed = player.is_running
 		$Panel1/IsSkateboarding.button_pressed = player.is_skateboarding
+		$Panel1/IsShimmying.button_pressed = player.is_shimmying
 		$Panel1/IsSprinting.button_pressed = player.is_sprinting
 		$Panel1/IsStanding.button_pressed = player.is_standing
 		$Panel1/IsSwimming.button_pressed = player.is_swimming
@@ -146,12 +69,14 @@ func _process(_delta: float) -> void:
 
 		# Panel 2
 		$Panel2/EnableCrouching.button_pressed = player.enable_crouching
+		$Panel2/EnableClimbing.button_pressed = player.enable_climbing
 		$Panel2/EnableChat.button_pressed = player.enable_chat
 		$Panel2/EnableDoubleJump.button_pressed = player.enable_double_jump
 		$Panel2/EnableFlying.button_pressed = player.enable_flying
 		$Panel2/EnableJumping.button_pressed = player.enable_jumping
 		$Panel2/EnableKicking.button_pressed = player.enable_kicking
 		$Panel2/EnablePunching.button_pressed = player.enable_punching
+		$Panel2/EnableSprinting.button_pressed = player.enable_sprinting
 		$Panel2/EnableVibration.button_pressed = player.enable_vibration
 		$Panel2/LockCamera.button_pressed = player.lock_camera
 		$Panel2/LockMovementX.button_pressed = player.lock_movement_x
@@ -160,83 +85,75 @@ func _process(_delta: float) -> void:
 		$Panel2/GamePaused.button_pressed = player.game_paused
 
 		# Panel 3
-		$FPS/Label.text = "FPS: " + str(int(Engine.get_frames_per_second()))
-
-		# Check is the current Input Event was triggered by a controller
-		if Controls.current_input_type == Controls.InputType.CONTROLLER:
-
-			# Get Left-stick magnitude
-			var left_stick_input = Vector2(
-				Input.get_axis("ui_left", "ui_right"),
-				Input.get_axis("ui_up", "ui_down")
-			)
-
-			# Apply position based on left-stick magnitude
-			if left_stick_input.length() > 0:
-				# Move StickL based on stick input strength
-				$XboxController/White/StickL.position = stick_l_origin + left_stick_input * 10.0
-			else:
-				# Return StickL to its original position when stick is released
-				$XboxController/White/StickL.position = stick_l_origin
-
-			# Get right-stick magnitude
-			var right_stick_input = Vector2(
-				Input.get_axis("look_left", "look_right"),
-				Input.get_axis("look_up", "look_down")
-			)
-
-			# Apply position based on right-stick magnitude
-			if right_stick_input.length() > 0:
-				# Move StickR based on stick input strength
-				$XboxController/White/StickR.position = stick_r_origin + right_stick_input * 10.0
-			else:
-				# Return StickR to its original position when stick is released
-				$XboxController/White/StickR.position = stick_r_origin
+		$Coordinates.text = "[center][color=red]X:[/color]%.1f [color=green]Y:[/color]%.1f [color=blue]Z:[/color]%.1f[/center]" % [player.global_position.x, player.global_position.y, player.global_position.z]
+		$FPS.text = "FPS: " + str(int(Engine.get_frames_per_second()))
 
 
+## Called when the "enable_chat" toggle option is changed.
 func _on_enable_chat_toggled(toggled_on: bool) -> void:
 	player.enable_chat = toggled_on
 
 
+## Called when the "enable_climbing" toggle option is changed.
+func _on_enable_climbing_toggled(toggled_on: bool) -> void:
+	player.enable_climbing = toggled_on
+
+
+## Called when the "enable_crouching" toggle option is changed.
 func _on_enable_crouching_toggled(toggled_on: bool) -> void:
 	player.enable_crouching = toggled_on
 
 
+## Called when the "enable_double_jump" toggle option is changed.
 func _on_enable_double_jump_toggled(toggled_on: bool) -> void:
 	player.enable_double_jump = toggled_on
 
 
+## Called when the "enable_flying" toggle option is changed.
 func _on_enable_flying_toggled(toggled_on: bool) -> void:
 	player.enable_flying = toggled_on
 
 
+## Called when the "enable_jumping" toggle option is changed.
 func _on_enable_jumping_toggled(toggled_on: bool) -> void:
 	player.enable_jumping = toggled_on
 
 
+## Called when the "enable_kicking" toggle option is changed.
 func _on_enable_kicking_toggled(toggled_on: bool) -> void:
 	player.enable_kicking = toggled_on
 
 
+## Called when the "enable_punching" toggle option is changed.
 func _on_enable_punching_toggled(toggled_on: bool) -> void:
 	player.enable_punching = toggled_on
 
 
+## Called when the "enable_sprinting" toggle option is changed.
+func _on_enable_sprinting_toggled(toggled_on: bool) -> void:
+	player.enable_sprinting = toggled_on
+
+
+## Called when the "enable_vibration" toggle option is changed.
 func _on_enable_vibration_toggled(toggled_on: bool) -> void:
 	player.enable_vibration = toggled_on
 
 
+## Called when the "locak_camera" toggle option is changed.
 func _on_lock_camera_toggled(toggled_on: bool) -> void:
 	player.lock_camera = toggled_on
 
 
+## Called when the "lock_movement_x" toggle option is changed.
 func _on_lock_movement_x_toggled(toggled_on: bool) -> void:
 	player.lock_movement_x = toggled_on
 
 
+## Called when the "lock_movement_y" toggle option is changed.
 func _on_lock_movement_y_toggled(toggled_on: bool) -> void:
 	player.lock_movement_y = toggled_on
 
 
+## Called when the "lock_perspective" toggle option is changed.
 func _on_lock_perspective_toggled(toggled_on: bool) -> void:
 	player.lock_perspective = toggled_on

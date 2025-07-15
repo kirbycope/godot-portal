@@ -22,8 +22,8 @@ func _ready() -> void:
 	# Disable the mouse pointer and capture the motion
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-	# Make sure the game is unpaused
-	$Player.game_paused = false
+	# Disable climbing
+	$Player.enable_climbing = false
 
 	# Put the player in first-person perspective
 	$Player.camera.switch_to_first_person()
@@ -42,16 +42,6 @@ func _ready() -> void:
 	# Open the first door
 	var animation_player = $Door01Wide.get_node("AnimationPlayer")
 	animation_player.play("open")
-
-	# TESTING
-	#$Player.is_holding_rifle = true
-
-	# Load the scene
-	#var scene = load("res://scenes/portal/portal_gun.tscn")
-	# Instantiate the scene
-	#var instance = scene.instantiate()
-	# Add the instance to the player scene
-	#$"Player/Visuals/HeldItemMount".add_child(instance)
 
 
 ## Called every frame. '_delta' is the elapsed time since the previous frame.

@@ -1,17 +1,13 @@
-[gd_scene load_steps=33 format=3 uid="uid://ujh51l2wv1vk"]
+[gd_scene load_steps=30 format=3 uid="uid://ujh51l2wv1vk"]
 
 [ext_resource type="Script" uid="uid://2iaqywmqcahl" path="res://addons/3d_player_controller/player_3d.gd" id="1_f3dlg"]
-[ext_resource type="PackedScene" uid="uid://r3qggst0jwcy" path="res://addons/3d_player_controller/virtual_buttons_top_left.tscn" id="2_1p282"]
-[ext_resource type="Script" uid="uid://qg3kc3fkwemc" path="res://addons/3d_player_controller/virtual_controller_3d.gd" id="2_ifath"]
-[ext_resource type="Script" uid="uid://duayexmvx1psh" path="res://addons/3d_player_controller/virtual_buttons.gd" id="2_vdjk1"]
-[ext_resource type="PackedScene" uid="uid://cstsy0gh6slk4" path="res://addons/3d_player_controller/virtual_buttons_top_right.tscn" id="3_k4p2k"]
+[ext_resource type="PackedScene" uid="uid://cx7x0f3lh4aus" path="res://addons/virtual_controller/scenes/canvas_layer.tscn" id="2_j65kv"]
 [ext_resource type="PackedScene" uid="uid://dv80q7jwkx20r" path="res://addons/3d_player_controller/debug.tscn" id="3_xex47"]
 [ext_resource type="PackedScene" uid="uid://c714y0011rxmt" path="res://addons/3d_player_controller/y_bot.tscn" id="4_swcjt"]
 [ext_resource type="PackedScene" uid="uid://bf6dhhwfpuau6" path="res://addons/3d_player_controller/pause.tscn" id="4_t2fvs"]
-[ext_resource type="PackedScene" uid="uid://dg7alw1ljs6jc" path="res://addons/3d_player_controller/virtual_buttons_bottom_left.tscn" id="4_vdjk1"]
-[ext_resource type="PackedScene" uid="uid://clo0cpddagrkh" path="res://addons/3d_player_controller/virtual_buttons_bottom_right.tscn" id="5_0pvj7"]
 [ext_resource type="PackedScene" uid="uid://u2wxuwpmjwha" path="res://addons/3d_player_controller/emotes.tscn" id="5_icw06"]
 [ext_resource type="Script" uid="uid://xf1vm85b12dr" path="res://addons/3d_player_controller/camera_3d.gd" id="5_j65kv"]
+[ext_resource type="PackedScene" uid="uid://oatiyge81y5c" path="res://addons/3d_player_controller/chat_window.tscn" id="5_k4p2k"]
 [ext_resource type="Script" uid="uid://bxskxesywooou" path="res://addons/3d_player_controller/states/climbing.gd" id="5_xlvyu"]
 [ext_resource type="Script" uid="uid://br5fy64tx7tfn" path="res://addons/3d_player_controller/states/crawling.gd" id="6_72vy6"]
 [ext_resource type="Script" uid="uid://b23wyc1lxy7ni" path="res://addons/3d_player_controller/states/base.gd" id="6_u38ru"]
@@ -21,6 +17,7 @@
 [ext_resource type="Script" uid="uid://b1b2rgyyrsjig" path="res://addons/3d_player_controller/states/flying.gd" id="9_2t1yj"]
 [ext_resource type="Texture2D" uid="uid://c4wibovgpj7xy" path="res://addons/3d_player_controller/textures/reticle.png" id="10_0pvj7"]
 [ext_resource type="Script" uid="uid://d31ddqb4hyuqm" path="res://addons/3d_player_controller/states/hanging.gd" id="10_eblo2"]
+[ext_resource type="Script" uid="uid://dodroqwgmf811" path="res://addons/3d_player_controller/states/states.gd" id="10_x07tl"]
 [ext_resource type="Script" uid="uid://cyls4atmagils" path="res://addons/3d_player_controller/states/holding.gd" id="11_ekkl0"]
 [ext_resource type="Script" uid="uid://drdtp8y8bxm65" path="res://addons/3d_player_controller/states/driving.gd" id="11_mcv3d"]
 [ext_resource type="Script" uid="uid://qvcaqop34woy" path="res://addons/3d_player_controller/states/jumping.gd" id="12_bhakt"]
@@ -44,85 +41,6 @@ script = ExtResource("1_f3dlg")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 volume_db = -10.0
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="VirtualController3D" type="Node2D" parent="CanvasLayer"]
-script = ExtResource("2_ifath")
-
-[node name="VirtualButtons" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_vdjk1")
-
-[node name="VirtualButtonsBottomLeft" parent="CanvasLayer" instance=ExtResource("4_vdjk1")]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_right = 0.0
-grow_horizontal = 1
-grow_vertical = 0
-
-[node name="VirtualButtonsBottomRight" parent="CanvasLayer" instance=ExtResource("5_0pvj7")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-script = null
-
-[node name="VirtualButtonsTopLeft" parent="CanvasLayer" instance=ExtResource("2_1p282")]
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="VirtualButtonsTopRight" parent="CanvasLayer" instance=ExtResource("3_k4p2k")]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_bottom = 0.0
-grow_horizontal = 0
-grow_vertical = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
-shape = SubResource("CapsuleShape3D_5e6s3")
-
-[node name="Visuals" type="Node3D" parent="."]
-
-[node name="AuxScene" parent="Visuals" instance=ExtResource("4_swcjt")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-
-[node name="RayCast3D_JumpTarget" type="RayCast3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -0.6)
-
-[node name="RayCast3D_InFrontPlayer_Top" type="RayCast3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-target_position = Vector3(0, 0, -1)
-
-[node name="RayCast3D_InFrontPlayer_High" type="RayCast3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
-target_position = Vector3(0, 0, -1)
-
-[node name="RayCast3D_InFrontPlayer_Middle" type="RayCast3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-target_position = Vector3(0, 0, -1)
-
-[node name="RayCast3D_InFrontPlayer_Use" type="RayCast3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-target_position = Vector3(0, 0, -0.5)
-
-[node name="RayCast3D_InFrontPlayer_Low" type="RayCast3D" parent="Visuals"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-target_position = Vector3(0, 0, -1)
-
-[node name="RayCast3D_BelowPlayer" type="RayCast3D" parent="Visuals"]
-
-[node name="HeldItemMount" type="Node3D" parent="Visuals"]
-
-[node name="SkateboardMount" type="Node3D" parent="Visuals"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="CameraMount" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -155,6 +73,9 @@ stretch_mode = 3
 [node name="Emotes" parent="CameraMount/Camera3D" instance=ExtResource("5_icw06")]
 visible = false
 
+[node name="ChatWindow" parent="CameraMount/Camera3D" instance=ExtResource("5_k4p2k")]
+visible = false
+
 [node name="Pause" parent="CameraMount/Camera3D" instance=ExtResource("4_t2fvs")]
 visible = false
 
@@ -165,10 +86,22 @@ visible = false
 visible = false
 
 [node name="RayCast3D" type="RayCast3D" parent="CameraMount/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
 target_position = Vector3(0, 0, -2)
 
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_5e6s3")
+
+[node name="Controls" parent="." instance=ExtResource("2_j65kv")]
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+shape = SubResource("CylinderShape3D_8pp8g")
+target_position = Vector3(0, -0.5, 0)
+
 [node name="States" type="Node" parent="."]
+script = ExtResource("10_x07tl")
 
 [node name="Base" type="Node" parent="States"]
 process_mode = 4
@@ -232,8 +165,37 @@ script = ExtResource("17_kn3kj")
 process_mode = 4
 script = ExtResource("16_70kcl")
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
-enabled = false
-shape = SubResource("CylinderShape3D_8pp8g")
-target_position = Vector3(0, -0.5, 0)
+[node name="Visuals" type="Node3D" parent="."]
+
+[node name="AuxScene" parent="Visuals" instance=ExtResource("4_swcjt")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="RayCast3D_JumpTarget" type="RayCast3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2, -0.6)
+
+[node name="RayCast3D_InFrontPlayer_Top" type="RayCast3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="RayCast3D_InFrontPlayer_High" type="RayCast3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="RayCast3D_InFrontPlayer_Middle" type="RayCast3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="RayCast3D_InFrontPlayer_Use" type="RayCast3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+target_position = Vector3(0, 0, -0.5)
+
+[node name="RayCast3D_InFrontPlayer_Low" type="RayCast3D" parent="Visuals"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+target_position = Vector3(0, 0, -1)
+
+[node name="RayCast3D_BelowPlayer" type="RayCast3D" parent="Visuals"]
+
+[node name="HeldItemMount" type="Node3D" parent="Visuals"]
+
+[node name="SkateboardMount" type="Node3D" parent="Visuals"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
